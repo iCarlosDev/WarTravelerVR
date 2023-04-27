@@ -30,7 +30,7 @@ public class VR_Rig : MonoBehaviour
 
     private void Start()
     {
-        //headBodyOffset = transform.position - headConstraint.position;
+        headBodyOffset = transform.position - headConstraint.position;
     }
 
     private void FixedUpdate()
