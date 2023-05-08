@@ -2837,6 +2837,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1710022933}
     m_Modifications:
+    - target: {fileID: 1800502867, guid: e103a93a5acd2c14ebfb4eef009ebdc9, type: 3}
+      propertyPath: max_speed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1800502867, guid: e103a93a5acd2c14ebfb4eef009ebdc9, type: 3}
+      propertyPath: min_speed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1895020966332892, guid: e103a93a5acd2c14ebfb4eef009ebdc9, type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_American_01
@@ -4671,6 +4679,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1710022933}
     m_Modifications:
+    - target: {fileID: 1800502867, guid: e103a93a5acd2c14ebfb4eef009ebdc9, type: 3}
+      propertyPath: max_speed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1800502867, guid: e103a93a5acd2c14ebfb4eef009ebdc9, type: 3}
+      propertyPath: min_speed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1895020966332892, guid: e103a93a5acd2c14ebfb4eef009ebdc9, type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_American_01 (2)
@@ -5207,6 +5223,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1710022933}
     m_Modifications:
+    - target: {fileID: 1800502867, guid: e103a93a5acd2c14ebfb4eef009ebdc9, type: 3}
+      propertyPath: max_speed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1800502867, guid: e103a93a5acd2c14ebfb4eef009ebdc9, type: 3}
+      propertyPath: min_speed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1895020966332892, guid: e103a93a5acd2c14ebfb4eef009ebdc9, type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_American_01 (1)
@@ -6642,6 +6666,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1710022933}
     m_Modifications:
+    - target: {fileID: 1800502867, guid: e103a93a5acd2c14ebfb4eef009ebdc9, type: 3}
+      propertyPath: max_speed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1800502867, guid: e103a93a5acd2c14ebfb4eef009ebdc9, type: 3}
+      propertyPath: min_speed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1895020966332892, guid: e103a93a5acd2c14ebfb4eef009ebdc9, type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_American_01 (4)
@@ -8699,6 +8731,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1710022933}
     m_Modifications:
+    - target: {fileID: 1800502867, guid: e103a93a5acd2c14ebfb4eef009ebdc9, type: 3}
+      propertyPath: max_speed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1800502867, guid: e103a93a5acd2c14ebfb4eef009ebdc9, type: 3}
+      propertyPath: min_speed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1895020966332892, guid: e103a93a5acd2c14ebfb4eef009ebdc9, type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_American_01 (5)
@@ -11186,6 +11226,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1710022933}
     m_Modifications:
+    - target: {fileID: 1800502867, guid: e103a93a5acd2c14ebfb4eef009ebdc9, type: 3}
+      propertyPath: max_speed
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 1800502867, guid: e103a93a5acd2c14ebfb4eef009ebdc9, type: 3}
+      propertyPath: min_speed
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1895020966332892, guid: e103a93a5acd2c14ebfb4eef009ebdc9, type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_American_01 (3)
