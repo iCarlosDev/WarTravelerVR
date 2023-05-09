@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.wartraveler_vr.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "C:\\Users\\c.jimenez\\Documents\\Github\\WarTravelerVR\\WarTraveler_VR\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "D:\\SantMarc\\2CFGS\\Github\\WarTravelerVR\\WarTraveler_VR\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "WarTraveler_VR [Testing]"
