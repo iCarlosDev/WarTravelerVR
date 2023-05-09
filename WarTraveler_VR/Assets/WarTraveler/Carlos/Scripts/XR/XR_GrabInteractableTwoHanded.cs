@@ -1,13 +1,33 @@
+using System;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class XR_GrabInteractableTwoHanded : XRGrabInteractable
 {
+    [Space(20)]
+    
+    [Header("--- MY SCRIPT ---")]
+    [Space(10)]
+    [SerializeField] private bool isGrabbed;
+    
+    [Header("--- ATACHABLE HANDS ---")]
+    [Space(10)]
     [SerializeField] private GameObject leftHandPrefabInstantiate;
     [SerializeField] private GameObject rightHandPrefabInstantiate;
     [SerializeField] private XRBaseController controller;
     
-    [SerializeField] private bool isGrabbed;
+    [Header("--- ROTATION CONTROL ---")]
+    [Space(10)]
+    [SerializeField] private float rotationSpeed;
+    [SerializeField] private bool TrackRotationByPosition;
+
+    private void Update()
+    {
+        if (isGrabbed)
+        {
+            ControlRotationByPosition();
+        }
+    }
 
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
@@ -97,5 +117,14 @@ public class XR_GrabInteractableTwoHanded : XRGrabInteractable
     public void OnControllerExited()
     {
         isGrabbed = false;
+    }
+
+    private void ControlRotationByPosition()
+    {
+        if (!TrackRotationByPosition) return;
+
+        Vector3 direction = (controller.transform.position - transform.position).normalized;
+        Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up);
+        transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
 }
