@@ -10,7 +10,7 @@ public class XR_GrabInteractableTwoHanded : XRGrabInteractable
     [Space(10)]
     [SerializeField] private bool isGrabbed;
     
-    [Header("--- ATACHABLE HANDS ---")]
+    [Header("--- ATTACHABLE HANDS ---")]
     [Space(10)]
     [SerializeField] private GameObject leftHandPrefabInstantiate;
     [SerializeField] private GameObject rightHandPrefabInstantiate;
@@ -107,10 +107,12 @@ public class XR_GrabInteractableTwoHanded : XRGrabInteractable
         if (controller.CompareTag("LeftHand"))
         {
             Destroy(leftHandPrefabInstantiate);
+            controller = GameObject.FindWithTag("RightHand").GetComponent<XRBaseController>();
         }
         else
         {
             Destroy(rightHandPrefabInstantiate);
+            controller = GameObject.FindWithTag("LeftHand").GetComponent<XRBaseController>();
         }
     }
 
