@@ -8,6 +8,7 @@ TagManager:
   - LeftHand
   - RightHand
   - BulletNoCollisionable
+  - Weapon
   layers:
   - Default
   - TransparentFX
