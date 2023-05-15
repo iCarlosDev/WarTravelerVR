@@ -463,6 +463,7 @@ GameObject:
   - component: {fileID: 393263380}
   - component: {fileID: 393263379}
   - component: {fileID: 393263374}
+  - component: {fileID: 393263381}
   m_Layer: 0
   m_Name: RightHand Controller
   m_TagString: RightHand
@@ -786,6 +787,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &393263381
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393263372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9b30493efa67b40a96bc9db4ab034c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0.1
+  intensity: 1
 --- !u!1 &402105933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1685,6 +1700,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8932367440660016869, guid: 11a30ed2979cb5040a4f6218afaadab3,
+        type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 1493020589}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11a30ed2979cb5040a4f6218afaadab3, type: 3}
 --- !u!4 &998892824 stripped
@@ -2082,6 +2102,7 @@ GameObject:
   - component: {fileID: 1639493184}
   - component: {fileID: 1639493183}
   - component: {fileID: 1639493178}
+  - component: {fileID: 1639493185}
   m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: LeftHand
@@ -2405,6 +2426,20 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1639493185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639493176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9b30493efa67b40a96bc9db4ab034c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  time: 0.1
+  intensity: 1
 --- !u!1001 &1710561208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2565,19 +2600,7 @@ MonoBehaviour:
       m_Calls: []
   m_LastSelectExited:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1775130046}
-        m_TargetAssemblyTypeName: XR_GrabInteractableTwoHanded, Assembly-CSharp
-        m_MethodName: OnControllerExited
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -2653,7 +2676,7 @@ MonoBehaviour:
   m_SmoothRotation: 0
   m_SmoothRotationAmount: 5
   m_TightenRotation: 0.5
-  m_ThrowOnDetach: 1
+  m_ThrowOnDetach: 0
   m_ThrowSmoothingDuration: 0.25
   m_ThrowSmoothingCurve:
     serializedVersion: 2
@@ -2678,10 +2701,17 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  isGrabbed: 0
+  _firstTransformPosition: {x: 0, y: 0, z: 0}
+  _firstTransformRotation: {x: 0, y: 0, z: 0, w: 0}
+  _timeToReset: 3
   leftHandPrefabInstantiate: {fileID: 0}
   rightHandPrefabInstantiate: {fileID: 0}
-  controller: {fileID: 0}
+  _leftController: {fileID: 0}
+  _rightController: {fileID: 0}
+  _firstAttachOffset: {x: -0.35, y: 0.1, z: 0}
+  _secondAttachOffset: {x: 0.35, y: 0.1, z: 0}
+  _isLeftGrab: 0
+  _isRightGrab: 0
   rotationSpeed: 7
   TrackRotationByPosition: 1
 --- !u!114 &1775130047
@@ -2696,7 +2726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4648b3c8a200aef46bf7879b09d8f59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _xrGrabInteractableTwoHanded: {fileID: 0}
+  _turretXrGrabInteractableTwoHanded: {fileID: 0}
   _bulletPrefab: {fileID: 1003485616670832, guid: 2298236a23b5c4349b5f8204068aadf3,
     type: 3}
   _bulletImpulseForce: 250

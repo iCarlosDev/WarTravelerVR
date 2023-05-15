@@ -323,8 +323,9 @@ GameObject:
   - component: {fileID: 33494520965019838}
   - component: {fileID: 23654429445298678}
   - component: {fileID: 64335815038385710}
-  - component: {fileID: 998892826}
   - component: {fileID: 4632777975670169627}
+  - component: {fileID: 8932367440660016869}
+  - component: {fileID: 998892831}
   m_Layer: 0
   m_Name: SM_Wep_American_MachineGun_01
   m_TagString: Untagged
@@ -417,7 +418,23 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43282463509106228, guid: 7f1578d9ab5808b4fa1b7741e7234719, type: 2}
---- !u!114 &998892826
+--- !u!54 &4632777975670169627
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1704588758205608}
+  serializedVersion: 2
+  m_Mass: 7
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 1
+--- !u!114 &8932367440660016869
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -426,7 +443,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1704588758205608}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3216436ef7bce8142b3c155703441daf, type: 3}
+  m_Script: {fileID: 11500000, guid: 8cb9b401093e4ac4db69140f58a1c3ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 0}
@@ -464,8 +481,8 @@ MonoBehaviour:
   m_LastSelectExited:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 998892826}
-        m_TargetAssemblyTypeName: XR_GrabInteractableTwoHanded, Assembly-CSharp
+      - m_Target: {fileID: 8932367440660016869}
+        m_TargetAssemblyTypeName: Weapon_XR_GrabInteractableTwoHanded, Assembly-CSharp
         m_MethodName: OnControllerExited
         m_Mode: 1
         m_Arguments:
@@ -484,7 +501,19 @@ MonoBehaviour:
       m_Calls: []
   m_Activated:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 998892831}
+        m_TargetAssemblyTypeName: Weapon_Rifle, Assembly-CSharp
+        m_MethodName: Shoot
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_Deactivated:
     m_PersistentCalls:
       m_Calls: []
@@ -564,26 +593,36 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
-  leftHandPrefab: {fileID: 0}
-  rightHandPrefab: {fileID: 0}
-  controller: {fileID: 0}
-  isGrabbed: 0
---- !u!54 &4632777975670169627
-Rigidbody:
+  _firstGrab: 0
+  _secondGrab: 0
+  leftHandPrefabInstantiate: {fileID: 0}
+  rightHandPrefabInstantiate: {fileID: 0}
+  _leftController: {fileID: 0}
+  _rightController: {fileID: 0}
+--- !u!114 &998892831
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704588758205608}
-  serializedVersion: 2
-  m_Mass: 7
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 1
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ccb5de5026df34ea7b1933b7e57989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fireRate: 0
+  _recoil: 0
+  _bulletPrefab: {fileID: 0}
+  _maxAmmo: 0
+  _currentAmmoInMagazine: 0
+  _magazineCapacity: 0
+  _hasBreechBullet: 0
+  _particleSystem: {fileID: 0}
+  _secondGrab: {fileID: 0}
+  _magazineGrab: {fileID: 0}
+  _breech: {fileID: 0}
+  _isSemiAutomatic: 0
 --- !u!1 &1776031598982862
 GameObject:
   m_ObjectHideFlags: 0
