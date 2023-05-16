@@ -1093,6 +1093,7 @@ GameObject:
   - component: {fileID: 64139016984493720}
   - component: {fileID: 5662370547415398974}
   - component: {fileID: 2367187486160237156}
+  - component: {fileID: 567765099964281042}
   m_Layer: 0
   m_Name: SM_Veh_American_Truck_01
   m_TagString: Untagged
@@ -1230,6 +1231,19 @@ MonoBehaviour:
   waypoints: []
   waypointIndex: 0
   NavMeshAgent: {fileID: 0}
+--- !u!114 &567765099964281042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1970220558431104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b9e074edb8e6a4888541a520377b79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _DestroyVehicle: {fileID: 0}
 --- !u!1 &1970719163168000
 GameObject:
   m_ObjectHideFlags: 0
