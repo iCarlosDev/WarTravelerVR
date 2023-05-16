@@ -7,16 +7,11 @@ public class Weapon_Rifle : Weapon
     [Space(10)] 
     [SerializeField] private bool _isSemiAutomatic;
 
-    private void Start()
-    {
-        
-    }
-
     public override void Shoot()
     {
         if (!_hasBreechBullet) return;
 
-        if (_currentAmmoInMagazine == 0) _hasBreechBullet = false;
+        if (_magazine?.CurrentAmmoInMagazine == 0) _hasBreechBullet = false;
 
         if (_hasBreechBullet) BoltAction();
         

@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public abstract class Weapon : MonoBehaviour
 {
@@ -8,14 +10,13 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] private float _recoil;
     [SerializeField] protected float _shootForce;
     [SerializeField] protected float _bulletShellExitForce;
+    [SerializeField] protected bool _hasMagazineIn;
     
     [Header("--- WEAPON AMMO ---")]
     [Space(10)]
     [SerializeField] protected GameObject _bulletPrefab;
     [SerializeField] protected GameObject _bulletShellPrefab;
-    [SerializeField] protected int _maxAmmo;
-    [SerializeField] protected int _currentAmmoInMagazine;
-    [SerializeField] protected int _magazineCapacity;
+    [SerializeField] protected Magazine _magazine;
     [Tooltip("Indica si tienes una bala en la recámara")]
     [SerializeField] protected bool _hasBreechBullet;
     
@@ -43,13 +44,13 @@ public abstract class Weapon : MonoBehaviour
     [ContextMenu(nameof(BoltAction))]
     public virtual void BoltAction()
     {
-        if (_currentAmmoInMagazine > 0)
+        if (_magazine != null && _magazine.CurrentAmmoInMagazine > 0)
         {
             _hasBreechBullet = true;
             _bulletShellExitForce = Random.Range(2f, 2.5f);
             GameObject bulletShell = Instantiate(_bulletShellPrefab, _bulletShellExit.position, _bulletShellExit.rotation);
             bulletShell.GetComponent<Rigidbody>().AddForce(_bulletShellExit.forward * _bulletShellExitForce, ForceMode.Impulse);
-            _currentAmmoInMagazine--;
+            _magazine.CurrentAmmoInMagazine--;
         }
         else
         {
@@ -60,11 +61,11 @@ public abstract class Weapon : MonoBehaviour
     [ContextMenu(nameof(InsertMagazine))]
     private void InsertMagazine()
     {
-        _currentAmmoInMagazine = 10;
+        
     }
 
     public virtual void DropMagazine()
     {
-        _currentAmmoInMagazine = 0;
+        _magazine = null;
     }
 }

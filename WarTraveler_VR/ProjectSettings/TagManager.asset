@@ -10,6 +10,7 @@ TagManager:
   - BulletNoCollisionable
   - Weapon
   - VehicleWaypoint
+  - AmmoPouch
   layers:
   - Default
   - TransparentFX

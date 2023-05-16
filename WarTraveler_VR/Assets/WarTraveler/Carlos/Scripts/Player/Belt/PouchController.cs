@@ -1,7 +1,7 @@
 using Unity.Mathematics;
 using UnityEngine;
 
-public class BeltController : MonoBehaviour
+public class PouchController : MonoBehaviour
 {
     [SerializeField] private Camera _camera;
     [SerializeField] private Vector3 _beltPositionOffset;
