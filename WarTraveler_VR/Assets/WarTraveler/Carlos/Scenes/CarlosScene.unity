@@ -461,9 +461,11 @@ GameObject:
   m_Component:
   - component: {fileID: 393263373}
   - component: {fileID: 393263378}
+  - component: {fileID: 393263383}
   - component: {fileID: 393263380}
-  - component: {fileID: 393263381}
   - component: {fileID: 393263374}
+  - component: {fileID: 393263381}
+  - component: {fileID: 393263382}
   m_Layer: 0
   m_Name: RightHand Controller
   m_TagString: RightHand
@@ -711,7 +713,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 393263372}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39a641d10ffddef4286612ae67802e52, type: 3}
+  m_Script: {fileID: 11500000, guid: 4253f32900bcc4d499d675566142ded0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 1493020589}
@@ -787,6 +789,38 @@ MonoBehaviour:
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
   m_AllowHoverHapticsWhileSelecting: 1
+--- !u!114 &393263382
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393263372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab3d0e4fa2f546448a91c34b065203c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gripInput: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  _triggerInput: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+--- !u!54 &393263383
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 393263372}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &402105933
 GameObject:
   m_ObjectHideFlags: 0
@@ -2149,9 +2183,11 @@ GameObject:
   m_Component:
   - component: {fileID: 1639493177}
   - component: {fileID: 1639493182}
+  - component: {fileID: 1639493187}
   - component: {fileID: 1639493184}
-  - component: {fileID: 1639493185}
   - component: {fileID: 1639493178}
+  - component: {fileID: 1639493185}
+  - component: {fileID: 1639493186}
   m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: LeftHand
@@ -2399,7 +2435,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1639493176}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 39a641d10ffddef4286612ae67802e52, type: 3}
+  m_Script: {fileID: 11500000, guid: 4253f32900bcc4d499d675566142ded0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractionManager: {fileID: 1493020589}
@@ -2440,7 +2476,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_SelectActionTrigger: 1
-  m_HideControllerOnSelect: 0
+  m_HideControllerOnSelect: 1
   m_AllowHoveredActivate: 0
   m_TargetPriorityMode: 0
   m_PlayAudioClipOnSelectEntered: 0
@@ -2475,6 +2511,38 @@ MonoBehaviour:
   m_HapticHoverCancelIntensity: 0
   m_HapticHoverCancelDuration: 0
   m_AllowHoverHapticsWhileSelecting: 1
+--- !u!114 &1639493186
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639493176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab3d0e4fa2f546448a91c34b065203c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gripInput: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  _triggerInput: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+--- !u!54 &1639493187
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1639493176}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &1710561208
 PrefabInstance:
   m_ObjectHideFlags: 0
