@@ -22,7 +22,7 @@ public class Bomba : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("barco"))
+        if (collision.gameObject.CompareTag("Barco"))
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
@@ -32,7 +32,7 @@ public class Bomba : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         
-       if  (other.gameObject.CompareTag("mar"))
+       if  (other.gameObject.CompareTag("Mar"))
         {
             Destroy(gameObject);
             

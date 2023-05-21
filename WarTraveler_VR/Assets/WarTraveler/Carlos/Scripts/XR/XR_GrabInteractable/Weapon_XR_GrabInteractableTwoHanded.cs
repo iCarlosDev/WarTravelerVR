@@ -18,23 +18,38 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
     [SerializeField] private XRBaseController _leftController;
     [SerializeField] private XRBaseController _rightController;
 
+    [Header("--- OTHER ---")] 
+    [Space(10)] 
+    [SerializeField] private Weapon _weapon;
+
     protected override void Awake()
     {
         base.Awake();
         _leftController = GameObject.FindWithTag("LeftHand").GetComponent<XRBaseController>();
         _rightController = GameObject.FindWithTag("RightHand").GetComponent<XRBaseController>();
+        _weapon = GetComponent<Weapon>();
     }
 
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
         base.OnSelectEntered(args);
         ControllerGrabCheck(args);
+
+        if (_weapon != null)
+        {
+            TakePouchAmmo.instance.GrabbedWeaponsList.Add(_weapon);   
+        }
     }
 
     protected override void OnSelectExited(SelectExitEventArgs args)
     {
         base.OnSelectExited(args);
         InteractableExited(args);
+        
+        if (_weapon != null)
+        {
+            TakePouchAmmo.instance.GrabbedWeaponsList.Remove(_weapon);
+        }
     }
     
     private void ControllerGrabCheck(SelectEnterEventArgs args)

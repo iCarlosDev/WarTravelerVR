@@ -702,7 +702,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &393263381
 MonoBehaviour:
@@ -801,10 +801,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab3d0e4fa2f546448a91c34b065203c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gripInput: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f,
+  _interactor: {fileID: 0}
+  _controllerPosition: {fileID: -3326005586356538449, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   _triggerInput: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
+  _gripInput: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  _objectGrabbed: {fileID: 0}
+  _isTriggering: 0
 --- !u!54 &393263383
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -957,7 +962,7 @@ GameObject:
   - component: {fileID: 487318475}
   - component: {fileID: 487318477}
   - component: {fileID: 487318480}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: XR Origin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -972,7 +977,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 487318471}
   m_LocalRotation: {x: -0, y: 0.70710677, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.00000016391277, y: 0, z: -2.75}
+  m_LocalPosition: {x: -0.118, y: 0, z: -4.482}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1745,6 +1750,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Wep_American_MachineGun_01
       objectReference: {fileID: 0}
+    - target: {fileID: 4008079478951600, guid: 11a30ed2979cb5040a4f6218afaadab3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.148
+      objectReference: {fileID: 0}
     - target: {fileID: 4087574122900708, guid: 11a30ed2979cb5040a4f6218afaadab3, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -1788,6 +1797,11 @@ PrefabInstance:
     - target: {fileID: 4087574122900708, guid: 11a30ed2979cb5040a4f6218afaadab3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4608092633830501411, guid: 11a30ed2979cb5040a4f6218afaadab3,
+        type: 3}
+      propertyPath: m_Value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11a30ed2979cb5040a4f6218afaadab3, type: 3}
@@ -2424,7 +2438,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.1
+  m_Radius: 0.05
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1639493185
 MonoBehaviour:
@@ -2523,10 +2537,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ab3d0e4fa2f546448a91c34b065203c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gripInput: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f,
+  _interactor: {fileID: 0}
+  _controllerPosition: {fileID: -2024308242397127297, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   _triggerInput: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
+  _gripInput: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f,
+    type: 3}
+  _objectGrabbed: {fileID: 0}
+  _isTriggering: 0
 --- !u!54 &1639493187
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3141,6 +3160,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 505a6b903ecbde94cbf0402f73e9850e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _grabbedWeaponsList: []
 --- !u!1 &2059415296
 GameObject:
   m_ObjectHideFlags: 0

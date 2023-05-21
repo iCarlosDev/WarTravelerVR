@@ -68,12 +68,12 @@ public class Avion : MonoBehaviour
             StartMission();
         }
         
-        if  (other.gameObject.CompareTag("barco"))
+        if  (other.gameObject.CompareTag("Barco"))
         {
             Invoke(nameof(AtacarBarco), Random.Range(0f, 1f));
             
         }
-        if  (other.gameObject.CompareTag("mar"))
+        if  (other.gameObject.CompareTag("Mar"))
         {
             Destroy(gameObject);
             

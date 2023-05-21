@@ -16,6 +16,8 @@ TagManager:
   - Avion
   - Barco
   - Mar
+  - WeaponSlide
+  - WeaponMagazine
   layers:
   - Default
   - TransparentFX
@@ -23,9 +25,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Weapon
+  - WeaponMagazine
+  - Player
   - 
   - 
   - 

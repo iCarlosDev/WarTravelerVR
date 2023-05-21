@@ -9,6 +9,8 @@ namespace UnityEngine.XR.Content.Interaction
     /// </summary>
     public class XR_Slider : XRBaseInteractable
     {
+        #region - DEFAULT SCRIPT -
+        
         [Serializable]
         public class ValueChangeEvent : UnityEvent<float> { }
 
@@ -135,5 +137,7 @@ namespace UnityEngine.XR.Content.Interaction
         {
             SetSliderPosition(m_Value);
         }
+        
+        #endregion
     }
 }

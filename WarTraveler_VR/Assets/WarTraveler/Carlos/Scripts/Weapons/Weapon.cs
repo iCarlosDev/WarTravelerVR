@@ -6,6 +6,7 @@ public abstract class Weapon : MonoBehaviour
 {
     [Header("--- WEAPON STATS ---")] 
     [Space(10)] 
+    [SerializeField] private GameObject _magazinePrefab;
     [SerializeField] private float _fireRate;
     [SerializeField] private float _recoil;
     [SerializeField] protected float _shootForce;
@@ -34,6 +35,9 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] private Transform _secondGrab;
     [SerializeField] private Transform _magazineGrab;
     [SerializeField] private Transform _breech;
+    
+    //GETTERS && SETTERS//
+    public GameObject MagazinePrefab => _magazinePrefab;
 
     public abstract void Shoot();
 

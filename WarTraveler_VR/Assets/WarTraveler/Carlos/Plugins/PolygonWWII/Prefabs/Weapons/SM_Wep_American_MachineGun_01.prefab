@@ -1,5 +1,133 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &284149864
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 284149865}
+  - component: {fileID: 284149866}
+  m_Layer: 6
+  m_Name: MagazinePlace
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &284149865
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284149864}
+  m_LocalRotation: {x: -0.70710576, y: -0, z: -0, w: 0.7071079}
+  m_LocalPosition: {x: 0, y: -0.0105, z: 0.2073}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4087574122900708}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &284149866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284149864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6dd9b6feb6ec45c4b88ee2780d2179ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_Colliders: []
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_InteractionLayers:
+    m_Bits: 1
+  m_DistanceCalculationMode: 1
+  m_SelectMode: 0
+  m_CustomReticle: {fileID: 0}
+  m_AllowGazeInteraction: 0
+  m_AllowGazeSelect: 0
+  m_OverrideGazeTimeToSelect: 0
+  m_GazeTimeToSelect: 0.5
+  m_OverrideTimeToAutoDeselectGaze: 0
+  m_TimeToAutoDeselectGaze: 3
+  m_AllowGazeAssistance: 0
+  m_FirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FirstSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_LastSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Activated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Deactivated:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_StartingInteractionStrengthFilters: []
+  m_OnFirstHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnLastHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectCanceled:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnActivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnDeactivate:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Handle: {fileID: 0}
+  m_Value: 1
+  m_MaxPosition: 0
+  m_MinPosition: -0.1
+  m_OnValueChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &289868545
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,9 +316,11 @@ GameObject:
   - component: {fileID: 33019532892348892}
   - component: {fileID: 23607964614447512}
   - component: {fileID: 4608092633830501411}
+  - component: {fileID: 837285154}
+  - component: {fileID: 1319048326}
   m_Layer: 0
   m_Name: SM_Wep_American_MachineGun_01_Slide
-  m_TagString: Untagged
+  m_TagString: WeaponSlide
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,7 +333,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1631664556851026}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.025424162, y: 0.015813284, z: 0.148}
+  m_LocalPosition: {x: -0.0257, y: 0.0156, z: 0.148}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -356,6 +486,34 @@ MonoBehaviour:
   m_OnValueChange:
     m_PersistentCalls:
       m_Calls: []
+--- !u!135 &837285154
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631664556851026}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.02
+  m_Center: {x: -0.01, y: 0.00000006635673, z: 0}
+--- !u!114 &1319048326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631664556851026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f136fa8a17255b1408f2dfa07f1361f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _xrInputDetector: {fileID: 0}
+  _xrSlider: {fileID: 0}
+  _moveSlideSpeed: 5
 --- !u!1 &1704588758205608
 GameObject:
   m_ObjectHideFlags: 0
@@ -371,7 +529,7 @@ GameObject:
   - component: {fileID: 4632777975670169627}
   - component: {fileID: 8932367440660016869}
   - component: {fileID: 998892831}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: SM_Wep_American_MachineGun_01
   m_TagString: Weapon
   m_Icon: {fileID: 0}
@@ -397,6 +555,7 @@ Transform:
   - {fileID: 1229320633}
   - {fileID: 5267459655866910818}
   - {fileID: 2017557968}
+  - {fileID: 284149865}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -645,6 +804,7 @@ MonoBehaviour:
   rightHandPrefabInstantiate: {fileID: 0}
   _leftController: {fileID: 0}
   _rightController: {fileID: 0}
+  _weapon: {fileID: 0}
 --- !u!114 &998892831
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,18 +817,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ccb5de5026df34ea7b1933b7e57989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _magazinePrefab: {fileID: 8360662115620219097, guid: c28c471e2939ebc40bd19d9564ae3c9e,
+    type: 3}
   _fireRate: 0
   _recoil: 0
   _shootForce: 200
   _bulletShellExitForce: 0
+  _hasMagazineIn: 0
   _bulletPrefab: {fileID: 1003485616670832, guid: fef57ce557292384c8200652fd1ac641,
     type: 3}
   _bulletShellPrefab: {fileID: 1327677523374358631, guid: bd3e9ae0f16328245b31b6c32ef0beb9,
     type: 3}
-  _maxAmmo: 0
-  _currentAmmoInMagazine: 10
-  _magazineCapacity: 0
-  _hasBreechBullet: 1
+  _magazine: {fileID: 0}
+  _hasBreechBullet: 0
   _particleSystem: {fileID: 2070084002}
   _canon: {fileID: 5267459655866910818}
   _bulletShellExit: {fileID: 2017557968}
