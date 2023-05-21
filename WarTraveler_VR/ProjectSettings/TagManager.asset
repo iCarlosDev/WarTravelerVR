@@ -11,6 +11,12 @@ TagManager:
   - Weapon
   - VehicleWaypoint
   - AmmoPouch
+  - StartPoint
+  - EndPoint
+  - Objetivo
+  - Avion
+  - Barco
+  - Mar
   layers:
   - Default
   - TransparentFX
