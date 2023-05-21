@@ -33,9 +33,9 @@ public class Avion : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        GameObject[] listaTarget = GameObject.FindGameObjectsWithTag("Target");
+        GameObject[] listaTarget = GameObject.FindGameObjectsWithTag("Barco");
         
-        Debug.Log("Length " + objetivos.Count);
+        Debug.Log("Length " + listaTarget.Length);
         
         foreach (GameObject target in listaTarget)
         {
