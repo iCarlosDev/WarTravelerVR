@@ -12,9 +12,7 @@ public class Avion : MonoBehaviour
     
     public float max_Speed;
     public float min_Speed;
-    public float max_height;
-    public float min_height;
-
+  
     public float currentSpeed;
 
     private Transform objetivo;
