@@ -9,10 +9,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 284149865}
+  - component: {fileID: 998892826}
   - component: {fileID: 284149866}
+  - component: {fileID: 998892828}
   m_Layer: 6
   m_Name: MagazinePlace
-  m_TagString: Untagged
+  m_TagString: WeaponInsertMagazineZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,13 +27,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284149864}
   m_LocalRotation: {x: -0.70710576, y: -0, z: -0, w: 0.7071079}
-  m_LocalPosition: {x: 0, y: -0.0105, z: 0.2073}
+  m_LocalPosition: {x: 0, y: -0, z: 0.1865}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4087574122900708}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!65 &998892826
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284149864}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.03, y: 0.08, z: -0.08}
+  m_Center: {x: 0, y: 0, z: -0.03}
 --- !u!114 &284149866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,12 +137,25 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Handle: {fileID: 0}
-  m_Value: 1
+  m_Value: 0
   m_MaxPosition: 0
   m_MinPosition: -0.1
   m_OnValueChange:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &998892828
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 284149864}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7aeaa043fd2354ea60e56970686268, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _xrSlider: {fileID: 0}
 --- !u!1 &289868545
 GameObject:
   m_ObjectHideFlags: 0
@@ -315,9 +343,8 @@ GameObject:
   - component: {fileID: 4008079478951600}
   - component: {fileID: 33019532892348892}
   - component: {fileID: 23607964614447512}
-  - component: {fileID: 4608092633830501411}
   - component: {fileID: 837285154}
-  - component: {fileID: 1319048326}
+  - component: {fileID: 4608092633830501411}
   m_Layer: 0
   m_Name: SM_Wep_American_MachineGun_01_Slide
   m_TagString: WeaponSlide
@@ -390,6 +417,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!135 &837285154
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631664556851026}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.02
+  m_Center: {x: -0.01, y: 0.00000006635673, z: 0}
 --- !u!114 &4608092633830501411
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -486,34 +526,6 @@ MonoBehaviour:
   m_OnValueChange:
     m_PersistentCalls:
       m_Calls: []
---- !u!135 &837285154
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631664556851026}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.02
-  m_Center: {x: -0.01, y: 0.00000006635673, z: 0}
---- !u!114 &1319048326
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631664556851026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f136fa8a17255b1408f2dfa07f1361f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _xrInputDetector: {fileID: 0}
-  _xrSlider: {fileID: 0}
-  _moveSlideSpeed: 5
 --- !u!1 &1704588758205608
 GameObject:
   m_ObjectHideFlags: 0

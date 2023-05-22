@@ -1,23 +1,25 @@
 using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Content.Interaction;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class XR_InputDetector : MonoBehaviour
 {
     [SerializeField] private XRBaseInteractor _interactor;
-    [SerializeField] private InputActionReference _controllerPosition;
     [SerializeField] private InputActionReference _triggerInput;
     [SerializeField] private InputActionReference _gripInput;
-    [SerializeField] private XRGrabInteractable _objectGrabbed;
     [SerializeField] private bool _isTriggering;
+    
+    [Header("--- MAGAZINE ---")]
+    [Space(10)]
+    [SerializeField] private XRGrabInteractable _objectGrabbed;
+    
+    [Header("--- SLIDER ---")]
+    [Space(10)]
+    [SerializeField] private XR_Slider _weaponSliderGrabbed;
 
     //GETTERS && SETTERS//
-    public XRBaseInteractor Interactor => _interactor;
-    public InputActionReference ControllerPosition => _controllerPosition;
-    public InputActionReference TriggerInput => _triggerInput;
-    public InputActionReference GripInput => _gripInput;
-    public bool IsTriggering => _isTriggering;
 
     /////////////////////////////////////////////////////
 
@@ -28,20 +30,12 @@ public class XR_InputDetector : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(_controllerPosition.action.ReadValue<Vector3>());
-        
-        /*if (_triggerInput.action.ReadValue<float>() == 1 && !_isTriggering)
-        {
-            _isTriggering = true;
-        }
-        else if (_triggerInput.action.ReadValue<float>() == 0 && _isTriggering)
-        {
-            _isTriggering = false;
-        }*/
-        
         DropMagazine();
+        ReleaseSlider();
     }
 
+    #region - MAGAZINE -
+    
     /// <summary>
     /// Método para Instanciar y Agarrar automaticamente un cargador cuando pulsemos el trigger en nuestro "Pouch";
     /// </summary>
@@ -75,29 +69,89 @@ public class XR_InputDetector : MonoBehaviour
     /// </summary>
     private void DropMagazine()
     {
-        if (_objectGrabbed != null && _triggerInput.action.ReadValue<float>() == 0)
+        if (_objectGrabbed != null && _triggerInput.action.ReadValue<float>() <= 0.1f && _isTriggering)
         {
             _objectGrabbed.interactionManager.SelectExit(_interactor, _objectGrabbed);
-            _objectGrabbed = null;
             _isTriggering = false;
+            _objectGrabbed = null;
         }
     }
+    
+    #endregion
+
+    #region - SLIDER -
+
+    /// <summary>
+    /// Método para Agarrar el Slider de las Armas que hayan en la escena con el Trigger;
+    /// </summary>
+    /// <param name="grabInteractable"></param>
+    private void GrabSlider(XR_Slider weaponSlider)
+    {
+        if (weaponSlider == null) return;
+
+        _weaponSliderGrabbed = weaponSlider;
+        
+        _interactor.IsSelecting(_weaponSliderGrabbed);
+        _interactor.interactionManager.SelectEnter(_interactor, _weaponSliderGrabbed);
+        _isTriggering = true;
+    }
+
+    private void ReleaseSlider()
+    {
+        if (_weaponSliderGrabbed == null) return;
+
+        if (_weaponSliderGrabbed.value == 1f && !_isTriggering) _weaponSliderGrabbed = null;
+
+        if (_triggerInput.action.ReadValue<float>() <= 0.1f)
+        {
+            _weaponSliderGrabbed.value = Mathf.Lerp(_weaponSliderGrabbed.value, 1f, 20f * Time.deltaTime);
+            Debug.Log(_triggerInput.action.ReadValue<float>());
+            
+            if (_isTriggering)
+            {
+                _weaponSliderGrabbed.interactionManager.SelectExit(_interactor, _weaponSliderGrabbed);
+                _isTriggering = false;
+            }
+        }
+    }
+
+    #endregion
 
     private void OnTriggerStay(Collider other)
     {
         if (_isTriggering) return;
         
-        if (_triggerInput.action.ReadValue<float>() == 1 && !_isTriggering)
+        if (_triggerInput.action.ReadValue<float>() > 0.3f)
         {
-            if (other.CompareTag("AmmoPouch"))
+            if (!_isTriggering)
             {
-                InstantiateAndGrabMagazine();
+                if (other.CompareTag("AmmoPouch"))
+                {
+                    InstantiateAndGrabMagazine();
+                }
+
+                if (other.CompareTag("WeaponMagazine"))
+                {
+                    GrabMagazine(other.GetComponent<XRGrabInteractable>());
+                }
+
+                if (other.CompareTag("WeaponSlide"))
+                {
+                    GrabSlider(other.GetComponent<XR_Slider>());
+                }
             }
 
-            if (other.CompareTag("WeaponMagazine"))
+            if (other.CompareTag("WeaponInsertMagazineZone") && _objectGrabbed != null)
             {
-            
-                GrabMagazine(other.GetComponent<XRGrabInteractable>());
+                if (_weaponSliderGrabbed == null)
+                {
+                    _weaponSliderGrabbed = other.GetComponent<XR_Slider>();
+                }
+
+                if (_weaponSliderGrabbed.MHandle == null) return;
+                
+                DropMagazine();
+                GrabSlider(_weaponSliderGrabbed);
             }
         }
     }

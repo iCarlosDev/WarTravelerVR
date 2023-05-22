@@ -50,6 +50,12 @@ namespace UnityEngine.XR.Content.Interaction
             }
         }
 
+        public Transform MHandle
+        {
+            get => m_Handle;
+            set => m_Handle = value;
+        }
+
         /// <summary>
         /// Events to trigger when the slider is moved
         /// </summary>

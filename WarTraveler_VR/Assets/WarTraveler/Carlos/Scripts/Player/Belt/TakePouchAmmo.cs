@@ -9,11 +9,7 @@ public class TakePouchAmmo : MonoBehaviour
     [SerializeField] private List<Weapon> _grabbedWeaponsList;
 
     //GETTERS && SETTERS//
-    public List<Weapon> GrabbedWeaponsList
-    {
-        get => _grabbedWeaponsList;
-        set => _grabbedWeaponsList = value;
-    }
+    public List<Weapon> GrabbedWeaponsList => _grabbedWeaponsList;
 
     /////////////////////////////////////////////////
 

@@ -20,6 +20,7 @@ TagManager:
   - WeaponMagazine
   - Cubierta
   - Craft
+  - WeaponInsertMagazineZone
   layers:
   - Default
   - TransparentFX
