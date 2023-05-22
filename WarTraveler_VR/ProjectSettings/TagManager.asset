@@ -18,6 +18,8 @@ TagManager:
   - Mar
   - WeaponSlide
   - WeaponMagazine
+  - Cubierta
+  - Craft
   layers:
   - Default
   - TransparentFX

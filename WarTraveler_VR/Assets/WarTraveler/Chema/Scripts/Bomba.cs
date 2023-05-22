@@ -6,7 +6,7 @@ using UnityEngine;
 public class Bomba : MonoBehaviour
 {
 
-    private int numbarcos;
+    //private int numbarcos;
     
     // Start is called before the first frame update
     void Start()
@@ -20,15 +20,28 @@ public class Bomba : MonoBehaviour
         
     }
 
+    
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Barco"))
+        
+        
+        if (collision.gameObject.CompareTag("Cubierta"))
+        {
+            
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Craft"))
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }
        
     }
+    
+    
+    
+    
     private void OnTriggerEnter(Collider other)
     {
         
@@ -41,4 +54,7 @@ public class Bomba : MonoBehaviour
         
         
     }
+    
+    
+    
 }

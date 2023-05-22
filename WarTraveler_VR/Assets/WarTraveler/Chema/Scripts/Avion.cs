@@ -107,6 +107,7 @@ public class Avion : MonoBehaviour
         }
         else
         {
+            
             Fuga();
         }
     }
@@ -119,6 +120,7 @@ public class Avion : MonoBehaviour
 
     private void Fuga()
     {
+        Debug.Log("FUGA");
         endMap = endPoints[Random.Range(0, endPoints.Length)];
         transform.LookAt(endMap);
     }
