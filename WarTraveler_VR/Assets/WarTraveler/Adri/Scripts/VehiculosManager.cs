@@ -10,11 +10,22 @@ public class VehiculosManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SpawnVehicles();
+        Instantiate(vehiclesArray[Random.Range(0, vehiclesArray.Length)], startPosition.position, startPosition.rotation);
+        StartCoroutine(Spawn());
+        
     }
 
-    private void SpawnVehicles()
+    IEnumerator Spawn()
     {
-        Instantiate(vehiclesArray[Random.Range(0, vehiclesArray.Length)], startPosition.position, startPosition.rotation);
+        WaitForSeconds wait = new WaitForSeconds(7f);
+        
+        while (true)
+        {
+            yield return wait;
+            Instantiate(vehiclesArray[Random.Range(0, vehiclesArray.Length)], startPosition.position, startPosition.rotation);
+            yield return null;
+        }
     }
+    
+    
 }

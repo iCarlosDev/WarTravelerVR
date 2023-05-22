@@ -25,8 +25,8 @@ public class IA_Vehiculo : MonoBehaviour
     {
         GoNextWaypoint();
     }
-    
 
+   
     private void GoNextWaypoint()
     {
         if (waypointIndex == waypoints.Count -1) return;
