@@ -558,7 +558,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_SelectActionTrigger: 1
-  m_HideControllerOnSelect: 0
+  m_HideControllerOnSelect: 1
   m_AllowHoveredActivate: 0
   m_TargetPriorityMode: 0
   m_PlayAudioClipOnSelectEntered: 0
@@ -611,6 +611,7 @@ MonoBehaviour:
   _gripInput: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   _isTriggering: 0
+  _weaponGrabbed: {fileID: 0}
   _objectGrabbed: {fileID: 0}
   _weaponSliderGrabbed: {fileID: 0}
 --- !u!1 &7913293436306841721
@@ -1193,6 +1194,7 @@ MonoBehaviour:
   _gripInput: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   _isTriggering: 0
+  _weaponGrabbed: {fileID: 0}
   _objectGrabbed: {fileID: 0}
   _weaponSliderGrabbed: {fileID: 0}
 --- !u!1 &7913293437513187985
@@ -1239,6 +1241,8 @@ GameObject:
   - component: {fileID: 7913293437569960575}
   - component: {fileID: 7913293437569960572}
   - component: {fileID: 7913293437569960573}
+  - component: {fileID: 1699252499}
+  - component: {fileID: 1699252500}
   m_Layer: 0
   m_Name: PlayerBelt
   m_TagString: Untagged
@@ -1290,6 +1294,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _grabbedWeaponsList: []
+  _xrInputDetector: {fileID: 0}
+  _canTakeAmmo: 0
+--- !u!65 &1699252499
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7913293437569960574}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.35438266, y: 0.10672852, z: 0.116297595}
+  m_Center: {x: -0.000002592802, y: -0.022793885, z: 0.034}
+--- !u!65 &1699252500
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7913293437569960574}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.18, y: 0.23, z: 0.07}
+  m_Center: {x: 0, y: 0.04, z: 0}
 --- !u!1001 &7913293437126620512
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1345,7 +1377,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1807191762, guid: b5b453ad90f65bd4fb76f39868e23286, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b5b453ad90f65bd4fb76f39868e23286, type: 3}
 --- !u!4 &7916854613204856798 stripped
 Transform:
@@ -1408,7 +1441,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -49.383
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2145802318, guid: 5772c935e0ce551458dc3c9165216020, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5772c935e0ce551458dc3c9165216020, type: 3}
 --- !u!4 &7916920130096765784 stripped
 Transform:

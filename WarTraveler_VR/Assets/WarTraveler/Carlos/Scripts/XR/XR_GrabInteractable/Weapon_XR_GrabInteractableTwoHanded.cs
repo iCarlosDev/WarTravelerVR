@@ -21,6 +21,11 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
     [Header("--- OTHER ---")] 
     [Space(10)] 
     [SerializeField] private Weapon _weapon;
+    
+    //GETTERS && SETTERS//
+    
+    
+    ///
 
     protected override void Awake()
     {
@@ -37,6 +42,7 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
 
         if (_weapon != null)
         {
+            args.interactorObject.transform.GetComponent<XR_InputDetector>().WeaponGrabbed = this;
             TakePouchAmmo.instance.GrabbedWeaponsList.Add(_weapon);   
         }
     }
@@ -48,6 +54,7 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
         
         if (_weapon != null)
         {
+            args.interactorObject.transform.GetComponent<XR_InputDetector>().WeaponGrabbed = null;
             TakePouchAmmo.instance.GrabbedWeaponsList.Remove(_weapon);
         }
     }
