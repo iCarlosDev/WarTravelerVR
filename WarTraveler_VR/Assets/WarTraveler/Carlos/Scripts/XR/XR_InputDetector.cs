@@ -7,9 +7,21 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class XR_InputDetector : MonoBehaviour
 {
     [SerializeField] private XRBaseInteractor _interactor;
+    
+    [Header("--- TRIGGER INPUT ---")]
+    [Space(10)]
     [SerializeField] private InputActionReference _triggerInput;
     [SerializeField] private bool _isTriggering;
     
+    [Header("--- PRIMARY BUTTON ---")]
+    [Space(10)]
+    [SerializeField] private InputActionReference _primaryButton;
+    [SerializeField] private bool _primaryButtonWasPressed;
+
+    [Header("--- SECONDARY BUTTON ---")]
+    [Space(10)]
+    [SerializeField] private InputActionReference _secondaryButton;
+
     [Header("--- WEAPON ---")]
     [Space(10)]
     [SerializeField] private Weapon_XR_GrabInteractableTwoHanded _weaponGrabbed;
@@ -35,7 +47,9 @@ public class XR_InputDetector : MonoBehaviour
         set => _objectGrabbed = value;
     }
     public bool IsTriggering => _isTriggering;
-
+    public InputActionReference PrimaryButton => _primaryButton;
+    public InputActionReference SecondaryButton => _secondaryButton;
+    
     /////////////////////////////////////////////////////
 
     private void Awake()
@@ -45,7 +59,7 @@ public class XR_InputDetector : MonoBehaviour
 
     private void Update()
     {
-       CheckInputs();
+        CheckInputs();
         
        //Si dejamos de apretar el trigger se cumplirá la condición;
         if (!_isTriggering)
@@ -73,6 +87,15 @@ public class XR_InputDetector : MonoBehaviour
         {
             _isTriggering = false;
             _grabbingSlider = false;
+        }
+
+        if (_primaryButton.action.IsPressed())
+        {
+            _primaryButtonWasPressed = true;
+        }
+        else
+        {
+            _primaryButtonWasPressed = false;
         }
     }
     

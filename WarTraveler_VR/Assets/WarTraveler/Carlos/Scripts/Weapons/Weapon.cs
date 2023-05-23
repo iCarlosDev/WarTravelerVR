@@ -4,6 +4,10 @@ using Random = UnityEngine.Random;
 
 public abstract class Weapon : MonoBehaviour
 {
+    [SerializeField] private Weapon_XR_GrabInteractableTwoHanded _weaponXRGrab;
+    [SerializeField] private XR_InputDetector _xrInputDetector;
+    [SerializeField] private WeaponMagazineDetector _weaponMagazineDetector;
+    
     [Header("--- WEAPON STATS ---")] 
     [Space(10)] 
     [SerializeField] private GameObject _magazinePrefab;
@@ -30,16 +34,36 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] protected Transform _canon;
     [SerializeField] protected Transform _bulletShellExit;
 
-    [Header("--- WEAPON GRABS POSITIONS ---")] 
-    [Space(10)] 
-    [SerializeField] private Transform _secondGrab;
-    [SerializeField] private Transform _magazineGrab;
-    [SerializeField] private Transform _breech;
-    
     //GETTERS && SETTERS//
     public GameObject MagazinePrefab => _magazinePrefab;
+    public XR_InputDetector XRInputDetector
+    {
+        get => _xrInputDetector;
+        set => _xrInputDetector = value;
+    }
+    
+    //////////////////////////////////////////////////////////
 
     public abstract void Shoot();
+
+    private void Awake()
+    {
+        _weaponXRGrab = GetComponent<Weapon_XR_GrabInteractableTwoHanded>();
+        _weaponMagazineDetector = GetComponentInChildren<WeaponMagazineDetector>();
+    }
+
+    private void Update()
+    {
+        if (_weaponXRGrab.isSelected && _magazine != null)
+        {
+            if (_xrInputDetector == null) return;
+
+            if (_xrInputDetector.SecondaryButton.action.IsPressed())
+            {
+                DropMagazine();   
+            }
+        }
+    }
 
     /// <summary>
     /// Método que se ejecuta cuando usas el (cerrojo o recamara) de un arma para introducir la primera bala que haya en el cargador
@@ -48,13 +72,17 @@ public abstract class Weapon : MonoBehaviour
     [ContextMenu(nameof(BoltAction))]
     public virtual void BoltAction()
     {
-        if (_magazine != null && _magazine.CurrentAmmoInMagazine > 0)
+        if (_hasBreechBullet)
         {
-            _hasBreechBullet = true;
             _bulletShellExitForce = Random.Range(2f, 2.5f);
             GameObject bulletShell = Instantiate(_bulletShellPrefab, _bulletShellExit.position, _bulletShellPrefab.transform.rotation);
             bulletShell.GetComponent<Rigidbody>().AddForce(_bulletShellExit.forward * _bulletShellExitForce, ForceMode.Impulse);
+        }
+        
+        if (_magazine != null && _magazine.CurrentAmmoInMagazine > 0)
+        {
             _magazine.CurrentAmmoInMagazine--;
+            _hasBreechBullet = true;
         }
         else
         {
@@ -72,6 +100,10 @@ public abstract class Weapon : MonoBehaviour
 
     public virtual void DropMagazine()
     {
+        _magazine.BoxCollider.isTrigger = false;
+        _magazine.Rigidbody.isKinematic = false;
+        _magazine.transform.parent = null;
+        _weaponMagazineDetector.XRSlider.MHandle = null;
         _magazine = null;
     }
 }

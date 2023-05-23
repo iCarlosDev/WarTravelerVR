@@ -26,8 +26,13 @@ public class Turret_XR_GrabInteractableTwoHanded : XRGrabInteractable
     [SerializeField] private float rotationSpeed;
     [SerializeField] private bool TrackRotationByPosition;
 
+    //GETTERS && SETTERS//
     public XRBaseController LeftController => _leftController;
     public XRBaseController RightController => _rightController;
+    public bool IsLeftGrab => _isLeftGrab;
+    public bool IsRightGrab => _isRightGrab;
+    
+    /////////////////////////////////////////////////////////////////////
 
     protected override void Awake()
     {

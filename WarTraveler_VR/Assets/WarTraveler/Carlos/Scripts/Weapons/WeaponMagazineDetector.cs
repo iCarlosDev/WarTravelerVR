@@ -10,6 +10,8 @@ public class WeaponMagazineDetector : MonoBehaviour
     [SerializeField] private XR_TriggerGrabbable _magazine;
     [SerializeField] private bool quieroSalir;
 
+    public XR_Slider XRSlider => _xrSlider;
+
     private void Awake()
     {
         _weapon = GetComponentInParent<Weapon>();

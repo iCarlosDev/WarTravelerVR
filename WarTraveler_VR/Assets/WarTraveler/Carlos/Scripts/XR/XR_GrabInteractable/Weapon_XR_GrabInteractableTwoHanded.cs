@@ -65,6 +65,7 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
         
         if (!_firstGrab)
         {
+            _weapon.XRInputDetector = args.interactorObject.transform.GetComponent<XR_InputDetector>();
             GameObject firstHand = Instantiate(controller.modelPrefab.gameObject, attachTransform);
 
             if (firstHand.CompareTag("LeftHand"))

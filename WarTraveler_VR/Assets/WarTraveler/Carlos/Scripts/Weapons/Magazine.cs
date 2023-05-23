@@ -1,11 +1,8 @@
-using System;
 using UnityEngine;
-using UnityEngine.XR.Content.Interaction;
 
 public class Magazine : MonoBehaviour
 {
     [SerializeField] private XR_TriggerGrabbable _xrTriggerGrabbable;
-    [SerializeField] private XR_Slider _xrSlider;
     [SerializeField] private BoxCollider _boxCollider;
     [SerializeField] private Rigidbody _rigidbody;
     
@@ -56,6 +53,11 @@ public class Magazine : MonoBehaviour
         if (_xrTriggerGrabbable.isSelected && _isInserted)
         {
             GrabInsertedMagazine();
+        }
+
+        if (_currentAmmoInMagazine == 0 && transform.childCount != 0)
+        {
+            Destroy(transform.GetChild(0).gameObject);
         }
     }
 
