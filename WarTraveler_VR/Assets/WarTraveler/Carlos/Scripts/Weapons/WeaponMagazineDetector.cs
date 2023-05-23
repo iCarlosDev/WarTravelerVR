@@ -1,27 +1,49 @@
+using System;
 using UnityEngine;
 using UnityEngine.XR.Content.Interaction;
 
 public class WeaponMagazineDetector : MonoBehaviour
 {
+    [SerializeField] private Weapon _weapon;
     [SerializeField] private XR_InputDetector _xrInputDetector;
     [SerializeField] private XR_Slider _xrSlider;
     [SerializeField] private XR_TriggerGrabbable _magazine;
+    [SerializeField] private bool quieroSalir;
 
     private void Awake()
     {
+        _weapon = GetComponentInParent<Weapon>();
         _xrSlider = GetComponent<XR_Slider>();
+    }
+
+    private void Update()
+    {
+        if (_xrSlider.value >= 1f && _magazine != null && _xrSlider.isSelected)
+        {
+            _xrInputDetector.ReleaseSlider();
+            _xrSlider.interactionManager.SelectExit(_xrSlider.firstInteractorSelecting, _xrSlider);
+            _weapon.InsertMagazine(_magazine.GetComponent<Magazine>());
+        }
+
+        if (transform.childCount == 0 && _xrSlider.MHandle != null)
+        {
+            quieroSalir = true;
+            _xrSlider.MHandle = null;
+            _weapon.DropMagazine();
+        }
     }
 
     private void DetectMagazineToInsert(Collider other)
     {
         _magazine = other.GetComponent<XR_TriggerGrabbable>();
+        Magazine magazine = _magazine.GetComponent<Magazine>();
         
-        _magazine.GetComponent<BoxCollider>().isTrigger = true;
-        _magazine.GetComponent<Rigidbody>().isKinematic = true;
-        _magazine.GetComponent<Magazine>().IsBeingInserted = true;
-            
         _xrInputDetector = _magazine.firstInteractorSelecting.transform.GetComponent<XR_InputDetector>();
         _xrInputDetector.DropTriggeredObject();
+        
+        magazine.BoxCollider.isTrigger = true;
+        magazine.Rigidbody.isKinematic = true;
+        magazine.IsBeingInserted = true;
 
         _magazine.transform.parent = transform;
         _magazine.transform.localPosition = Vector3.zero;
@@ -33,13 +55,28 @@ public class WeaponMagazineDetector : MonoBehaviour
         _xrInputDetector.GrabSlider(_xrSlider);
     }
 
+    private void NoQuererSalir()
+    {
+        quieroSalir = false;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
+        if (quieroSalir) return;
+
         if (other.CompareTag("WeaponMagazine") && _xrSlider.MHandle == null)
         {
             if (!other.GetComponent<XR_TriggerGrabbable>().isSelected) return;
 
             DetectMagazineToInsert(other);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("WeaponMagazine"))
+        {
+           Invoke(nameof(NoQuererSalir), 1f);
         }
     }
 }

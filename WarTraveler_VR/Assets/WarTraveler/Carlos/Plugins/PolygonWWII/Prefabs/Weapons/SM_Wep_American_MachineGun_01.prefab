@@ -155,9 +155,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd7aeaa043fd2354ea60e56970686268, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _weapon: {fileID: 0}
   _xrInputDetector: {fileID: 0}
   _xrSlider: {fileID: 0}
   _magazine: {fileID: 0}
+  quieroSalir: 0
 --- !u!1 &289868545
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +349,7 @@ GameObject:
   - component: {fileID: 23607964614447512}
   - component: {fileID: 837285154}
   - component: {fileID: 4608092633830501411}
+  - component: {fileID: 829709842}
   m_Layer: 0
   m_Name: SM_Wep_American_MachineGun_01_Slide
   m_TagString: WeaponSlide
@@ -528,6 +531,21 @@ MonoBehaviour:
   m_OnValueChange:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &829709842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631664556851026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f25dd07c7dab7094dacf11b03bb55b5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weapon: {fileID: 0}
+  _xrSlider: {fileID: 0}
+  _wasBolted: 0
 --- !u!1 &1704588758205608
 GameObject:
   m_ObjectHideFlags: 0

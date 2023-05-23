@@ -52,7 +52,7 @@ public abstract class Weapon : MonoBehaviour
         {
             _hasBreechBullet = true;
             _bulletShellExitForce = Random.Range(2f, 2.5f);
-            GameObject bulletShell = Instantiate(_bulletShellPrefab, _bulletShellExit.position, _bulletShellExit.rotation);
+            GameObject bulletShell = Instantiate(_bulletShellPrefab, _bulletShellExit.position, _bulletShellPrefab.transform.rotation);
             bulletShell.GetComponent<Rigidbody>().AddForce(_bulletShellExit.forward * _bulletShellExitForce, ForceMode.Impulse);
             _magazine.CurrentAmmoInMagazine--;
         }
@@ -63,9 +63,11 @@ public abstract class Weapon : MonoBehaviour
     }
 
     [ContextMenu(nameof(InsertMagazine))]
-    private void InsertMagazine()
+    public void InsertMagazine(Magazine magazine)
     {
-        
+        _magazine = magazine;
+        _magazine.IsBeingInserted = false;
+        _magazine.IsInserted = true;
     }
 
     public virtual void DropMagazine()

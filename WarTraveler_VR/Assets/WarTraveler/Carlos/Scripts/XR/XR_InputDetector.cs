@@ -21,6 +21,7 @@ public class XR_InputDetector : MonoBehaviour
     [Header("--- SLIDER ---")]
     [Space(10)]
     [SerializeField] private XR_Slider _weaponSliderGrabbed;
+    [SerializeField] private bool _grabbingSlider;
 
     //GETTERS && SETTERS//
     public Weapon_XR_GrabInteractableTwoHanded WeaponGrabbed
@@ -46,8 +47,10 @@ public class XR_InputDetector : MonoBehaviour
     {
        CheckInputs();
         
+       //Si dejamos de apretar el trigger se cumplirá la condición;
         if (!_isTriggering)
         {
+            //Si estamos agarrando un objeto...;
             if (_objectGrabbed != null)
             {
                 DropTriggeredObject();      
@@ -57,6 +60,9 @@ public class XR_InputDetector : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Método para detectar que Inputs del Mando se están ejecutando;
+    /// </summary>
     private void CheckInputs()
     {
         if (_triggerInput.action.ReadValue<float>() > 0.3f)
@@ -66,6 +72,7 @@ public class XR_InputDetector : MonoBehaviour
         else if (_triggerInput.action.ReadValue<float>() <= 0.1f)
         {
             _isTriggering = false;
+            _grabbingSlider = false;
         }
     }
     
@@ -89,6 +96,7 @@ public class XR_InputDetector : MonoBehaviour
     public void DropTriggeredObject()
     {
         _objectGrabbed.interactionManager.SelectExit(_interactor, _objectGrabbed);
+        _objectGrabbed.GetComponent<Rigidbody>().isKinematic = false;
         _objectGrabbed = null;
     }
 
@@ -106,9 +114,13 @@ public class XR_InputDetector : MonoBehaviour
         
         _interactor.IsSelecting(_weaponSliderGrabbed);
         _interactor.interactionManager.SelectEnter(_interactor, _weaponSliderGrabbed);
+        _grabbingSlider = true;
     }
 
-    private void ReleaseSlider()
+    /// <summary>
+    /// Método para soltar un slider que tengamos agarrado con el trigger;
+    /// </summary>
+    public void ReleaseSlider()
     {
         if (_weaponSliderGrabbed == null) return;
 
@@ -137,6 +149,8 @@ public class XR_InputDetector : MonoBehaviour
         
         if (_objectGrabbed == null)
         {
+            if (_grabbingSlider) return;
+            
             if (other.CompareTag("WeaponMagazine"))
             {
                 if (other.GetComponent<Magazine>().IsBeingInserted) return;
