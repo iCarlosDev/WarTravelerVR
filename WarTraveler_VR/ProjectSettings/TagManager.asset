@@ -21,6 +21,8 @@ TagManager:
   - Cubierta
   - Craft
   - WeaponInsertMagazineZone
+  - BombStart
+  - BombEnd
   layers:
   - Default
   - TransparentFX

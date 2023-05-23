@@ -513,7 +513,8 @@ GameObject:
   - component: {fileID: 5332604078812796902}
   - component: {fileID: 5333551321477357148}
   - component: {fileID: 5334233101584074268}
-  - component: {fileID: 5396125279191750511}
+  - component: {fileID: 5510089610839666288}
+  - component: {fileID: 2249820986119811154}
   m_Layer: 0
   m_Name: SM_Veh_American_Plane_Transport_01
   m_TagString: Untagged
@@ -605,7 +606,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5397063130138489088}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -619,7 +620,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5397063130138489088}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -633,7 +634,7 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5397063130138489088}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
@@ -647,13 +648,13 @@ MeshCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5397063130138489088}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43323521968431474, guid: cfe4f4042b8b6934ab9554524c301c59, type: 2}
---- !u!114 &5396125279191750511
+--- !u!114 &5510089610839666288
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -662,15 +663,38 @@ MonoBehaviour:
   m_GameObject: {fileID: 5397063130138489088}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e9cac59ad2b0e0429be0bb6c18c33c0, type: 3}
+  m_Script: {fileID: 11500000, guid: 603d1d9487688d446bb95e25002c6b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  min_speed: 5
-  max_speed: 15
-  min_height: -50
-  max_height: 3
-  crashHeight: 0
+  max_Speed: 40
+  min_Speed: 25
   currentSpeed: 0
+  endPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  startPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+--- !u!54 &2249820986119811154
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5397063130138489088}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1 &5397101407085708552
 GameObject:
   m_ObjectHideFlags: 0
