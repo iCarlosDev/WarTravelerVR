@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Bombarderos : MonoBehaviour
 {
@@ -15,6 +17,13 @@ public class Bombarderos : MonoBehaviour
     
     private Transform BombEnd;
     private Transform BombStart;
+
+    public ParticleSystem paracas;
+
+    private void Awake()
+    {
+        paracas = GetComponentInChildren<ParticleSystem>();
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -32,7 +41,7 @@ public class Bombarderos : MonoBehaviour
     private void StartFlight()
     {
         currentSpeed = Random.Range(max_Speed, min_Speed + 1);
-        BombStart = endPoints[Random.Range(0, endPoints.Length)];
+        BombStart = startPoints[Random.Range(0, startPoints.Length)];
         transform.position = BombStart.position;
         OnFlight();
        
@@ -40,7 +49,7 @@ public class Bombarderos : MonoBehaviour
 
     private void OnFlight()
     {
-        BombEnd = startPoints[Random.Range(0, startPoints.Length)];
+        BombEnd = endPoints[Random.Range(0, endPoints.Length)];
         transform.LookAt(BombEnd);
     }
     
@@ -50,9 +59,23 @@ public class Bombarderos : MonoBehaviour
         {
             StartFlight();
         }
+
+        if (other.gameObject.CompareTag("ZonaParacas"))
+        {
+            paracas.Play();
+        }
         
         
-        
-        
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+
+
+
+        if (other.gameObject.CompareTag("ZonaParacas"))
+        {
+            paracas.Stop();
+        }
     }
 }
