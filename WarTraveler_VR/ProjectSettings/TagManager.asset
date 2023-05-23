@@ -23,6 +23,7 @@ TagManager:
   - WeaponInsertMagazineZone
   - BombStart
   - BombEnd
+  - ZonaParacas
   layers:
   - Default
   - TransparentFX
