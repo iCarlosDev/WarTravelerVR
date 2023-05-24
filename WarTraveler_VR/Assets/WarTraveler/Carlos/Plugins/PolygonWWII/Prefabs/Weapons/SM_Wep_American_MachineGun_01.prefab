@@ -245,14 +245,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017557967}
-  m_LocalRotation: {x: -0.27059805, y: 0.6532816, z: 0.270598, w: 0.65328145}
+  m_LocalRotation: {x: 0.00000021606684, y: -0.00000040233135, z: 0.3826835, w: 0.9238795}
   m_LocalPosition: {x: 0.010077238, y: 0.053799987, z: 0.19225413}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4087574122900708}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
 --- !u!1 &1002972310279024
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,6 +849,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88ccb5de5026df34ea7b1933b7e57989, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _weaponXRGrab: {fileID: 0}
+  _xrInputDetector: {fileID: 0}
+  _weaponMagazineDetector: {fileID: 0}
   _magazinePrefab: {fileID: 8360662115620219097, guid: c28c471e2939ebc40bd19d9564ae3c9e,
     type: 3}
   _fireRate: 0
@@ -865,9 +868,6 @@ MonoBehaviour:
   _particleSystem: {fileID: 2070084002}
   _canon: {fileID: 5267459655866910818}
   _bulletShellExit: {fileID: 2017557968}
-  _secondGrab: {fileID: 0}
-  _magazineGrab: {fileID: 0}
-  _breech: {fileID: 0}
   _isSemiAutomatic: 0
 --- !u!1 &1776031598982862
 GameObject:

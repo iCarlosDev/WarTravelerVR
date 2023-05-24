@@ -24,6 +24,7 @@ TagManager:
   - BombStart
   - BombEnd
   - ZonaParacas
+  - Bullet
   layers:
   - Default
   - TransparentFX

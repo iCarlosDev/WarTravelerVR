@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] private int _bulletDamage;
+
+    public int BulletDamage => _bulletDamage;
+
     // Start is called before the first frame update
     void Start()
     {
