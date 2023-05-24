@@ -75,8 +75,8 @@ public abstract class Weapon : MonoBehaviour
         if (_hasBreechBullet)
         {
             _bulletShellExitForce = Random.Range(2f, 2.5f);
-            GameObject bulletShell = Instantiate(_bulletShellPrefab, _bulletShellExit.position, _bulletShellPrefab.transform.rotation);
-            bulletShell.GetComponent<Rigidbody>().AddForce(_bulletShellExit.forward * _bulletShellExitForce, ForceMode.Impulse);
+            GameObject bulletShell = Instantiate(_bulletShellPrefab, _bulletShellExit.position, _bulletShellExit.rotation);
+            bulletShell.GetComponent<Rigidbody>().AddForce(_bulletShellExit.right * _bulletShellExitForce, ForceMode.Impulse);
         }
         
         if (_magazine != null && _magazine.CurrentAmmoInMagazine > 0)

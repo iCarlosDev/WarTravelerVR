@@ -13,6 +13,8 @@ public class AntiAereoShoot : MonoBehaviour
     [Space(10)]
     [SerializeField] private GameObject _bulletPrefab;
     [SerializeField] private float _bulletImpulseForce;
+    [SerializeField] private float _fireRate; 
+    private float _fireRateTime;
     [SerializeField] private Transform _firstMachineGunCanon;
     [SerializeField] private ParticleSystem _firstMachineGunParticleSystem;
     [SerializeField] private Transform _secondMachineGunCanon;
@@ -40,43 +42,63 @@ public class AntiAereoShoot : MonoBehaviour
 
     private void Update()
     {
-        CanonShoot();
+        LeftMachineGunShoot();
+        RightMachineGunShoot();
+        
+        LeftCanonShoot();
+        RightCanonShoot();
     }
-
-    [ContextMenu("Shoot")]
-    public void MachineGunShoot(ActivateEventArgs args)
+    
+    private void LeftMachineGunShoot()
     {
-        if (args.interactorObject.transform.tag.Equals(_turretXrGrabInteractableTwoHanded.LeftController.tag))
+        if (_leftInputDetector.IsTriggering && _turretXrGrabInteractableTwoHanded.IsLeftGrab)
         {
-            GameObject bullet = Instantiate(_bulletPrefab, _firstMachineGunCanon.position, _firstMachineGunCanon.rotation);
-            bullet.GetComponent<Rigidbody>().AddForce(_firstMachineGunCanon.forward * _bulletImpulseForce, ForceMode.Impulse);
-            
-            _firstMachineGunParticleSystem.Play();
-        }
-        else
-        {
-            GameObject bullet = Instantiate(_bulletPrefab, _secondMachineGunCanon.position, _secondMachineGunCanon.rotation);
-            bullet.GetComponent<Rigidbody>().AddForce(_secondMachineGunCanon.forward * _bulletImpulseForce, ForceMode.Impulse);
-            
-            _secondMachineGunParticleSystem.Play();
+            ChooseMachineGunShoot(_firstMachineGunCanon, _firstMachineGunParticleSystem);
         }
     }
 
-    private void CanonShoot()
+    private void RightMachineGunShoot()
+    {
+        if (_rightInputDetector.IsTriggering && _turretXrGrabInteractableTwoHanded.IsRightGrab)
+        {
+            ChooseMachineGunShoot(_secondMachineGunCanon, _secondMachineGunParticleSystem);
+        }
+    }
+
+    private void ChooseMachineGunShoot(Transform machineGunCanon, ParticleSystem machineGunParticleSystem)
+    {
+        if (Time.time > _fireRateTime)
+        {
+            GameObject bullet = Instantiate(_bulletPrefab, machineGunCanon.position, machineGunCanon.rotation);
+            bullet.GetComponent<Rigidbody>().AddForce(machineGunCanon.forward * _bulletImpulseForce, ForceMode.Impulse);
+            
+            machineGunParticleSystem.Play();
+
+            _fireRateTime = Time.time + _fireRate;
+        }
+    }
+
+    private void LeftCanonShoot()
     {
         if (_leftInputDetector.PrimaryButton.action.triggered && _turretXrGrabInteractableTwoHanded.IsLeftGrab)
         {
-            GameObject bullet = Instantiate(_canonBulletPrefab, _firstCanon.position, _firstCanon.rotation);
-            bullet.GetComponent<Rigidbody>().AddForce(_firstCanon.forward * _canonBulletImpulseForce, ForceMode.Impulse);
-            
-            _firstCanonParticleSystem.Play();
+            ChooseMachineGunShoot(_firstCanon, _firstCanonParticleSystem);
         }
-        else if (_rightInputDetector.PrimaryButton.action.triggered && _turretXrGrabInteractableTwoHanded.IsRightGrab)
+    }
+
+    private void RightCanonShoot()
+    {
+        if (_rightInputDetector.PrimaryButton.action.triggered && _turretXrGrabInteractableTwoHanded.IsRightGrab)
         {
-            GameObject bullet = Instantiate(_canonBulletPrefab, _secondCanon.position, _secondCanon.rotation);
-            bullet.GetComponent<Rigidbody>().AddForce(_firstCanon.forward * _canonBulletImpulseForce, ForceMode.Impulse);
-            
-            _secondCanonParticleSystem.Play();
+            ChooseCanonShoot(_secondCanon, _secondCanonParticleSystem);
         }
+    }
+
+    private void ChooseCanonShoot(Transform canon, ParticleSystem canonParticleSystem)
+    {
+        GameObject bullet = Instantiate(_canonBulletPrefab, canon.position, canon.rotation);
+        bullet.GetComponent<Rigidbody>().AddForce(canon.forward * _canonBulletImpulseForce, ForceMode.Impulse);
+            
+        canonParticleSystem.Play();
     }
 }
