@@ -13,6 +13,11 @@ public class XR_InputDetector : MonoBehaviour
     [SerializeField] private InputActionReference _triggerInput;
     [SerializeField] private bool _isTriggering;
     
+    [Header("--- GRAB INPUT ---")]
+    [Space(10)]
+    [SerializeField] private InputActionReference _grabInput;
+    [SerializeField] private bool _isGrabbing;
+    
     [Header("--- PRIMARY BUTTON ---")]
     [Space(10)]
     [SerializeField] private InputActionReference _primaryButton;
@@ -96,6 +101,15 @@ public class XR_InputDetector : MonoBehaviour
         else
         {
             _primaryButtonWasPressed = false;
+        }
+
+        if (_grabInput.action.ReadValue<float>() > 0.3f)
+        {
+            _isGrabbing = true;
+        }
+        else if (_grabInput.action.ReadValue<float>() <= 0.1f)
+        {
+            _isGrabbing = false;
         }
     }
     
@@ -181,7 +195,7 @@ public class XR_InputDetector : MonoBehaviour
                 GrabTriggerObject(other.GetComponent<XR_TriggerGrabbable>());
             }
 
-            if (other.CompareTag("WeaponSlide"))
+            if (other.CompareTag("WeaponSlide") && !_isGrabbing)
             {
                 GrabSlider(other.GetComponent<XR_Slider>());
             }
