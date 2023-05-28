@@ -187,6 +187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2604446eb17aff540a7b91f429d3a738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyHealth: {fileID: 0}
 --- !u!1 &1034323108232224
 GameObject:
   m_ObjectHideFlags: 0
@@ -200,6 +201,7 @@ GameObject:
   - component: {fileID: 6538751400798591885}
   - component: {fileID: 7581077724608136475}
   - component: {fileID: 1582806617498796099}
+  - component: {fileID: 4997433986305583726}
   m_Layer: 0
   m_Name: Character_German_Officer_02
   m_TagString: Untagged
@@ -256,6 +258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3602d72e77711904aaa0c93c800688d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 0}
 --- !u!114 &7581077724608136475
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -280,6 +283,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 123ce62bd472d004591bab5d5195029d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyComponentsStorage: {fileID: 0}
+  _maxHealth: 100
+  _currentHealth: 0
+--- !u!114 &4997433986305583726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034323108232224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0524024a13f48f43b2a51cc1c685523, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _enemyAnimationsController: {fileID: 0}
+  _enemyController: {fileID: 0}
+  _enemyHealth: {fileID: 0}
 --- !u!1 &1053369231566408
 GameObject:
   m_ObjectHideFlags: 0
@@ -855,6 +876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2604446eb17aff540a7b91f429d3a738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyHealth: {fileID: 0}
 --- !u!1 &1329422051602870
 GameObject:
   m_ObjectHideFlags: 0
@@ -979,6 +1001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2604446eb17aff540a7b91f429d3a738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyHealth: {fileID: 0}
 --- !u!1 &1329480984776894
 GameObject:
   m_ObjectHideFlags: 0
@@ -1265,6 +1288,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2604446eb17aff540a7b91f429d3a738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyHealth: {fileID: 0}
 --- !u!1 &1396878135665450
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,6 +1412,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2604446eb17aff540a7b91f429d3a738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyHealth: {fileID: 0}
 --- !u!1 &1459451964587116
 GameObject:
   m_ObjectHideFlags: 0
@@ -1640,6 +1665,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2604446eb17aff540a7b91f429d3a738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyHealth: {fileID: 0}
 --- !u!1 &1528190420599830
 GameObject:
   m_ObjectHideFlags: 0
@@ -2052,6 +2078,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2604446eb17aff540a7b91f429d3a738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyHealth: {fileID: 0}
 --- !u!1 &1864112549360504
 GameObject:
   m_ObjectHideFlags: 0
@@ -2239,6 +2266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2604446eb17aff540a7b91f429d3a738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyHealth: {fileID: 0}
 --- !u!1 &1897081587511112
 GameObject:
   m_ObjectHideFlags: 0
@@ -2395,6 +2423,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2604446eb17aff540a7b91f429d3a738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyHealth: {fileID: 0}
 --- !u!1 &1925143647775342
 GameObject:
   m_ObjectHideFlags: 0
@@ -2539,6 +2568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2604446eb17aff540a7b91f429d3a738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyHealth: {fileID: 0}
 --- !u!1 &1982596022247114
 GameObject:
   m_ObjectHideFlags: 0
@@ -2756,3 +2786,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2604446eb17aff540a7b91f429d3a738, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _enemyHealth: {fileID: 0}
