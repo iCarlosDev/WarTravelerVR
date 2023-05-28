@@ -1,0 +1,279 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!244 &-9189247596012632006
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: e32816fc6e3a7c04fa5baf067acc8fdc
+  m_EffectName: Attenuation
+  m_MixLevel: dd516d65c8c9fa642a172d1e6d3322ca
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &-6516532229196911143
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: ad97ad56692b4c149b6d705a78c4395c
+  m_EffectName: Attenuation
+  m_MixLevel: 7c008b220899c5a43a301d3ea067c5ca
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &-6483344212337712945
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sonido Avion
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: a2410855d912c5443b942e9be1ae5dcf
+  m_Children: []
+  m_Volume: dc825b5bbe4831f409f304dfe43ac7c3
+  m_Pitch: 08c1f95c676ca5143873a233b759b8ba
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 5513686061900886808}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &-3853967508539964923
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Bocina Barco
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 030ea3bb8f1ca56419b06b199049e462
+  m_Children: []
+  m_Volume: 6168be933a717964096b915b7b37c79d
+  m_Pitch: 78e815575fc64144a9dfe53cabf9ec04
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 1193248452159450077}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!243 &-1454799829483907790
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Motor Avion
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 43fd577217d646046ae4320b8a2e2a85
+  m_Children: []
+  m_Volume: 74ee423290dbb41419f9d4e9a7dbaef5
+  m_Pitch: 5e1ffa94336f9c34b928ab08d2981010
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 8747205254476109541}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!241 &24100000
+AudioMixerController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Vehiculos
+  m_OutputGroup: {fileID: 3802985200404707166, guid: 9bd81f4b102afd84dbd9484b30d2db9a,
+    type: 2}
+  m_MasterGroup: {fileID: 24300002}
+  m_Snapshots:
+  - {fileID: 24500006}
+  m_StartSnapshot: {fileID: 24500006}
+  m_SuspendThreshold: -80
+  m_EnableSuspend: 1
+  m_UpdateMode: 0
+  m_ExposedParameters: []
+  m_AudioMixerGroupViews:
+  - guids:
+    - fb0413f979ac4c744b93b53539e3ff9a
+    - fe96b7510330693448c5e3804bb8367a
+    - 030ea3bb8f1ca56419b06b199049e462
+    - 43fd577217d646046ae4320b8a2e2a85
+    - 5394965b2d92997449d884ade2b05aae
+    - 7a9a68bb7efb0524ba40a8cbaa1708fb
+    - a2410855d912c5443b942e9be1ae5dcf
+    name: View
+  m_CurrentViewIndex: 0
+  m_TargetSnapshot: {fileID: 24500006}
+--- !u!243 &24300002
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Master
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: fb0413f979ac4c744b93b53539e3ff9a
+  m_Children:
+  - {fileID: 7262065554530995711}
+  - {fileID: -3853967508539964923}
+  - {fileID: -1454799829483907790}
+  - {fileID: 326857329823087257}
+  - {fileID: 4964225429170487023}
+  - {fileID: -6483344212337712945}
+  m_Volume: bcfa20bfe2655454d8afe5d33ccf0da9
+  m_Pitch: e656e77308aa922418c09a9a8eeed475
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 24400004}
+  m_UserColorIndex: 0
+  m_Mute: 1
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &24400004
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 72c7c38e38a552d44914e596b82c871f
+  m_EffectName: Attenuation
+  m_MixLevel: 856ffde23de9e0447b8d52888fe90daa
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!245 &24500006
+AudioMixerSnapshotController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Snapshot
+  m_AudioMixer: {fileID: 24100000}
+  m_SnapshotID: 80492b71957f0384d9ba299c77c95811
+  m_FloatValues: {}
+  m_TransitionOverrides: {}
+--- !u!243 &326857329823087257
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Motor Avion 1
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 5394965b2d92997449d884ade2b05aae
+  m_Children: []
+  m_Volume: 4896225c13510504e9d0c45f4763c569
+  m_Pitch: 0d5facefe3cb2ce4a80e272007b3a253
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -6516532229196911143}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &1193248452159450077
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 0d237bdfbcfe24445b2f47a3df0d6bc9
+  m_EffectName: Attenuation
+  m_MixLevel: 6273f3ee04db4034d9b224382136a7e9
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!244 &2874831011729657293
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: 05a35af25ea0ef14988bc33adee34225
+  m_EffectName: Attenuation
+  m_MixLevel: cad90db895eea9b46845781eaa019507
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &4964225429170487023
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Motor Avion 2
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: 7a9a68bb7efb0524ba40a8cbaa1708fb
+  m_Children: []
+  m_Volume: dc7f5f3f2df70394eb546d2ff63ee67b
+  m_Pitch: f8ac31b02e8525749bdecb043d2ab2ad
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: -9189247596012632006}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &5513686061900886808
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: d29df3c209c6f4d4dbdd669ac36342a6
+  m_EffectName: Attenuation
+  m_MixLevel: e632e7d4d86aa30448c1d06af8e0519b
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
+--- !u!243 &7262065554530995711
+AudioMixerGroupController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Barco Navegando
+  m_AudioMixer: {fileID: 24100000}
+  m_GroupID: fe96b7510330693448c5e3804bb8367a
+  m_Children: []
+  m_Volume: 7ce31fff5f4766449a7723b3a8915315
+  m_Pitch: c6bb57d133df608439f2711392556d6f
+  m_Send: 00000000000000000000000000000000
+  m_Effects:
+  - {fileID: 2874831011729657293}
+  m_UserColorIndex: 0
+  m_Mute: 0
+  m_Solo: 0
+  m_BypassEffects: 0
+--- !u!244 &8747205254476109541
+AudioMixerEffectController:
+  m_ObjectHideFlags: 3
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: 
+  m_EffectID: faa28fa2ef8fc17458d03771b1a74127
+  m_EffectName: Attenuation
+  m_MixLevel: 2f80a285ec0aef249a57ea3802052ace
+  m_Parameters: []
+  m_SendTarget: {fileID: 0}
+  m_EnableWetMix: 0
+  m_Bypass: 0
