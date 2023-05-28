@@ -1,26 +1,25 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public class SocketController : MonoBehaviour
 {
-    private Coroutine _setPistolToSocket;
-    
-    public void SetPistolToSocket(SelectEnterEventArgs args)
-    {
-        if (!args.interactableObject.transform.TryGetComponent(out Weapon_Pistol weaponPistol)) return;
+    private Coroutine _setWeaponToSocket;
 
-        if (_setPistolToSocket != null)
+    public void SetWeaponToSocket(SelectEnterEventArgs args)
+    {
+        if (!args.interactableObject.transform.TryGetComponent(out Weapon weapon)) return;
+
+        if (_setWeaponToSocket != null)
         {
-            StopCoroutine(_setPistolToSocket);
-            _setPistolToSocket = null;
+            StopCoroutine(_setWeaponToSocket);
+            _setWeaponToSocket = null;
         }
         
-        _setPistolToSocket = StartCoroutine(SetPistolToSocket_Coroutine(args));
+        _setWeaponToSocket = StartCoroutine(SetWeaponToSocket_Coroutine(args));
     }
 
-    private IEnumerator SetPistolToSocket_Coroutine(SelectEnterEventArgs args)
+    private IEnumerator SetWeaponToSocket_Coroutine(SelectEnterEventArgs args)
     {
         yield return new WaitForSeconds(0.1f);
         

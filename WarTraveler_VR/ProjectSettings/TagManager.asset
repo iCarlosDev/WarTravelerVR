@@ -26,6 +26,7 @@ TagManager:
   - ZonaParacas
   - Bullet
   - Socket
+  - EnemyCollider
   layers:
   - Default
   - TransparentFX
