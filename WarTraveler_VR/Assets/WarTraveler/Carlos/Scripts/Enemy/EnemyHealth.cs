@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
@@ -7,6 +6,10 @@ public class EnemyHealth : MonoBehaviour
 
     [SerializeField] private int _maxHealth;
     [SerializeField] private int _currentHealth;
+    
+    //GETTERS && SETTERS//
+
+    /////////////////////////////////
 
     private void Awake()
     {
@@ -18,8 +21,19 @@ public class EnemyHealth : MonoBehaviour
         _currentHealth = _maxHealth;
     }
 
+    public void TakeDamage(int damage)
+    {
+        _currentHealth -= damage;
+        if (_currentHealth <= 0) Die();
+    }
+    
     private void Die()
     {
+        foreach (EnemyCollidersHealth enemyBone in _enemyComponentsStorage.EnemyBonesList)
+        {
+            enemyBone.Rigidbody.isKinematic = false;
+        }
         
+        _enemyComponentsStorage.EnemyAnimationsController.Animator.enabled = false;
     }
 }

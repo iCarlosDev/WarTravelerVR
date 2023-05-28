@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 944510601}
   m_Layer: 0
   m_Name: FX_WeaponBullet_Trail 1
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
