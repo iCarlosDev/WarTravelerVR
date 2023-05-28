@@ -12,8 +12,8 @@ public class Turret_XR_GrabInteractableTwoHanded : XRGrabInteractable
 
     [Header("--- ATTACHABLE HANDS ---")]
     [Space(10)]
-    [SerializeField] private GameObject leftHandPrefabInstantiate;
-    [SerializeField] private GameObject rightHandPrefabInstantiate;
+    [SerializeField] private GameObject _leftHandPose;
+    [SerializeField] private GameObject _rightHandPose;
     [SerializeField] private XRBaseController _leftController;
     [SerializeField] private XRBaseController _rightController;
     [SerializeField] private Vector3 _firstAttachOffset;
@@ -37,12 +37,15 @@ public class Turret_XR_GrabInteractableTwoHanded : XRGrabInteractable
     protected override void Awake()
     {
         base.Awake();
-        _leftController = GameObject.FindWithTag("LeftHand").GetComponent<XRBaseController>();
-        _rightController = GameObject.FindWithTag("RightHand").GetComponent<XRBaseController>();
+        _leftController = GameObject.Find("XR Origin/Camera Offset/LeftHand Controller").GetComponent<XRBaseController>();
+        _rightController = GameObject.Find("XR Origin/Camera Offset/RightHand Controller").GetComponent<XRBaseController>();
     }
 
     private void Start()
     {
+        _leftHandPose.SetActive(false);
+        _rightHandPose.SetActive(false);
+        
         _firstTransformPosition = transform.position;
         _firstTransformRotation = transform.rotation;
     }
@@ -51,11 +54,7 @@ public class Turret_XR_GrabInteractableTwoHanded : XRGrabInteractable
     {
         if (!_isLeftGrab && !_isRightGrab)
         {
-            if (transform.rotation == _firstTransformRotation) return;
-            
-            Debug.Log("Reseting Position");
-            transform.position = Vector3.Lerp(transform.position, _firstTransformPosition, _timeToReset * Time.deltaTime);
-            transform.rotation = Quaternion.Lerp(transform.rotation, _firstTransformRotation, _timeToReset * Time.deltaTime);
+            ResetPosition();
             return;
         }
         
@@ -82,36 +81,57 @@ public class Turret_XR_GrabInteractableTwoHanded : XRGrabInteractable
         ControllerExitCheck(args);
     }
 
+    /// <summary>
+    /// Método para resetear la posición del objeto una vez no esté agarrado;
+    /// </summary>
+    private void ResetPosition()
+    {
+        if (transform.rotation == _firstTransformRotation) return;
+            
+        Debug.Log("Reseting Position");
+        transform.position = Vector3.Lerp(transform.position, _firstTransformPosition, _timeToReset * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, _firstTransformRotation, _timeToReset * Time.deltaTime);
+    }
+    
+    /// <summary>
+    /// Método para saber que mano ha agarrado el objeto y así hacerla aparecer;
+    /// </summary>
+    /// <param name="args"></param>
     private void ControllerGrabCheck(SelectEnterEventArgs args)
     {
-        if (args.interactorObject.transform.tag.Equals(_leftController.tag))
+        if (args.interactorObject.transform.CompareTag("LeftHand"))
         {
-            GameObject firstHand = Instantiate(_leftController.modelPrefab.gameObject, attachTransform);
-            leftHandPrefabInstantiate = firstHand;
+            _leftHandPose.SetActive(true);
             _isLeftGrab = true;
         }
         else
         {
-            GameObject secondHand = Instantiate(_rightController.modelPrefab.gameObject, secondaryAttachTransform);
-            rightHandPrefabInstantiate = secondHand;
+            _rightHandPose.SetActive(true);
             _isRightGrab = true;
         }
     }
 
+    /// <summary>
+    /// Método para saber que mano se ha soltado y así hacerla desaparecer;
+    /// </summary>
+    /// <param name="args"></param>
     private void ControllerExitCheck(SelectExitEventArgs args)
     {
-        if (args.interactorObject.transform.tag.Equals(_leftController.tag))
+        if (args.interactorObject.transform.CompareTag("LeftHand"))
         {
-            Destroy(leftHandPrefabInstantiate);
+            _leftHandPose.SetActive(false);
             _isLeftGrab = false;
         }
         else
         {
-            Destroy(rightHandPrefabInstantiate);
+            _rightHandPose.SetActive(false);
             _isRightGrab = false;
         }
     }
 
+    /// <summary>
+    /// Método para controlar el objeto con la mano izquierda;
+    /// </summary>
     private void ControlRotationByLeftPosition()
     {
         if (!TrackRotationByPosition) return;
@@ -121,6 +141,9 @@ public class Turret_XR_GrabInteractableTwoHanded : XRGrabInteractable
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
     
+    /// <summary>
+    /// Método para controlar el objeto con la mano derecha;
+    /// </summary>
     private void ControlRotationByRightPosition()
     {
         if (!TrackRotationByPosition) return;

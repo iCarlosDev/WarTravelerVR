@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4498270330051262}
   - component: {fileID: 33008205142113590}
   - component: {fileID: 23756057164852344}
-  - component: {fileID: 1807191762}
   m_Layer: 0
   m_Name: SM_Char_Attach_American_Pouch_Front_01
   m_TagString: AmmoPouch
@@ -84,16 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &1807191762
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1680235066246022}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.35438266, y: 0.10672852, z: 0.116297595}
-  m_Center: {x: -0.000002592802, y: -0.022793885, z: 0.11555225}

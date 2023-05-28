@@ -8,13 +8,8 @@ public class HandData : MonoBehaviour
     private enum _HandModelType {Left, Right}
     [SerializeField] private _HandModelType _handType;
     [SerializeField] private Transform _root;
-    [SerializeField] private Animator _animator;
     [SerializeField] private Transform[] fingerBones;
 
-    public Animator Animator => _animator;
-
-    private void Awake()
-    {
-        _animator = GetComponent<Animator>();
-    }
+    public Transform Root => _root;
+    public Transform[] FingerBones => fingerBones;
 }

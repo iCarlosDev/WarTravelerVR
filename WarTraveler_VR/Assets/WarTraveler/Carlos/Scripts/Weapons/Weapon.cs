@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -6,6 +7,7 @@ public abstract class Weapon : MonoBehaviour
 {
     [SerializeField] private Weapon_XR_GrabInteractableTwoHanded _weaponXRGrab;
     [SerializeField] private XR_InputDetector _xrInputDetector;
+    [SerializeField] private WeaponBolt _weaponBolt;
     [SerializeField] private WeaponMagazineDetector _weaponMagazineDetector;
     
     [Header("--- WEAPON STATS ---")] 
@@ -15,6 +17,7 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] private float _recoil;
     [SerializeField] protected float _shootForce;
     [SerializeField] protected float _bulletShellExitForce;
+    [SerializeField] private bool _isSemiAutomatic;
     [SerializeField] protected bool _hasMagazineIn;
     
     [Header("--- WEAPON AMMO ---")]
@@ -34,6 +37,8 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] protected Transform _canon;
     [SerializeField] protected Transform _bulletShellExit;
 
+    private Coroutine _glowBack;
+
     //GETTERS && SETTERS//
     public GameObject MagazinePrefab => _magazinePrefab;
     public XR_InputDetector XRInputDetector
@@ -44,11 +49,10 @@ public abstract class Weapon : MonoBehaviour
     
     //////////////////////////////////////////////////////////
 
-    public abstract void Shoot();
-
     private void Awake()
     {
         _weaponXRGrab = GetComponent<Weapon_XR_GrabInteractableTwoHanded>();
+        _weaponBolt = GetComponentInChildren<WeaponBolt>();
         _weaponMagazineDetector = GetComponentInChildren<WeaponMagazineDetector>();
     }
 
@@ -62,6 +66,51 @@ public abstract class Weapon : MonoBehaviour
             {
                 DropMagazine();   
             }
+        }
+    }
+    
+    public void Shoot()
+    {
+        if (!_hasBreechBullet) return;
+
+        if (_hasBreechBullet)
+        {
+            if (_glowBack != null)
+            {
+                StopCoroutine(_glowBack);
+                _glowBack = null;
+            }
+            
+            _glowBack = StartCoroutine(GlowBack_Coroutine());
+        }
+        
+        GameObject bullet = Instantiate(_bulletPrefab, _canon.position, _canon.rotation);
+        bullet.GetComponent<Rigidbody>().AddForce(_canon.forward * _shootForce, ForceMode.Impulse);
+        _particleSystem.Play();
+    }
+
+    private IEnumerator GlowBack_Coroutine()
+    {
+        float lerpTime = 20f;
+        
+        float timeBack = 0f;
+
+        while (_weaponBolt.XRSlider.value != 0)
+        {
+            _weaponBolt.XRSlider.value = Mathf.Lerp(_weaponBolt.XRSlider.value, 0f, timeBack);
+
+            timeBack += lerpTime * Time.deltaTime;
+            yield return null;
+        }
+
+        float timeFront = 0f;
+        
+        while (Math.Abs(_weaponBolt.XRSlider.value - 1f) > 0f)
+        {
+            _weaponBolt.XRSlider.value = Mathf.Lerp(_weaponBolt.XRSlider.value, 1f, timeFront);
+            
+            timeFront += lerpTime * Time.deltaTime;
+            yield return null;
         }
     }
 
@@ -100,7 +149,7 @@ public abstract class Weapon : MonoBehaviour
 
     public virtual void DropMagazine()
     {
-        _magazine.BoxCollider.isTrigger = false;
+        _magazine.Collider.isTrigger = false;
         _magazine.Rigidbody.isKinematic = false;
         _magazine.transform.parent = null;
         _weaponMagazineDetector.XRSlider.MHandle = null;

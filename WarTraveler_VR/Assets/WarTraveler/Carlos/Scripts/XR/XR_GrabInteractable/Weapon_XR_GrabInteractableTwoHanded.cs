@@ -13,19 +13,34 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
 
     [Header("--- ATTACHABLE HANDS ---")]
     [Space(10)]
-    [SerializeField] private GameObject leftHandPrefabInstantiate;
-    [SerializeField] private GameObject rightHandPrefabInstantiate;
+    [SerializeField] private GameObject _firstLeftHandPose;
+    [SerializeField] private GameObject _firstRightHandPose;
+    [SerializeField] private GameObject _secondLeftHandPose;
+    [SerializeField] private GameObject _secondRightHandPose;
     [SerializeField] private XRBaseController _leftController;
     [SerializeField] private XRBaseController _rightController;
 
     [Header("--- OTHER ---")] 
     [Space(10)] 
     [SerializeField] private Weapon _weapon;
-    
+
     //GETTERS && SETTERS//
+    public bool FirstGrab
+    {
+        get => _firstGrab;
+        set => _firstGrab = value;
+    }
+    public bool SecondGrab
+    {
+        get => _secondGrab;
+        set => _secondGrab = value;
+    }
+    public GameObject FirstLeftHandPose => _firstLeftHandPose;
+    public GameObject FirstRightHandPose => _firstRightHandPose;
+    public GameObject SecondLeftHandPose => _secondLeftHandPose;
+    public GameObject SecondRightHandPose => _secondRightHandPose;
     
-    
-    ///
+    ////////////////////////////////////////////////////////////////////////////
 
     protected override void Awake()
     {
@@ -35,12 +50,20 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
         _weapon = GetComponent<Weapon>();
     }
 
+    private void Start()
+    {
+        _firstLeftHandPose.SetActive(false);
+        _firstRightHandPose.SetActive(false);
+        _secondLeftHandPose.SetActive(false);
+        _secondRightHandPose.SetActive(false);
+    }
+
     protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
         base.OnSelectEntered(args);
         ControllerGrabCheck(args);
 
-        if (_weapon != null)
+        if (_weapon != null && !args.interactorObject.transform.CompareTag("Socket"))
         {
             args.interactorObject.transform.GetComponent<XR_InputDetector>().WeaponGrabbed = this;
             TakePouchAmmo.instance.GrabbedWeaponsList.Add(_weapon);   
@@ -52,7 +75,7 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
         base.OnSelectExited(args);
         InteractableExited(args);
         
-        if (_weapon != null)
+        if (_weapon != null && !args.interactorObject.transform.CompareTag("Socket"))
         {
             args.interactorObject.transform.GetComponent<XR_InputDetector>().WeaponGrabbed = null;
             TakePouchAmmo.instance.GrabbedWeaponsList.Remove(_weapon);
@@ -61,33 +84,28 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
     
     private void ControllerGrabCheck(SelectEnterEventArgs args)
     {
-        XRBaseController controller = args.interactorObject.transform.GetComponent<XRBaseController>();
-        
         if (!_firstGrab)
         {
             _weapon.XRInputDetector = args.interactorObject.transform.GetComponent<XR_InputDetector>();
-            GameObject firstHand = Instantiate(controller.modelPrefab.gameObject, attachTransform);
 
-            if (firstHand.CompareTag("LeftHand"))
-            {
-                leftHandPrefabInstantiate = firstHand;
+            if (args.interactorObject.transform.CompareTag("LeftHand"))
+            { 
+                _firstLeftHandPose.SetActive(true);
             }
             else
-            {
-                rightHandPrefabInstantiate = firstHand;
+            { 
+                _firstRightHandPose.SetActive(true);
             }
         }
         else
         {
-            GameObject secondHand = Instantiate(controller.modelPrefab.gameObject, secondaryAttachTransform);
-            
-            if (secondHand.CompareTag("LeftHand"))
+            if (args.interactorObject.transform.CompareTag("LeftHand"))
             {
-                leftHandPrefabInstantiate = secondHand;
+                _secondLeftHandPose.SetActive(true);
             }
             else
             {
-                rightHandPrefabInstantiate = secondHand;
+                _secondRightHandPose.SetActive(true);
             }
         }
         
@@ -95,31 +113,59 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
         
         _firstGrab = true;
     }
-
-    private void InteractableExited(SelectExitEventArgs args)
+    
+    public void InteractableExited(SelectExitEventArgs args)
     {
-        ControllerExitCheck(args);
-        
-        if (secondaryAttachTransform.childCount != 0)
+        if (!_secondGrab)
         {
-            if (secondaryAttachTransform.GetChild(0).name.Contains("Left_Hand"))
-            {
-                leftHandPrefabInstantiate.transform.position = attachTransform.position;
-                leftHandPrefabInstantiate.transform.parent = attachTransform;
-            }
-            else
-            {
-                rightHandPrefabInstantiate.transform.position = attachTransform.position;
-                rightHandPrefabInstantiate.transform.parent = attachTransform;
-            }
-
-            _secondGrab = false;
+            ControllerExitCheck(args);
+            return;
         }
+
+        switch (args.interactorObject.transform.tag)
+        {
+            case "LeftHand":
+                if (_secondLeftHandPose.activeSelf)
+                {
+                    _secondLeftHandPose.SetActive(false);
+                }
+                else if (_firstLeftHandPose.activeSelf)
+                {
+                    _firstLeftHandPose.SetActive(false);
+                    _secondRightHandPose.SetActive(false);
+                    _firstRightHandPose.SetActive(true);
+                }
+                break;
+
+            case "RightHand":
+                if (_secondRightHandPose.activeSelf)
+                {
+                    _secondRightHandPose.SetActive(false);
+                }
+                else if (_firstRightHandPose.activeSelf)
+                {
+                    _firstRightHandPose.SetActive(false);
+                    _secondLeftHandPose.SetActive(false);
+                    _firstLeftHandPose.SetActive(true);
+                }
+                break;
+        }
+
+        _secondGrab = false;
     }
 
     private void ControllerExitCheck(SelectExitEventArgs args)
     {
-        Destroy(args.interactorObject.transform.tag.Equals(_leftController.tag) ? leftHandPrefabInstantiate : rightHandPrefabInstantiate);
+        if (isSelected) return;
+
+        if (args.interactorObject.transform.CompareTag("LeftHand"))
+        {
+            _firstLeftHandPose.SetActive(false);
+        }
+        else
+        {
+            _firstRightHandPose.SetActive(false);
+        }
     }
 
     public void OnControllerExited()

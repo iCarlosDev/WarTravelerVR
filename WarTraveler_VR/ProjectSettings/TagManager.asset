@@ -25,6 +25,7 @@ TagManager:
   - BombEnd
   - ZonaParacas
   - Bullet
+  - Socket
   layers:
   - Default
   - TransparentFX

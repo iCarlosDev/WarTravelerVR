@@ -395,8 +395,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7249135839789775128}
-  - component: {fileID: 5087913987089707666}
-  - component: {fileID: 2740643485603912084}
   m_Layer: 0
   m_Name: Left_Hand
   m_TagString: LeftHand
@@ -421,50 +419,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!95 &5087913987089707666
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8057443374544233378}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &2740643485603912084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8057443374544233378}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e0992515ddd1dc4d87b06f6e0239631, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _handType: 0
-  _root: {fileID: 6234492692379823926}
-  _animator: {fileID: 0}
-  fingerBones:
-  - {fileID: 4138086057324797414}
-  - {fileID: 426424999670315094}
-  - {fileID: 6300533301210685438}
-  - {fileID: 8786248257250682851}
-  - {fileID: 4319397219554984563}
-  - {fileID: 5823729439475324248}
-  - {fileID: 6248329285448776884}
-  - {fileID: 2279837207119052108}
 --- !u!1 &8408225231892554441
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,21 +32,25 @@ public class TakePouchAmmo : MonoBehaviour
     /// </summary>
     private void TakeAmmo()
     {
-        if (_xrInputDetector == null) return;
+        if (_xrInputDetector == null || _xrInputDetector.IsGrabbing || !_canTakeAmmo) return;
 
         if (_xrInputDetector.IsTriggering && _xrInputDetector.ObjectGrabbed == null)
         {
             GameObject instantiatedObject = Instantiate(GrabbedWeaponsList[0].MagazinePrefab, transform.position, transform.rotation);
             XR_TriggerGrabbable triggerGrabbable = instantiatedObject.GetComponent<XR_TriggerGrabbable>();
             _xrInputDetector.GrabTriggerObject(triggerGrabbable);
+            _canTakeAmmo = false;
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if ((other.CompareTag("LeftHand") || other.CompareTag("RightHand")) && _grabbedWeaponsList.Count != 0)
         {
-            _xrInputDetector = other.GetComponent<XR_InputDetector>();
+            if (_xrInputDetector == null) _xrInputDetector = other.GetComponent<XR_InputDetector>();
+
+            if (_xrInputDetector.IsTriggering) return;
+
             if (_xrInputDetector.WeaponGrabbed != null) return;
 
             _canTakeAmmo = true;

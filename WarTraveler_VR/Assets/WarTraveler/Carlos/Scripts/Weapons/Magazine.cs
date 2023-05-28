@@ -3,7 +3,7 @@ using UnityEngine;
 public class Magazine : MonoBehaviour
 {
     [SerializeField] private XR_TriggerGrabbable _xrTriggerGrabbable;
-    [SerializeField] private BoxCollider _boxCollider;
+    [SerializeField] private Collider _collider;
     [SerializeField] private Rigidbody _rigidbody;
     
     [SerializeField] private bool _isBeingInserted;
@@ -15,7 +15,7 @@ public class Magazine : MonoBehaviour
     [SerializeField] protected int _currentAmmoInMagazine;
 
     //GETTERS && SETTERS//
-    public BoxCollider BoxCollider => _boxCollider;
+    public Collider Collider => _collider;
     public Rigidbody Rigidbody => _rigidbody;
     public bool IsBeingInserted
     {
@@ -39,7 +39,7 @@ public class Magazine : MonoBehaviour
     private void Awake()
     {
         _xrTriggerGrabbable = GetComponent<XR_TriggerGrabbable>();
-        _boxCollider = GetComponent<BoxCollider>();
+        _collider = GetComponent<Collider>();
         _rigidbody = GetComponent<Rigidbody>();
     }
 
@@ -63,7 +63,7 @@ public class Magazine : MonoBehaviour
 
     private void GrabInsertedMagazine()
     {
-        _boxCollider.isTrigger = false;
+        _collider.isTrigger = false;
         _rigidbody.isKinematic = false;
 
         _isInserted = false;

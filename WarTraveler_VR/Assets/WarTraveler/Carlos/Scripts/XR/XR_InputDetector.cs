@@ -38,6 +38,8 @@ public class XR_InputDetector : MonoBehaviour
     [Header("--- SLIDER ---")]
     [Space(10)]
     [SerializeField] private XR_Slider _weaponSliderGrabbed;
+    [SerializeField] private float _lerpTime;
+    [SerializeField] private float _time;
     [SerializeField] private bool _grabbingSlider;
 
     //GETTERS && SETTERS//
@@ -52,6 +54,7 @@ public class XR_InputDetector : MonoBehaviour
         set => _objectGrabbed = value;
     }
     public bool IsTriggering => _isTriggering;
+    public bool IsGrabbing => _isGrabbing;
     public InputActionReference PrimaryButton => _primaryButton;
     public InputActionReference SecondaryButton => _secondaryButton;
     
@@ -69,7 +72,7 @@ public class XR_InputDetector : MonoBehaviour
        //Si dejamos de apretar el trigger se cumplirá la condición;
         if (!_isTriggering)
         {
-            //Si estamos agarrando un objeto...;
+            //Solo si estámos agarrando un objeto podremos soltarlo;
             if (_objectGrabbed != null)
             {
                 DropTriggeredObject();      
@@ -84,6 +87,8 @@ public class XR_InputDetector : MonoBehaviour
     /// </summary>
     private void CheckInputs()
     {
+        #region - TRIGGER -
+
         if (_triggerInput.action.ReadValue<float>() > 0.3f)
         {
             _isTriggering = true;
@@ -94,6 +99,10 @@ public class XR_InputDetector : MonoBehaviour
             _grabbingSlider = false;
         }
 
+        #endregion
+
+        #region - PRIMARY BUTTON -
+
         if (_primaryButton.action.IsPressed())
         {
             _primaryButtonWasPressed = true;
@@ -103,6 +112,10 @@ public class XR_InputDetector : MonoBehaviour
             _primaryButtonWasPressed = false;
         }
 
+        #endregion
+
+        #region - GRIP -
+
         if (_grabInput.action.ReadValue<float>() > 0.3f)
         {
             _isGrabbing = true;
@@ -111,6 +124,8 @@ public class XR_InputDetector : MonoBehaviour
         {
             _isGrabbing = false;
         }
+
+        #endregion
     }
     
     /// <summary>
@@ -161,16 +176,21 @@ public class XR_InputDetector : MonoBehaviour
     {
         if (_weaponSliderGrabbed == null) return;
 
+        //Cuando haya vuelto a su posición inicial y no lo estemos agarrando se cumplirá la condición;
         if (_weaponSliderGrabbed.value > 1f && !_isTriggering)
         {
             _weaponSliderGrabbed = null;
+            _time = 0f;
             return;
         }
 
+        //Una vez soltemos el slider, este volverá a su posición inicial (como mecanismo de muelle);
         if (!_isTriggering)
         {
-            _weaponSliderGrabbed.value = Mathf.Lerp(_weaponSliderGrabbed.value, 1.5f, 20f * Time.deltaTime);
+            _weaponSliderGrabbed.value = Mathf.Lerp(_weaponSliderGrabbed.value, 1.5f, _time);
 
+            _time += _lerpTime * Time.deltaTime;
+            
             if (_weaponSliderGrabbed.isSelected)
             {
                 _weaponSliderGrabbed.interactionManager.SelectExit(_interactor, _weaponSliderGrabbed);   
@@ -186,7 +206,8 @@ public class XR_InputDetector : MonoBehaviour
         
         if (_objectGrabbed == null)
         {
-            if (_grabbingSlider) return;
+            //Solo si no estámos agarrando nada podremos interactuar con los sliders;
+            if (_grabbingSlider || _isGrabbing) return;
             
             if (other.CompareTag("WeaponMagazine"))
             {
@@ -195,7 +216,7 @@ public class XR_InputDetector : MonoBehaviour
                 GrabTriggerObject(other.GetComponent<XR_TriggerGrabbable>());
             }
 
-            if (other.CompareTag("WeaponSlide") && !_isGrabbing)
+            if (other.CompareTag("WeaponSlide"))
             {
                 GrabSlider(other.GetComponent<XR_Slider>());
             }

@@ -8,6 +8,7 @@ public class WeaponMagazineDetector : MonoBehaviour
     [SerializeField] private XR_InputDetector _xrInputDetector;
     [SerializeField] private XR_Slider _xrSlider;
     [SerializeField] private XR_TriggerGrabbable _magazine;
+    [SerializeField] private float _magazineX_RotationOffset;
     [SerializeField] private bool quieroSalir;
 
     public XR_Slider XRSlider => _xrSlider;
@@ -43,14 +44,14 @@ public class WeaponMagazineDetector : MonoBehaviour
         _xrInputDetector = _magazine.firstInteractorSelecting.transform.GetComponent<XR_InputDetector>();
         _xrInputDetector.DropTriggeredObject();
         
-        magazine.BoxCollider.isTrigger = true;
+        magazine.Collider.isTrigger = true;
         magazine.Rigidbody.isKinematic = true;
         magazine.IsBeingInserted = true;
 
         _magazine.transform.parent = transform;
         _magazine.transform.localPosition = Vector3.zero;
             
-        Quaternion magazineRotation = Quaternion.Euler(90f, 0f, 0f);
+        Quaternion magazineRotation = Quaternion.Euler(_magazineX_RotationOffset, 0f, 0f);
         _magazine.transform.localRotation = magazineRotation;
 
         _xrSlider.MHandle = _magazine.transform;

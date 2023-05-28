@@ -7,6 +7,8 @@ public class WeaponBolt : MonoBehaviour
     [SerializeField] private XR_Slider _xrSlider;
     [SerializeField] private bool _wasBolted;
 
+    public XR_Slider XRSlider => _xrSlider;
+
     private void Awake()
     {
         _weapon = GetComponentInParent<Weapon>();
