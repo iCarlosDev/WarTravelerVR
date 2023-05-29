@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 
 public class AntiAereoShoot : MonoBehaviour
 {
@@ -9,6 +7,11 @@ public class AntiAereoShoot : MonoBehaviour
     [SerializeField] private XR_InputDetector _leftInputDetector;
     [SerializeField] private XR_InputDetector _rightInputDetector;
 
+    [Header("--- CANON PARAMS ---")] 
+    [Space(10)] 
+    [SerializeField] private AudioSource _machineGunAudio;
+    [SerializeField] private AudioSource _canonAudio;
+    
     [Header("--- OVERHEATING PARAMS ---")] 
     [Space(10)]
     [SerializeField] private float _maxTimeShooting;

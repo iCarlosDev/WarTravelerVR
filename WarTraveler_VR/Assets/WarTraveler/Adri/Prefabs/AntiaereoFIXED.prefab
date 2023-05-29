@@ -532,7 +532,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2408221046546835017, guid: 5561f723fc2526f46a126f48284dd1fb, type: 3}
+  - {fileID: 2100000, guid: 630f317f419ffb740bf4f78f957bc861, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1203,7 +1203,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2408221046546835017, guid: 13c2880276768ad4d9d0804bf69aaf11, type: 3}
+  - {fileID: 2100000, guid: 630f317f419ffb740bf4f78f957bc861, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1293,7 +1293,6 @@ GameObject:
   - component: {fileID: 801955069890244245}
   - component: {fileID: 2524344226129796151}
   - component: {fileID: 775444630712310553}
-  - component: {fileID: 1639570183}
   m_Layer: 0
   m_Name: Palanca I
   m_TagString: BulletNoCollisionable
@@ -1366,20 +1365,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1639570183
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 624288913670260220}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 1119276695280054412, guid: 81fbcb728e38f324dab4a5fb45d4b011, type: 3}
 --- !u!1 &1024634487922859409
 GameObject:
   m_ObjectHideFlags: 0
@@ -1391,7 +1376,6 @@ GameObject:
   - component: {fileID: 7689115450613416439}
   - component: {fileID: 7548724136622413549}
   - component: {fileID: 5573660974655015639}
-  - component: {fileID: 1549114321}
   m_Layer: 0
   m_Name: Boton D
   m_TagString: BulletNoCollisionable
@@ -1464,20 +1448,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1549114321
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1024634487922859409}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7583976191177945880, guid: 81fbcb728e38f324dab4a5fb45d4b011, type: 3}
 --- !u!1 &2857188269955330287
 GameObject:
   m_ObjectHideFlags: 0
@@ -1489,7 +1459,6 @@ GameObject:
   - component: {fileID: 3064518922987146207}
   - component: {fileID: 2806539150742974666}
   - component: {fileID: 5058081014052660187}
-  - component: {fileID: 376905309}
   m_Layer: 0
   m_Name: "Ca\xF1on Sup"
   m_TagString: BulletNoCollisionable
@@ -1562,20 +1531,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &376905309
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2857188269955330287}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -2088514881701440960, guid: 81fbcb728e38f324dab4a5fb45d4b011, type: 3}
 --- !u!1 &3331780601900399290
 GameObject:
   m_ObjectHideFlags: 0
@@ -1587,7 +1542,6 @@ GameObject:
   - component: {fileID: 4321707356666318318}
   - component: {fileID: 8108605492704046893}
   - component: {fileID: 5356772732854501127}
-  - component: {fileID: 1929302988}
   m_Layer: 0
   m_Name: Balas
   m_TagString: BulletNoCollisionable
@@ -1660,20 +1614,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1929302988
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3331780601900399290}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 7196944368181961591, guid: 81fbcb728e38f324dab4a5fb45d4b011, type: 3}
 --- !u!1 &3410172967127291684
 GameObject:
   m_ObjectHideFlags: 0
@@ -1685,7 +1625,7 @@ GameObject:
   - component: {fileID: 659554431742746673}
   - component: {fileID: 3687196723316391850}
   - component: {fileID: 2610871807538202031}
-  - component: {fileID: 330029624}
+  - component: {fileID: 2493169405965607691}
   m_Layer: 0
   m_Name: Cuerpo
   m_TagString: BulletNoCollisionable
@@ -1758,8 +1698,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &330029624
-MeshCollider:
+--- !u!65 &2493169405965607691
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1768,10 +1708,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6981290006637109699, guid: 81fbcb728e38f324dab4a5fb45d4b011, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.7128793, y: 0.8406706, z: 0.9}
+  m_Center: {x: 0.001726836, y: 0.15240695, z: -0.3281473}
 --- !u!1 &3439769424089510920
 GameObject:
   m_ObjectHideFlags: 0
@@ -1977,7 +1916,6 @@ GameObject:
   - component: {fileID: 7909362215285145066}
   - component: {fileID: 2401407195969806996}
   - component: {fileID: 2480874151644096138}
-  - component: {fileID: 113316058}
   m_Layer: 0
   m_Name: Ametralladora I
   m_TagString: BulletNoCollisionable
@@ -2050,20 +1988,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &113316058
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6126138112967284013}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 789475285028556558, guid: 81fbcb728e38f324dab4a5fb45d4b011, type: 3}
 --- !u!1 &6590232913356855676
 GameObject:
   m_ObjectHideFlags: 0
@@ -2075,7 +1999,6 @@ GameObject:
   - component: {fileID: 3073211550803388104}
   - component: {fileID: 6729462567082010383}
   - component: {fileID: 2217405498352453615}
-  - component: {fileID: 1441772448}
   m_Layer: 0
   m_Name: Palanca D
   m_TagString: BulletNoCollisionable
@@ -2148,20 +2071,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1441772448
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6590232913356855676}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -5834461130366633239, guid: 81fbcb728e38f324dab4a5fb45d4b011, type: 3}
 --- !u!1 &6912016270235356719
 GameObject:
   m_ObjectHideFlags: 0
@@ -2173,7 +2082,6 @@ GameObject:
   - component: {fileID: 4735298566878841590}
   - component: {fileID: 4394321476723683541}
   - component: {fileID: 1704597891547129580}
-  - component: {fileID: 291670451}
   m_Layer: 0
   m_Name: Boton I
   m_TagString: BulletNoCollisionable
@@ -2246,20 +2154,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &291670451
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6912016270235356719}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -626294850177813691, guid: 81fbcb728e38f324dab4a5fb45d4b011, type: 3}
 --- !u!1 &6973834443339008224
 GameObject:
   m_ObjectHideFlags: 0
@@ -2304,7 +2198,6 @@ GameObject:
   - component: {fileID: 4580467005477112540}
   - component: {fileID: 6314361303129318207}
   - component: {fileID: 3047592085603777120}
-  - component: {fileID: 968470107}
   m_Layer: 0
   m_Name: "Ca\xF1on Inf"
   m_TagString: BulletNoCollisionable
@@ -2377,20 +2270,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &968470107
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7076115232237799082}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -577631953437755742, guid: 81fbcb728e38f324dab4a5fb45d4b011, type: 3}
 --- !u!1 &7405749037907648740
 GameObject:
   m_ObjectHideFlags: 0
@@ -2605,14 +2484,16 @@ MonoBehaviour:
   _turretXrGrabInteractableTwoHanded: {fileID: 0}
   _leftInputDetector: {fileID: 0}
   _rightInputDetector: {fileID: 0}
-  _maxTimeShooting: 7
+  _machineGunAudio: {fileID: 0}
+  _canonAudio: {fileID: 0}
+  _maxTimeShooting: 9000
   _currentLeftTimeShooting: 0
   _currentRightTimeShooting: 0
   _isLeftOverheated: 0
   _isRightOverheated: 0
   _bulletPrefab: {fileID: 1003485616670832, guid: 2298236a23b5c4349b5f8204068aadf3,
     type: 3}
-  _bulletImpulseForce: 500
+  _bulletImpulseForce: 1000
   _fireRate: 0.1
   _firstMachineGunCanon: {fileID: 1441803869}
   _firstMachineGunParticleSystem: {fileID: 788663540}
@@ -2638,7 +2519,6 @@ GameObject:
   - component: {fileID: 7208407328680334135}
   - component: {fileID: 7181832992607148784}
   - component: {fileID: 9215194878239742779}
-  - component: {fileID: 57396820}
   m_Layer: 0
   m_Name: Ametralladora D
   m_TagString: BulletNoCollisionable
@@ -2711,20 +2591,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &57396820
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8819942450091994043}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 5914441509531013003, guid: 81fbcb728e38f324dab4a5fb45d4b011, type: 3}
 --- !u!1001 &765426087
 PrefabInstance:
   m_ObjectHideFlags: 0

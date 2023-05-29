@@ -1,31 +1,46 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlaneHealth : MonoBehaviour
 {
-    [SerializeField] private ParticleSystem _explosionParticleSystem;
+    [Header("--- PARTICLES ---")]
+    [Space(10)]
+    [SerializeField] private ParticleSystem _explosionParticle;
+    [SerializeField] private ParticleSystem _smokeParticle;
+    [SerializeField] private ParticleSystem _fireParticle;
+    
+    
+    [SerializeField] private List<Rigidbody> _rigidbodyList;
+    [SerializeField] private float _forceImpulse;
+    [SerializeField] private float _torqueImpulse;
     [SerializeField] private int _maxHealth;
     [SerializeField] private int _currentHealth;
     [SerializeField] private bool _isDead;
 
+    public bool IsDead => _isDead;
+
     private void Awake()
     {
-        _explosionParticleSystem = GetComponentInChildren<ParticleSystem>(); 
+        _rigidbodyList.AddRange(GetComponentsInChildren<Rigidbody>());
     }
 
     private void Start()
     {
-        _maxHealth = 100;
         _currentHealth = _maxHealth;
     }
 
+    [ContextMenu("Take Damage")]
+    private void TakeDamageDEBUG()
+    {
+        TakeDamage(999);
+    }
+    
     private void TakeDamage(int damage)
     {
         if (_isDead) return;
        
         _currentHealth -= damage;
+       Debug.LogWarning("HITTED");
         
         if (_currentHealth <= 0) Die();
     }
@@ -33,7 +48,16 @@ public class PlaneHealth : MonoBehaviour
     private void Die()
     {
         _isDead = true;
-        _explosionParticleSystem.Play();
+        _explosionParticle.Play();
+        _smokeParticle.Play();
+        _fireParticle.Play();
+        
+        foreach (Rigidbody rigidbody in _rigidbodyList)
+        {
+            rigidbody.isKinematic = false;
+            rigidbody.AddForce(transform.forward * _forceImpulse, ForceMode.Impulse);
+            rigidbody.AddTorque(Vector3.forward * _torqueImpulse, ForceMode.Impulse);
+        }
     }
 
     private void OnCollisionEnter(Collision collision)

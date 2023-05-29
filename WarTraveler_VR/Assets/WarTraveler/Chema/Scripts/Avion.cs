@@ -1,13 +1,12 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class Avion : MonoBehaviour
 {
-
-   
+    
+    [Header("--- TODO LO DE CHEMA ---")]
+    [Space(10)]
     public GameObject bomba;
     
     public float max_Speed;
@@ -19,19 +18,27 @@ public class Avion : MonoBehaviour
     private Transform endMap;
     private Transform startMap;
 
-    public Transform[] endPoints;
-    public Transform[] startPoints;
+    public List<GameObject> endPoints;
+    public List<GameObject> startPoints;
     public List<Transform> objetivos;
     private bool bombDown;
     private bool atacar;
 
-  
-    
-    
+
+    [Header("--- TODO LO DE CARLOS ---")] 
+    [Space(10)] 
+    [SerializeField] private PlaneHealth _planeHealth;
+
+
     // Start is called before the first frame update
     void Awake()
     {
+        _planeHealth = GetComponent<PlaneHealth>();
+
         GameObject[] listaTarget = GameObject.FindGameObjectsWithTag("Barco");
+        
+        endPoints.AddRange(GameObject.FindGameObjectsWithTag("EndMap"));
+        startPoints.AddRange(GameObject.FindGameObjectsWithTag("StartPoint"));
         
         Debug.Log("Length " + listaTarget.Length);
         
@@ -43,24 +50,23 @@ public class Avion : MonoBehaviour
     
     void Start()
     {
-        
-        
         currentSpeed = Random.Range(max_Speed, min_Speed + 1);
-        
-        
-        Objetivo();
+        StartMission();
+        //Objetivo();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (_planeHealth.IsDead) return;
         
         transform.Translate(Vector3.forward * currentSpeed * Time.deltaTime);
-
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        if (_planeHealth.IsDead) return;
+        
         if (other.gameObject.CompareTag("EndMap"))
         {
             StartMission();
@@ -78,8 +84,7 @@ public class Avion : MonoBehaviour
         }
         if  (other.gameObject.CompareTag("Avion"))
         {
-            Destroy(gameObject);
-            
+            //Destroy(gameObject);
         }
         
         
@@ -95,7 +100,7 @@ public class Avion : MonoBehaviour
     {
         bool atacar = Random.Range(0f, 101f) >= 50f;
         currentSpeed = Random.Range(max_Speed, min_Speed + 1);
-        startMap = startPoints[Random.Range(0, startPoints.Length)];
+        startMap = startPoints[Random.Range(0, startPoints.Count)].transform;
         transform.position = startMap.position;
 
         if (atacar == true)
@@ -105,7 +110,6 @@ public class Avion : MonoBehaviour
         }
         else
         {
-            
             Fuga();
         }
     }
@@ -119,7 +123,7 @@ public class Avion : MonoBehaviour
     private void Fuga()
     {
         Debug.Log("FUGA");
-        endMap = endPoints[Random.Range(0, endPoints.Length)];
+        endMap = endPoints[Random.Range(0, endPoints.Count)].transform;
         transform.LookAt(endMap);
     }
 }
