@@ -21,10 +21,14 @@ public class WeaponMagazineDetector : MonoBehaviour
 
     private void Update()
     {
-        if (_xrSlider.value >= 1f && _magazine != null && _xrSlider.isSelected)
+        if (_xrSlider.value >= 1f && _magazine != null && _xrSlider.MHandle != null)
         {
-            _xrInputDetector.ReleaseSlider();
-            _xrSlider.interactionManager.SelectExit(_xrSlider.firstInteractorSelecting, _xrSlider);
+            if (_xrSlider.isSelected)
+            {
+                _xrInputDetector.ReleaseSlider();
+                _xrSlider.interactionManager.SelectExit(_xrSlider.firstInteractorSelecting, _xrSlider);
+            }
+            
             _weapon.InsertMagazine(_magazine.GetComponent<Magazine>());
         }
 
@@ -32,6 +36,7 @@ public class WeaponMagazineDetector : MonoBehaviour
         {
             quieroSalir = true;
             _xrSlider.MHandle = null;
+            _magazine = null;
             _weapon.DropMagazine();
         }
     }
