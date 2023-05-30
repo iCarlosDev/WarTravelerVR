@@ -1171,7 +1171,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b9e074edb8e6a4888541a520377b79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _DestroyVehicle: {fileID: 0}
 --- !u!1 &1598830320772300
 GameObject:
   m_ObjectHideFlags: 0
