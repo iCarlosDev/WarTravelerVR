@@ -147,6 +147,8 @@ public class AntiAereoShoot : MonoBehaviour
                 _leftInputDetector.HapticFeedBack.ControllerVibration(1f, 0.1f);
 
                 _leftFireRateTime = Time.time + _fireRate;
+                
+                AudioManager.instance.PlayOneShot("MachineGunShoot");
             }
             return true;
         }
@@ -169,6 +171,11 @@ public class AntiAereoShoot : MonoBehaviour
                 _rightInputDetector.HapticFeedBack.ControllerVibration(1f, 0.1f);
 
                 _rightFireRateTime = Time.time + _fireRate;
+
+                if (!_leftInputDetector.IsTriggering && !_isLeftOverheated)
+                {
+                    AudioManager.instance.PlayOneShot("MachineGunShoot");
+                }
             }
             return true;
         }

@@ -45,10 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: MachineGun
+  - name: MachineGunShoot
     _groupTypeEnum: 1
-    clip: {fileID: 8300000, guid: e97eaacaa9f557e4388e31dffd1987a7, type: 3}
+    clip: {fileID: 8300000, guid: aa7e549f1e9f6e74486970b81e54789a, type: 3}
     volume: 1
-    pitch: 1
+    pitch: 0.7
     loop: 0
     source: {fileID: 0}

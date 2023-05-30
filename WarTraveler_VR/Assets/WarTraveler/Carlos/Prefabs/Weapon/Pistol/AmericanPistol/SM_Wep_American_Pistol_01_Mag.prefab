@@ -135,7 +135,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 8
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _xrTriggerGrabbable: {fileID: 0}
-  _boxCollider: {fileID: 0}
+  _collider: {fileID: 0}
   _rigidbody: {fileID: 0}
   _isBeingInserted: 0
   _isInserted: 0

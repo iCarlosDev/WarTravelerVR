@@ -44,6 +44,13 @@ public class WeaponMagazineDetector : MonoBehaviour
     private void DetectMagazineToInsert(Collider other)
     {
         _magazine = other.GetComponent<XR_TriggerGrabbable>();
+
+        if (_xrSlider.interactionLayers.value != _magazine.interactionLayers.value)
+        {
+            _magazine = null;
+            return;
+        }
+        
         Magazine magazine = _magazine.GetComponent<Magazine>();
         
         _xrInputDetector = _magazine.firstInteractorSelecting.transform.GetComponent<XR_InputDetector>();
@@ -75,7 +82,7 @@ public class WeaponMagazineDetector : MonoBehaviour
         if (other.CompareTag("WeaponMagazine") && _xrSlider.MHandle == null)
         {
             if (!other.GetComponent<XR_TriggerGrabbable>().isSelected) return;
-
+            
             DetectMagazineToInsert(other);
         }
     }
