@@ -73,8 +73,7 @@ GameObject:
   - component: {fileID: 8113826331772942386}
   - component: {fileID: 8134460208339977956}
   - component: {fileID: 8125023563507465852}
-  - component: {fileID: 5081798744719662732}
-  - component: {fileID: 9186252100327964389}
+  - component: {fileID: 1034725815}
   m_Layer: 0
   m_Name: SM_Veh_Sub_01
   m_TagString: Cubierta
@@ -149,8 +148,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5081798744719662732
-BoxCollider:
+--- !u!64 &1034725815
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -159,22 +158,10 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5.988562, y: 2.5, z: 66.93799}
-  m_Center: {x: 0, y: 2.393486, z: 0.000009536743}
---- !u!65 &9186252100327964389
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8111098912846618096}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5.988562, y: 7.7, z: 7.96}
-  m_Center: {x: 0, y: 2.2, z: 1.23}
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 726b60d1a20b7b240b2cd151d7c5e10a, type: 3}
 --- !u!1 &8111267428826672752
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlaneHealth : MonoBehaviour
 {
     [SerializeField] private GameObject _destroyedPlanePrefab;
-    
+
     [Header("--- PARTICLES ---")]
     [Space(10)]
     [SerializeField] private ParticleSystem _explosionParticle;
@@ -22,11 +22,12 @@ public class PlaneHealth : MonoBehaviour
     
     [Header("--- DIE PARAMS ---")]
     [Space(10)]
-    [SerializeField] private LayerMask _layerToChange;
-    [SerializeField] private List<Rigidbody> _rigidbodyList;
+    [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private float _forceImpulse;
-    [SerializeField] private float _dieImpulse;
-    [SerializeField] private float _torqueImpulse;
+    [SerializeField] private float _forwardTorqueImpulse;
+    [SerializeField] private float _leftTorqueImpulse;
+    
+    private MeshRenderer _meshRenderer;
     
     //GETTERS && SETTERS//
     public bool IsDead => _isDead;
@@ -35,7 +36,8 @@ public class PlaneHealth : MonoBehaviour
 
     private void Awake()
     {
-        _rigidbodyList.AddRange(GetComponentsInChildren<Rigidbody>());
+        _rigidbody = GetComponent<Rigidbody>();
+        _meshRenderer = GetComponent<MeshRenderer>();
     }
 
     private void Start()
@@ -62,17 +64,28 @@ public class PlaneHealth : MonoBehaviour
     private void Die()
     {
         _isDead = true;
-        gameObject.layer = _layerToChange;
+        gameObject.layer = 2;
         _explosionParticle.Play();
         _smokeParticle.Play();
         _fireParticle.Play();
         
-        foreach (Rigidbody rigidbody in _rigidbodyList)
-        {
-            rigidbody.isKinematic = false;
-            rigidbody.AddForce(transform.forward * _forceImpulse, ForceMode.Impulse);
-            rigidbody.AddTorque(Vector3.forward * _torqueImpulse, ForceMode.Impulse);
-        }
+        _rigidbody.isKinematic = false;
+        _rigidbody.AddForce(transform.forward * _forceImpulse, ForceMode.Impulse);
+        _rigidbody.AddTorque(Vector3.forward * _forwardTorqueImpulse, ForceMode.Impulse);
+        _rigidbody.AddTorque(Vector3.left * _leftTorqueImpulse, ForceMode.Impulse);
+    }
+
+    private void DestroyPlane()
+    {
+        if (!_meshRenderer.enabled) return;
+
+        _bodyExplosionParticle.Play();
+        _giganticExplosionParticle.Play();
+            
+        _meshRenderer.enabled = false;
+        transform.GetChild(0).gameObject.SetActive(false);
+
+        Instantiate(_destroyedPlanePrefab, transform.position, transform.rotation);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -82,12 +95,15 @@ public class PlaneHealth : MonoBehaviour
             TakeDamage(collision.transform.GetComponent<Bullet>().BulletDamage);
         }
 
+        if (collision.transform.CompareTag("CanonBullet"))
+        {
+            Die();
+            DestroyPlane();
+        }
+
         if (collision.transform.CompareTag("Cubierta"))
         {
-            _bodyExplosionParticle.Play();
-            _giganticExplosionParticle.Play();
-            
-            GetComponent<MeshRenderer>().enabled = false;
+            DestroyPlane();
         }
     }
 
@@ -95,7 +111,7 @@ public class PlaneHealth : MonoBehaviour
     {
         if (other.CompareTag("Mar"))
         {
-            Destroy(gameObject, 2f);
+            Destroy(gameObject, 15f);
         }
     }
 }

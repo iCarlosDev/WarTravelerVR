@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4071673388477977936}
   m_Layer: 9
   m_Name: SM_Wep_American_RocketLauncher_Missile_01
-  m_TagString: Bullet
+  m_TagString: CanonBullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd128a98b6de43942800ef50ee17b28d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _bulletDamage: 100
+  _bulletDamage: 0
   _planeHitParticleSystem: {fileID: 198753536921840570, guid: 2938def9583039b498280fae52bf6fd4,
     type: 3}
 --- !u!136 &4071673388477977936

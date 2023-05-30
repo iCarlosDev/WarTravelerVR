@@ -27,6 +27,7 @@ TagManager:
   - Bullet
   - Socket
   - EnemyCollider
+  - CanonBullet
   layers:
   - Default
   - TransparentFX
