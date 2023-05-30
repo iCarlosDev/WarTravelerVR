@@ -9582,9 +9582,10 @@ GameObject:
   - component: {fileID: 1229074345}
   - component: {fileID: 1229074344}
   - component: {fileID: 1229074343}
+  - component: {fileID: 1229074346}
   m_Layer: 4
   m_Name: Water
-  m_TagString: Untagged
+  m_TagString: Mar
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9656,17 +9657,17 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
   shallowColor: {r: 0, g: 0.7725491, b: 0.62352943, a: 0.5019608}
-  deepColor: {r: 0.01176471, g: 0.28607076, b: 0.50980073, a: 1}
+  deepColor: {r: 0.01176471, g: 0.28606856, b: 0.50980073, a: 1}
   colorDepth: 0.84
-  horizonColor: {r: 0, g: 0.22724727, b: 0.8, a: 1}
+  horizonColor: {r: 0, g: 0.22724506, b: 0.8, a: 1}
   horizonDistance: 20
   shoreFade: 1
-  shoreColor: {r: 0, g: 0.98039216, b: 0.30175707, a: 0}
+  shoreColor: {r: 0, g: 0.98039216, b: 0.30175486, a: 0}
   shoreStrength: 0
   shoreBlend: 1
   shoreDepth: 0.74
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.20372847, g: 0.30960014, b: 0.517647, a: 1}
+  underwaterColor: {r: 0.20372638, g: 0.30959797, b: 0.517647, a: 1}
   underwaterColorStrength: 1
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: d3b0d77dfe711a04c8ff18ecc260aa66, type: 3}
@@ -9791,6 +9792,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229074341}
   m_Mesh: {fileID: -618246179706927764, guid: fb606524fcd88254ba3dad41413af47c, type: 3}
+--- !u!65 &1229074346
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229074341}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.500001, y: 0, z: 7.4999995}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &1234322851 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,

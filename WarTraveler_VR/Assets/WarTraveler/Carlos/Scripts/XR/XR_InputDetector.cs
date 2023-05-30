@@ -7,6 +7,7 @@ using UnityEngine.XR.Interaction.Toolkit;
 public class XR_InputDetector : MonoBehaviour
 {
     [SerializeField] private XRBaseInteractor _interactor;
+    [SerializeField] private HapticFeedBack _hapticFeedBack;
     
     [Header("--- TRIGGER INPUT ---")]
     [Space(10)]
@@ -43,6 +44,7 @@ public class XR_InputDetector : MonoBehaviour
     [SerializeField] private bool _grabbingSlider;
 
     //GETTERS && SETTERS//
+    public HapticFeedBack HapticFeedBack => _hapticFeedBack;
     public Weapon_XR_GrabInteractableTwoHanded WeaponGrabbed
     {
         get => _weaponGrabbed;
@@ -63,6 +65,7 @@ public class XR_InputDetector : MonoBehaviour
     private void Awake()
     {
         _interactor = GetComponent<XRBaseInteractor>();
+        _hapticFeedBack = GetComponent<HapticFeedBack>();
     }
 
     private void Update()

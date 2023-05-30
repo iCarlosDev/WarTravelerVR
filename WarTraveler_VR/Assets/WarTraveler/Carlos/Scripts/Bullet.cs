@@ -21,7 +21,7 @@ public class Bullet : MonoBehaviour
 
         if (collision.transform.CompareTag("Avion"))
         {
-            ParticleSystem particleSystem = Instantiate(_planeHitParticleSystem, collision.transform.position, Quaternion.identity);
+            ParticleSystem particleSystem = Instantiate(_planeHitParticleSystem, transform.position, Quaternion.identity);
             particleSystem.Play();
             particleSystem.transform.parent = null;
         }

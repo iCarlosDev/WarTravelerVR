@@ -144,6 +144,7 @@ public class AntiAereoShoot : MonoBehaviour
                 bullet.GetComponent<Rigidbody>().AddForce(_firstMachineGunCanon.forward * _bulletImpulseForce, ForceMode.Impulse);
             
                 _firstMachineGunParticleSystem.Play();
+                _leftInputDetector.HapticFeedBack.ControllerVibration(1f, 0.1f);
 
                 _leftFireRateTime = Time.time + _fireRate;
             }
@@ -165,6 +166,7 @@ public class AntiAereoShoot : MonoBehaviour
                 bullet.GetComponent<Rigidbody>().AddForce(_secondMachineGunCanon.forward * _bulletImpulseForce, ForceMode.Impulse);
             
                 _secondMachineGunParticleSystem.Play();
+                _rightInputDetector.HapticFeedBack.ControllerVibration(1f, 0.1f);
 
                 _rightFireRateTime = Time.time + _fireRate;
             }

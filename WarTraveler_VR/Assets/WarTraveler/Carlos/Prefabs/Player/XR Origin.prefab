@@ -888,6 +888,7 @@ GameObject:
   - component: {fileID: 7913293435989885600}
   - component: {fileID: 7913293435989885627}
   - component: {fileID: 7913293435989885624}
+  - component: {fileID: 1122072020}
   m_Layer: 0
   m_Name: RightHand Controller
   m_TagString: RightHand
@@ -1240,6 +1241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactor: {fileID: 0}
+  _hapticFeedBack: {fileID: 0}
   _triggerInput: {fileID: 7904272356298805229, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   _isTriggering: 0
@@ -1257,6 +1259,19 @@ MonoBehaviour:
   _lerpTime: 20
   _time: 0
   _grabbingSlider: 0
+--- !u!114 &1122072020
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7913293435989885602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f6622a6eaf29246a0f1e0f40f9a1f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _xrDirectInteractor: {fileID: 0}
 --- !u!1 &7913293436306841721
 GameObject:
   m_ObjectHideFlags: 0
@@ -1480,6 +1495,7 @@ GameObject:
   - component: {fileID: 7913293437226685844}
   - component: {fileID: 7913293437226685935}
   - component: {fileID: 7913293437226685932}
+  - component: {fileID: 1598614314}
   m_Layer: 0
   m_Name: LeftHand Controller
   m_TagString: LeftHand
@@ -1832,6 +1848,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interactor: {fileID: 0}
+  _hapticFeedBack: {fileID: 0}
   _triggerInput: {fileID: -4289430672226363583, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   _isTriggering: 0
@@ -1849,6 +1866,19 @@ MonoBehaviour:
   _lerpTime: 20
   _time: 0
   _grabbingSlider: 0
+--- !u!114 &1598614314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7913293437226685846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05f6622a6eaf29246a0f1e0f40f9a1f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _xrDirectInteractor: {fileID: 0}
 --- !u!1 &7913293437513187985
 GameObject:
   m_ObjectHideFlags: 0

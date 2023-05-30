@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -65,6 +66,14 @@ public class PlaneHealth : MonoBehaviour
         if (collision.transform.CompareTag("Bullet"))
         {
             TakeDamage(collision.transform.GetComponent<Bullet>().BulletDamage);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Mar"))
+        {
+            Destroy(gameObject, 2f);
         }
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using Unity.Mathematics;
 using UnityEngine;
 
@@ -10,6 +11,12 @@ public class PouchController : MonoBehaviour
     private void Awake()
     {
         _camera = Camera.main;
+    }
+
+    private void Start()
+    {
+        Application.targetFrameRate = 1000;
+        QualitySettings.vSyncCount = 0;
     }
 
     // Update is called once per frame

@@ -87,6 +87,8 @@ public abstract class Weapon : MonoBehaviour
         GameObject bullet = Instantiate(_bulletPrefab, _canon.position, _canon.rotation);
         bullet.GetComponent<Rigidbody>().AddForce(_canon.forward * _shootForce, ForceMode.Impulse);
         _particleSystem.Play();
+        
+        _xrInputDetector.HapticFeedBack.ControllerVibration(1, 0.1f);
     }
 
     private IEnumerator GlowBack_Coroutine()
