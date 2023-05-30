@@ -945,7 +945,7 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 2
-      scalar: 0.5
+      scalar: 1.232527
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -997,7 +997,7 @@ ParticleSystem:
         m_RotationOrder: 4
     y:
       serializedVersion: 2
-      minMaxState: 1
+      minMaxState: 2
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -1050,7 +1050,7 @@ ParticleSystem:
         m_RotationOrder: 4
     z:
       serializedVersion: 2
-      minMaxState: 1
+      minMaxState: 2
       scalar: 1
       minScalar: 1
       maxCurve:
@@ -4732,7 +4732,7 @@ GameObject:
   - component: {fileID: 198349147568493502}
   - component: {fileID: 199838715979905174}
   m_Layer: 0
-  m_Name: Explosion_Large_FX
+  m_Name: Explosion_Gigantic_FX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5667,7 +5667,7 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 1
-      scalar: 0.3
+      scalar: 0.5003742
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -10315,7 +10315,7 @@ ParticleSystem:
     curve:
       serializedVersion: 2
       minMaxState: 1
-      scalar: 0.3
+      scalar: 0.96346855
       minScalar: 1
       maxCurve:
         serializedVersion: 2

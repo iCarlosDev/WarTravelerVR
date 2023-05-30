@@ -268,10 +268,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -328,7 +341,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!1001 &33521766
 PrefabInstance:
@@ -337,6 +351,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -397,7 +419,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!1 &36526838
 GameObject:
@@ -725,6 +753,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -785,7 +821,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (20)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!4 &87587010 stripped
 Transform:
@@ -818,6 +860,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -878,7 +928,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (22)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!1001 &104047083
 PrefabInstance:
@@ -887,10 +943,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -947,7 +1016,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!4 &150135182 stripped
 Transform:
@@ -1013,6 +1083,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1073,7 +1151,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!1001 &175654063
 PrefabInstance:
@@ -1082,6 +1166,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1142,7 +1234,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (14)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!1001 &187020382
 PrefabInstance:
@@ -1151,10 +1249,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -1211,7 +1322,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!1001 &189448983
 PrefabInstance:
@@ -1702,6 +1814,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -1762,7 +1882,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (12)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!1 &249104239
 GameObject:
@@ -2205,6 +2331,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2265,7 +2399,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (18)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!4 &297656755 stripped
 Transform:
@@ -2280,10 +2420,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -2340,7 +2493,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!1001 &300962198
 PrefabInstance:
@@ -2349,6 +2503,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2409,7 +2571,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!1001 &302896342
 PrefabInstance:
@@ -2765,6 +2933,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -2825,7 +3001,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!1001 &370325448
 PrefabInstance:
@@ -3041,10 +3223,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -3101,7 +3296,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!1001 &395187560
 PrefabInstance:
@@ -3347,7 +3543,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 7262065554530995711, guid: e88a461ba02efb446aff751680feddd7,
     type: 2}
   m_audioClip: {fileID: 8300000, guid: b932c59bb15652048b2658da0686bd4e, type: 3}
-  m_PlayOnAwake: 0
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -3502,10 +3698,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -3562,7 +3771,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!4 &465436507 stripped
 Transform:
@@ -3776,6 +3986,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -3836,7 +4054,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (23)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!4 &531153156 stripped
 Transform:
@@ -4201,6 +4425,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -4261,7 +4493,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (21)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!1 &568231810
 GameObject:
@@ -4609,7 +4847,7 @@ PrefabInstance:
     - target: {fileID: 7946591206531314858, guid: ede23d2d050410244895cbb58390eead,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7946591206531314858, guid: ede23d2d050410244895cbb58390eead,
         type: 3}
@@ -4796,10 +5034,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -4856,7 +5107,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!1001 &672454609
 PrefabInstance:
@@ -4997,10 +5249,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -5057,7 +5322,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!4 &689363511 stripped
 Transform:
@@ -5135,10 +5401,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (10)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -5195,7 +5474,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!1001 &740138625
 PrefabInstance:
@@ -5204,6 +5484,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -5264,7 +5552,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!1001 &741506079
 PrefabInstance:
@@ -5273,10 +5567,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -5333,7 +5640,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!1 &747910023
 GameObject:
@@ -5489,10 +5797,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -5549,7 +5870,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!4 &792325394 stripped
 Transform:
@@ -5633,10 +5955,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (16)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -5693,7 +6028,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!1001 &814400223
 PrefabInstance:
@@ -5702,10 +6038,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -5762,7 +6111,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!1 &819569697
 GameObject:
@@ -6467,10 +6817,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -6527,7 +6890,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!4 &900569685 stripped
 Transform:
@@ -6945,6 +7309,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -7005,7 +7377,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (11)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!1001 &943127889
 PrefabInstance:
@@ -7164,6 +7542,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -7224,7 +7610,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (13)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!1001 &953161597
 PrefabInstance:
@@ -7359,6 +7751,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -7419,7 +7819,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (17)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!4 &963731608 stripped
 Transform:
@@ -7440,10 +7846,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -7500,7 +7919,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!1001 &998123511
 PrefabInstance:
@@ -8378,10 +8798,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -8438,7 +8871,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!4 &1105448395 stripped
 Transform:
@@ -9114,10 +9548,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -9174,7 +9621,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!1001 &1183560870
 PrefabInstance:
@@ -9183,6 +9631,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -9243,7 +9699,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (16)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!4 &1192777294 stripped
 Transform:
@@ -9657,17 +10119,17 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
   shallowColor: {r: 0, g: 0.7725491, b: 0.62352943, a: 0.5019608}
-  deepColor: {r: 0.01176471, g: 0.28606334, b: 0.50980073, a: 1}
+  deepColor: {r: 0.01176471, g: 0.28605562, b: 0.50980073, a: 1}
   colorDepth: 0.84
-  horizonColor: {r: 0, g: 0.22723985, b: 0.8, a: 1}
+  horizonColor: {r: 0, g: 0.22723216, b: 0.8, a: 1}
   horizonDistance: 20
   shoreFade: 1
-  shoreColor: {r: 0, g: 0.98039216, b: 0.30174965, a: 0}
+  shoreColor: {r: 0, g: 0.98039216, b: 0.30174193, a: 0}
   shoreStrength: 0
   shoreBlend: 1
   shoreDepth: 0.74
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.20372143, g: 0.30959272, b: 0.517647, a: 1}
+  underwaterColor: {r: 0.20371413, g: 0.30958503, b: 0.517647, a: 1}
   underwaterColorStrength: 1
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: d3b0d77dfe711a04c8ff18ecc260aa66, type: 3}
@@ -10500,10 +10962,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -10560,7 +11035,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!1 &1373292356
 GameObject:
@@ -11334,7 +11810,7 @@ PrefabInstance:
     - target: {fileID: 8894807806642966501, guid: c03e511c352b6da4a8c9ea63e048584d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8894807806642966501, guid: c03e511c352b6da4a8c9ea63e048584d,
         type: 3}
@@ -11429,6 +11905,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -11489,7 +11973,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!4 &1549830881 stripped
 Transform:
@@ -11817,10 +12307,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -11877,7 +12380,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!1001 &1608631696
 PrefabInstance:
@@ -12063,6 +12567,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -12123,7 +12635,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!1001 &1655395318
 PrefabInstance:
@@ -12488,7 +13006,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!4 &1716765378 stripped
 Transform:
@@ -12503,6 +13027,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -12563,7 +13095,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!4 &1723974356 stripped
 Transform:
@@ -12869,6 +13407,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -12929,7 +13475,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (25)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!1 &1774935027
 GameObject:
@@ -13885,6 +14437,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -13945,7 +14505,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!4 &1874441697 stripped
 Transform:
@@ -14023,6 +14589,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -14083,7 +14657,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (19)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!4 &1891912547 stripped
 Transform:
@@ -14388,10 +14968,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -14448,7 +15041,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!1001 &1979168726
 PrefabInstance:
@@ -14526,10 +15120,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (20)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -14586,7 +15193,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!1 &1998054912
 GameObject:
@@ -14897,6 +15505,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -14957,7 +15573,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (15)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!4 &2009220670 stripped
 Transform:
@@ -15191,10 +15813,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (23)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -15251,7 +15886,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!1 &2057183468
 GameObject:
@@ -15527,10 +16163,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (25)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -15587,7 +16236,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!1 &2095538043
 GameObject:
@@ -15642,10 +16292,23 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1891912556, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
       propertyPath: m_Name
       value: SM_Veh_Plane_German_01 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7522013916104446774, guid: efee8a0457a5719408d3128b2a75e26b,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7525247236481785504, guid: efee8a0457a5719408d3128b2a75e26b,
         type: 3}
@@ -15702,7 +16365,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7517047593889759744, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: efee8a0457a5719408d3128b2a75e26b, type: 3}
 --- !u!1 &2113927080
 GameObject:
@@ -16086,6 +16750,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1154543984}
     m_Modifications:
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: MaxDistance
+      value: 181.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 262228674, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8580590680410198288, guid: ab6eb9ce480d69241af4ca949f25256f,
         type: 3}
       propertyPath: m_RootOrder
@@ -16146,7 +16818,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: SM_Veh_Plane_German_02 (24)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8582842196623227850, guid: ab6eb9ce480d69241af4ca949f25256f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 4502147499677468075, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ab6eb9ce480d69241af4ca949f25256f, type: 3}
 --- !u!1001 &2357747146307524508
 PrefabInstance:

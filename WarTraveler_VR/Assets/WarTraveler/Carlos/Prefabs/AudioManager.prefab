@@ -47,8 +47,9 @@ MonoBehaviour:
   sounds:
   - name: MachineGunShoot
     _groupTypeEnum: 1
-    clip: {fileID: 8300000, guid: aa7e549f1e9f6e74486970b81e54789a, type: 3}
-    volume: 1
-    pitch: 0.7
+    clip: {fileID: 8300000, guid: 0938ebcd4c09a8f48bbf0c219ee3c786, type: 3}
+    volume: 0.224
+    pitch: 1
     loop: 0
+    spatialBlend: 0
     source: {fileID: 0}

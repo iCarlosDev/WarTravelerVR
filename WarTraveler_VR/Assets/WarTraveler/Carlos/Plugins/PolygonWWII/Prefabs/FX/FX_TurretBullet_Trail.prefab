@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3350267321737055543}
   - component: {fileID: 4325488919570871626}
   - component: {fileID: 7802034218081872626}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: FX_TurretBullet_Trail
   m_TagString: Bullet
   m_Icon: {fileID: 0}

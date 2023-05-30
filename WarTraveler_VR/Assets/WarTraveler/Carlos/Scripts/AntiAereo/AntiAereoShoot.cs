@@ -3,6 +3,7 @@ using UnityEngine;
 public class AntiAereoShoot : MonoBehaviour
 {
     [SerializeField] private Turret_XR_GrabInteractableTwoHanded _turretXrGrabInteractableTwoHanded;
+    [SerializeField] private AntiAereoAnimations _antiAereoAnimations;
 
     [SerializeField] private XR_InputDetector _leftInputDetector;
     [SerializeField] private XR_InputDetector _rightInputDetector;
@@ -46,6 +47,7 @@ public class AntiAereoShoot : MonoBehaviour
     private void Awake()
     {
         _turretXrGrabInteractableTwoHanded = GetComponent<Turret_XR_GrabInteractableTwoHanded>();
+        _antiAereoAnimations = GetComponent<AntiAereoAnimations>();
         
         _leftInputDetector = _turretXrGrabInteractableTwoHanded.LeftController.GetComponent<XR_InputDetector>();
         _rightInputDetector = _turretXrGrabInteractableTwoHanded.RightController.GetComponent<XR_InputDetector>();
@@ -89,17 +91,10 @@ public class AntiAereoShoot : MonoBehaviour
         {
             _isLeftOverheated = true;
         }
-        else if (_currentLeftTimeShooting <= 0f)
+        else if (_currentLeftTimeShooting <= _maxTimeShooting/2)
         {
             _isLeftOverheated = false;
         }
-        
-        /*_isLeftOverheated = _currentLeftTimeShooting switch
-        {
-            >= 7f => true,
-            <= 5f => false,
-            _ => _isLeftOverheated
-        };*/
     }
 
     private void CheckRightMachineGunOverheat()
@@ -119,22 +114,20 @@ public class AntiAereoShoot : MonoBehaviour
         {
             _isRightOverheated = true;
         }
-        else if (_currentRightTimeShooting <= 0f)
+        else if (_currentRightTimeShooting <= _maxTimeShooting/2)
         {
             _isRightOverheated = false;
         }
-        
-        /*_isRightOverheated = _currentRightTimeShooting switch
-        {
-            >= 7f => true,
-            <= 5f => false,
-            _ => _isRightOverheated
-        };*/
     }
     
     private bool LeftMachineGunShoot()
     {
-        if (_isLeftOverheated) return false;
+        if (_isLeftOverheated)
+        {
+            _antiAereoAnimations.SetBoolLeftAmmoAnimation(false);
+            _antiAereoAnimations.SetBoolLeftMachineGun(false);
+            return false;
+        }
 
         if (_leftInputDetector.IsTriggering && _turretXrGrabInteractableTwoHanded.IsLeftGrab)
         {
@@ -148,17 +141,27 @@ public class AntiAereoShoot : MonoBehaviour
 
                 _leftFireRateTime = Time.time + _fireRate;
                 
+                _antiAereoAnimations.SetBoolLeftAmmoAnimation(true);
+                _antiAereoAnimations.SetBoolLeftMachineGun(true);
+                
                 AudioManager.instance.PlayOneShot("MachineGunShoot");
             }
             return true;
         }
         
+        _antiAereoAnimations.SetBoolLeftAmmoAnimation(false);
+        _antiAereoAnimations.SetBoolLeftMachineGun(false);
         return false;
     }
 
     private bool RightMachineGunShoot()
     {
-        if (_isRightOverheated) return false;
+        if (_isRightOverheated)
+        {
+            _antiAereoAnimations.SetBoolRightAmmoAnimation(false);
+            _antiAereoAnimations.SetBoolRightMachineGun(false);
+            return false;
+        }
         
         if (_rightInputDetector.IsTriggering && _turretXrGrabInteractableTwoHanded.IsRightGrab)
         {
@@ -171,6 +174,9 @@ public class AntiAereoShoot : MonoBehaviour
                 _rightInputDetector.HapticFeedBack.ControllerVibration(1f, 0.1f);
 
                 _rightFireRateTime = Time.time + _fireRate;
+                
+                _antiAereoAnimations.SetBoolRightAmmoAnimation(true);
+                _antiAereoAnimations.SetBoolRightMachineGun(true);
 
                 if (!_leftInputDetector.IsTriggering && !_isLeftOverheated)
                 {
@@ -180,6 +186,8 @@ public class AntiAereoShoot : MonoBehaviour
             return true;
         }
 
+        _antiAereoAnimations.SetBoolRightAmmoAnimation(false);
+        _antiAereoAnimations.SetBoolRightMachineGun(false);
         return false;
     }
 
@@ -190,6 +198,7 @@ public class AntiAereoShoot : MonoBehaviour
         if (_leftInputDetector.PrimaryButton.action.triggered && _turretXrGrabInteractableTwoHanded.IsLeftGrab)
         {
             ChooseCanonShoot(_firstCanon, _firstCanonParticleSystem);
+            _antiAereoAnimations.SetTriggerFirstCanon();
             _readyToShootFirstCanon = false;
             Invoke(nameof(SetReadyToShootFirstCanon), 3f);
         }
@@ -202,6 +211,7 @@ public class AntiAereoShoot : MonoBehaviour
         if (_rightInputDetector.PrimaryButton.action.triggered && _turretXrGrabInteractableTwoHanded.IsRightGrab)
         {
             ChooseCanonShoot(_secondCanon, _secondCanonParticleSystem);
+            _antiAereoAnimations.SetTriggerSecondCanon();
             _readyToShootSecondCanon = false;
             Invoke(nameof(SetReadyToShootSecondCanon), 3f);
         }
