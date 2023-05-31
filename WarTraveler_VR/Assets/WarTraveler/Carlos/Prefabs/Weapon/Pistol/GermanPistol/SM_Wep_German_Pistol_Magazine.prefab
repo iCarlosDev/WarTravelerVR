@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &3587361154141242235
+--- !u!1 &3028431675754003719
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,51 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3587361154141242232}
-  - component: {fileID: 3587361154141242233}
-  - component: {fileID: 3587361154141242234}
-  - component: {fileID: 1581407121}
-  - component: {fileID: 1581407120}
-  - component: {fileID: 1581407119}
-  - component: {fileID: 1581407118}
+  - component: {fileID: 5030378783794778096}
+  - component: {fileID: 2170554086584417840}
+  - component: {fileID: 3325181892786319659}
+  - component: {fileID: 6358311275211812268}
+  - component: {fileID: 8497269027512873051}
+  - component: {fileID: 6358311275211812269}
+  - component: {fileID: 8544506612273948559}
   m_Layer: 7
-  m_Name: SM_Wep_American_Pistol_01_Mag
+  m_Name: SM_Wep_German_Pistol_Magazine
   m_TagString: WeaponMagazine
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3587361154141242232
+--- !u!4 &5030378783794778096
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3587361154141242235}
+  m_GameObject: {fileID: 3028431675754003719}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 8124083171337719399}
+  - {fileID: 7862889537393598677}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &3587361154141242233
+--- !u!33 &2170554086584417840
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3587361154141242235}
-  m_Mesh: {fileID: 4300002, guid: bd0868ebbb4422a45b4d235c3264d892, type: 3}
---- !u!23 &3587361154141242234
+  m_GameObject: {fileID: 3028431675754003719}
+  m_Mesh: {fileID: 4300006, guid: ff268b57a6bc9cb49bc68dcff89ebfe1, type: 3}
+--- !u!23 &3325181892786319659
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3587361154141242235}
+  m_GameObject: {fileID: 3028431675754003719}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -88,27 +88,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1581407121
+--- !u!64 &6358311275211812268
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3587361154141242235}
+  m_GameObject: {fileID: 3028431675754003719}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 4300002, guid: bd0868ebbb4422a45b4d235c3264d892, type: 3}
---- !u!54 &1581407120
+  m_Mesh: {fileID: 4300006, guid: ff268b57a6bc9cb49bc68dcff89ebfe1, type: 3}
+--- !u!54 &8497269027512873051
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3587361154141242235}
+  m_GameObject: {fileID: 3028431675754003719}
   serializedVersion: 2
   m_Mass: 2
   m_Drag: 0
@@ -118,13 +118,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
---- !u!114 &1581407119
+--- !u!114 &6358311275211812269
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3587361154141242235}
+  m_GameObject: {fileID: 3028431675754003719}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fad5a914cc842c144a4119c9e5bfee9a, type: 3}
@@ -136,7 +136,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 8
+    m_Bits: 32
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_CustomReticle: {fileID: 0}
@@ -253,13 +253,13 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
---- !u!114 &1581407118
+--- !u!114 &8544506612273948559
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3587361154141242235}
+  m_GameObject: {fileID: 3028431675754003719}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2adf19f901f54184ca08dfda7a0edc58, type: 3}
@@ -272,7 +272,7 @@ MonoBehaviour:
   _isInserted: 0
   _magazineCapacity: 11
   _currentAmmoInMagazine: 0
---- !u!1 &6911217410871561620
+--- !u!1 &7373880175060810351
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -280,46 +280,47 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8124083171337719399}
-  - component: {fileID: 6762015597483032998}
-  - component: {fileID: 2958131143189790339}
+  - component: {fileID: 7862889537393598677}
+  - component: {fileID: 6535079072349040496}
+  - component: {fileID: 9031323103911009210}
+  - component: {fileID: 5566613383350516999}
   m_Layer: 0
-  m_Name: SM_Wep_American_Pistol_01_Bullet
+  m_Name: PistolBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8124083171337719399
+--- !u!4 &7862889537393598677
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6911217410871561620}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.0462, z: 0.016}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_GameObject: {fileID: 7373880175060810351}
+  m_LocalRotation: {x: 0.2588186, y: -0.000000014901159, z: 0.00000004470348, w: 0.96592593}
+  m_LocalPosition: {x: -0, y: 0.0617, z: 0.0361}
+  m_LocalScale: {x: 1.535523, y: 1.535523, z: 1.535523}
+  m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 3587361154141242232}
+  m_Father: {fileID: 5030378783794778096}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &6762015597483032998
+  m_LocalEulerAnglesHint: {x: 30, y: 0, z: 0}
+--- !u!33 &6535079072349040496
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6911217410871561620}
-  m_Mesh: {fileID: -4221684462843859264, guid: bd0868ebbb4422a45b4d235c3264d892, type: 3}
---- !u!23 &2958131143189790339
+  m_GameObject: {fileID: 7373880175060810351}
+  m_Mesh: {fileID: -4221684462843859264, guid: a0ae7122f85a3e64d8550270a8597c68, type: 3}
+--- !u!23 &9031323103911009210
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6911217410871561620}
+  m_GameObject: {fileID: 7373880175060810351}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -333,7 +334,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 22af96f9ba68eb54b9ce79bdf6661284, type: 2}
+  - {fileID: -4597107667637640440, guid: a0ae7122f85a3e64d8550270a8597c68, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -355,3 +356,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &5566613383350516999
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7373880175060810351}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -4221684462843859264, guid: a0ae7122f85a3e64d8550270a8597c68, type: 3}

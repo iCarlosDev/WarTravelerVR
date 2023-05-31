@@ -138,8 +138,8 @@ MonoBehaviour:
       m_Calls: []
   m_Handle: {fileID: 0}
   m_Value: 1
-  m_MaxPosition: -0.019
-  m_MinPosition: -0.14
+  m_MaxPosition: -0
+  m_MinPosition: -0.12
   m_OnValueChange:
     m_PersistentCalls:
       m_Calls: []
@@ -286,7 +286,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 757307232}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.08469999, z: 0.07}
+  m_LocalPosition: {x: -0, y: -0.085, z: 0.003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -317,7 +317,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 924093348}
   m_LocalRotation: {x: -0, y: -0, z: 0.38268322, w: 0.9238797}
-  m_LocalPosition: {x: 0.008100033, y: 0.0058496, z: -0.010500021}
+  m_LocalPosition: {x: 0.0081, y: 0.0058, z: 0.0396}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -10561,7 +10561,7 @@ MonoBehaviour:
   _hasMagazineIn: 0
   _bulletPrefab: {fileID: 1003485616670832, guid: fef57ce557292384c8200652fd1ac641,
     type: 3}
-  _bulletShellPrefab: {fileID: 1327677523374358631, guid: bd3e9ae0f16328245b31b6c32ef0beb9,
+  _bulletShellPrefab: {fileID: 6316652104979885144, guid: 288f80a59009ba04fbeaaa11bcb0c644,
     type: 3}
   _magazine: {fileID: 0}
   _hasBreechBullet: 0
