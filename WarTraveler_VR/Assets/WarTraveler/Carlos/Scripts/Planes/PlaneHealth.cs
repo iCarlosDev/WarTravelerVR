@@ -75,6 +75,7 @@ public class PlaneHealth : MonoBehaviour
         _rigidbody.AddTorque(Vector3.left * _leftTorqueImpulse, ForceMode.Impulse);
     }
 
+    [ContextMenu("Destroy Plane")]
     private void DestroyPlane()
     {
         if (!_meshRenderer.enabled) return;

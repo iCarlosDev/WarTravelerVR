@@ -3,8 +3,10 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private int _bulletDamage;
+    [SerializeField] private float _verticalOffset;
 
     [SerializeField] private ParticleSystem _planeHitParticleSystem;
+    [SerializeField] private ParticleSystem _waterSplashParticleSystem;
 
     public int BulletDamage => _bulletDamage;
 
@@ -28,4 +30,16 @@ public class Bullet : MonoBehaviour
         
         Destroy(gameObject);
     }
+
+    /*private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Mar"))
+        {
+            Vector3 offset = new Vector3(0f, _verticalOffset, 0f);
+            
+            ParticleSystem particleSystem = Instantiate(_waterSplashParticleSystem, transform.position + offset, Quaternion.identity);
+            particleSystem.Play();
+            particleSystem.transform.parent = null;
+        }
+    }*/
 }

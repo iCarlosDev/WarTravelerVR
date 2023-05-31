@@ -178,7 +178,7 @@ public class AntiAereoShoot : MonoBehaviour
                 _antiAereoAnimations.SetBoolRightAmmoAnimation(true);
                 _antiAereoAnimations.SetBoolRightMachineGun(true);
 
-                if (!_leftInputDetector.IsTriggering && !_isLeftOverheated)
+                if (!LeftMachineGunShoot())
                 {
                     AudioManager.instance.PlayOneShot("MachineGunShoot");
                 }

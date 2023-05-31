@@ -149,5 +149,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletDamage: 25
+  _verticalOffset: 2
   _planeHitParticleSystem: {fileID: 198753536921840570, guid: 2938def9583039b498280fae52bf6fd4,
+    type: 3}
+  _waterSplashParticleSystem: {fileID: 198545204457678188, guid: 99e758af330618c49b02d1e99f19db50,
     type: 3}
