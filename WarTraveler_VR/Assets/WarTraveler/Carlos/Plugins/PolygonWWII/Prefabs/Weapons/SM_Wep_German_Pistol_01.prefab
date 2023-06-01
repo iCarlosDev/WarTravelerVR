@@ -1416,7 +1416,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1536861209}
         m_TargetAssemblyTypeName: Weapon, Assembly-CSharp
-        m_MethodName: Shoot
+        m_MethodName: ShootSemiAutomatic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1534,10 +1534,9 @@ MonoBehaviour:
     type: 3}
   _fireRate: 0
   _recoil: 0
-  _shootForce: 100
+  _shootForce: 550
   _bulletShellExitForce: 0
-  _isSemiAutomatic: 0
-  _hasMagazineIn: 0
+  _isSemiAutomatic: 1
   _bulletPrefab: {fileID: 1003485616670832, guid: fef57ce557292384c8200652fd1ac641,
     type: 3}
   _bulletShellPrefab: {fileID: 6316652104979885144, guid: 288f80a59009ba04fbeaaa11bcb0c644,

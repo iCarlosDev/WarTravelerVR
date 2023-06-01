@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 using Random = UnityEngine.Random;
 
 public abstract class Weapon : MonoBehaviour
@@ -18,6 +19,7 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] protected float _shootForce;
     [SerializeField] protected float _bulletShellExitForce;
     [SerializeField] private bool _isSemiAutomatic;
+    private float _fireRateTime;
 
     [Header("--- WEAPON AMMO ---")]
     [Space(10)]
@@ -66,9 +68,34 @@ public abstract class Weapon : MonoBehaviour
                 DropMagazine();   
             }
         }
-    }   
+
+        if (_isSemiAutomatic) return;
+        
+        if (_xrInputDetector != null && _xrInputDetector.IsTriggering)
+        {
+            ShootAutomatic(); 
+        }
+    }
+
+    public void ShootSemiAutomatic(ActivateEventArgs args)
+    {
+        if (!_isSemiAutomatic) return;
+        
+        if (!args.interactorObject.transform.CompareTag(_xrInputDetector.tag)) return;
+        
+        Shoot();
+    }
+
+    private void ShootAutomatic()
+    {
+        if (Time.time > _fireRateTime)
+        {
+            Shoot();
+            _fireRateTime = Time.time + _fireRate;
+        }
+    }
     
-    public void Shoot()
+    private void Shoot()
     {
         if (!_hasBreechBullet) return;
 

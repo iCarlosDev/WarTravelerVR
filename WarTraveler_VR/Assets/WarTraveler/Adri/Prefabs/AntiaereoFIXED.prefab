@@ -1872,7 +1872,7 @@ GameObject:
   - component: {fileID: 6416195864377349960}
   - component: {fileID: 5628034803357887821}
   - component: {fileID: 919706251}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Cuerpo
   m_TagString: BulletNoCollisionable
   m_Icon: {fileID: 0}
@@ -2451,7 +2451,7 @@ GameObject:
   - component: {fileID: 1944957636}
   - component: {fileID: 1944957638}
   - component: {fileID: 59707829}
-  m_Layer: 11
+  m_Layer: 0
   m_Name: CanonParent
   m_TagString: BulletNoCollisionable
   m_Icon: {fileID: 0}
