@@ -2451,7 +2451,7 @@ GameObject:
   - component: {fileID: 1944957636}
   - component: {fileID: 1944957638}
   - component: {fileID: 59707829}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: CanonParent
   m_TagString: BulletNoCollisionable
   m_Icon: {fileID: 0}

@@ -11,15 +11,14 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] private WeaponMagazineDetector _weaponMagazineDetector;
     
     [Header("--- WEAPON STATS ---")] 
-    [Space(10)] 
+    [Space(10)]
     [SerializeField] private GameObject _magazinePrefab;
     [SerializeField] private float _fireRate;
     [SerializeField] private float _recoil;
     [SerializeField] protected float _shootForce;
     [SerializeField] protected float _bulletShellExitForce;
     [SerializeField] private bool _isSemiAutomatic;
-    [SerializeField] protected bool _hasMagazineIn;
-    
+
     [Header("--- WEAPON AMMO ---")]
     [Space(10)]
     [SerializeField] protected GameObject _bulletPrefab;
@@ -67,7 +66,7 @@ public abstract class Weapon : MonoBehaviour
                 DropMagazine();   
             }
         }
-    }
+    }   
     
     public void Shoot()
     {

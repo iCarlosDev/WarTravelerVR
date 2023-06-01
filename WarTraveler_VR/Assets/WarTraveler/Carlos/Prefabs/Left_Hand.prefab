@@ -42,6 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8266815646185605591}
   - component: {fileID: 4592242467495564551}
+  - component: {fileID: 8564808010664154278}
   m_Layer: 0
   m_Name: Hand_L_Mesh
   m_TagString: Untagged
@@ -129,6 +130,20 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.1107192, y: -0.022621058, z: 0.018868074}
     m_Extent: {x: 0.11506825, y: 0.051537417, z: 0.10332699}
   m_DirtyAABB: 0
+--- !u!64 &8564808010664154278
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2842315282900526704}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 8953488648805078029, guid: 5561f723fc2526f46a126f48284dd1fb, type: 3}
 --- !u!1 &3005808062572750839
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,7 +410,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7249135839789775128}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Left_Hand
   m_TagString: LeftHand
   m_Icon: {fileID: 0}
