@@ -1007,7 +1007,7 @@ Animator:
   m_GameObject: {fileID: 1626846198958120}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1252c2e76de8eaf42ad98fb010533104, type: 2}
+  m_Controller: {fileID: 9100000, guid: 14f88de2e4f95ea4a9d1f61a106fdcf7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1195,6 +1195,8 @@ GameObject:
   - component: {fileID: 33241103728087198}
   - component: {fileID: 23854857838592558}
   - component: {fileID: 64161553455893386}
+  - component: {fileID: -238696086697645873}
+  - component: {fileID: -4434357352091451810}
   m_Layer: 0
   m_Name: SM_Veh_American_Halftrack_01
   m_TagString: Untagged
@@ -1302,6 +1304,43 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 43889767491516064, guid: 602373674d891a74495170baf51d4e1f, type: 2}
+--- !u!195 &-238696086697645873
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690419524236544}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 3.657815
+  m_Speed: 5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 5.123235
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!114 &-4434357352091451810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1690419524236544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 840d22a3e7de78843b3d679e50f6dc38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  waypointIndex: 0
+  NavMeshAgent: {fileID: 0}
 --- !u!1 &1806433719902670
 GameObject:
   m_ObjectHideFlags: 0
@@ -1645,7 +1684,7 @@ Animator:
   m_GameObject: {fileID: 1964953908159584}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f9fd5afbbe955a2428dd9bff0cecde3e, type: 2}
+  m_Controller: {fileID: 9100000, guid: a437e24fcbf7de241acbf9a4132b04f3, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
