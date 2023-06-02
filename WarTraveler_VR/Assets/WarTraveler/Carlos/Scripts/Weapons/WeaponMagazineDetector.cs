@@ -45,6 +45,7 @@ public class WeaponMagazineDetector : MonoBehaviour
     {
         _magazine = other.GetComponent<XR_TriggerGrabbable>();
 
+        //Si el cargador y el detector de cargador no tienen la misma layer no podrémos usarlo;
         if (_xrSlider.interactionLayers.value != _magazine.interactionLayers.value)
         {
             _magazine = null;
@@ -52,13 +53,14 @@ public class WeaponMagazineDetector : MonoBehaviour
         }
         
         Magazine magazine = _magazine.GetComponent<Magazine>();
+
+        magazine.IsBeingInserted = true;
         
         _xrInputDetector = _magazine.firstInteractorSelecting.transform.GetComponent<XR_InputDetector>();
         _xrInputDetector.DropTriggeredObject();
         
         magazine.Collider.isTrigger = true;
         magazine.Rigidbody.isKinematic = true;
-        magazine.IsBeingInserted = true;
 
         _magazine.transform.parent = transform;
         _magazine.transform.localPosition = Vector3.zero;

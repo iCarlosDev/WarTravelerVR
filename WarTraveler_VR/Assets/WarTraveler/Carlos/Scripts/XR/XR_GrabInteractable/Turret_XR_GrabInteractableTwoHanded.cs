@@ -99,6 +99,8 @@ public class Turret_XR_GrabInteractableTwoHanded : XRGrabInteractable
     /// <param name="args"></param>
     private void ControllerGrabCheck(SelectEnterEventArgs args)
     {
+        PlayerScriptStorage playerScriptStorage = args.interactorObject.transform.GetComponentInParent<PlayerScriptStorage>();
+        
         if (args.interactorObject.transform.CompareTag("LeftHand"))
         {
             _leftHandPose.SetActive(true);
@@ -109,6 +111,11 @@ public class Turret_XR_GrabInteractableTwoHanded : XRGrabInteractable
             _rightHandPose.SetActive(true);
             _isRightGrab = true;
         }
+
+        if (playerScriptStorage != null)
+        {
+            playerScriptStorage.TransitionsManager.DisablePlayerMovement();
+        }
     }
 
     /// <summary>
@@ -117,6 +124,8 @@ public class Turret_XR_GrabInteractableTwoHanded : XRGrabInteractable
     /// <param name="args"></param>
     private void ControllerExitCheck(SelectExitEventArgs args)
     {
+        PlayerScriptStorage playerScriptStorage = args.interactorObject.transform.GetComponentInParent<PlayerScriptStorage>();
+        
         if (args.interactorObject.transform.CompareTag("LeftHand"))
         {
             _leftHandPose.SetActive(false);
@@ -126,6 +135,14 @@ public class Turret_XR_GrabInteractableTwoHanded : XRGrabInteractable
         {
             _rightHandPose.SetActive(false);
             _isRightGrab = false;
+        }
+
+        if (playerScriptStorage != null)
+        {
+            if (!_isLeftGrab && !_isRightGrab)
+            {
+                playerScriptStorage.TransitionsManager.EnablePlayerMovement();
+            }
         }
     }
 
@@ -140,7 +157,7 @@ public class Turret_XR_GrabInteractableTwoHanded : XRGrabInteractable
         Quaternion targetRotation = Quaternion.LookRotation(direction, Vector3.up);
         transform.rotation = Quaternion.Lerp(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
     }
-    
+
     /// <summary>
     /// Método para controlar el objeto con la mano derecha;
     /// </summary>

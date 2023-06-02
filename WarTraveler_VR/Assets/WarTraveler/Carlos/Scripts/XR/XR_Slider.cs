@@ -145,5 +145,59 @@ namespace UnityEngine.XR.Content.Interaction
         }
         
         #endregion
+        
+        protected override void OnSelectEntered(SelectEnterEventArgs args)
+        {
+            XR_InputDetector xrInputDetector = args.interactorObject.transform.GetComponent<XR_InputDetector>();
+            if (!xrInputDetector.IsTriggering)return;
+
+            base.OnSelectEntered(args);
+        }
+
+        protected override void OnSelectEntering(SelectEnterEventArgs args)
+        {
+            XR_InputDetector xrInputDetector = args.interactorObject.transform.GetComponent<XR_InputDetector>();
+            if (!xrInputDetector.IsTriggering) return;
+      
+            base.OnSelectEntering(args);
+        }
+
+        protected override void OnSelectExited(SelectExitEventArgs args)
+        {
+            XR_InputDetector xrInputDetector = args.interactorObject.transform.GetComponent<XR_InputDetector>();
+            XR_Slider xrSlider = args.interactableObject.transform.GetComponent<XR_Slider>();
+
+            if (xrSlider != null)
+            {
+                if (xrSlider.MHandle.TryGetComponent(out Magazine sliderMagazine))
+                {
+                    if (xrInputDetector.IsTriggering && sliderMagazine.IsBeingInserted) return;
+                }
+
+                if (xrInputDetector.IsTriggering && xrSlider.CompareTag("WeaponSlide")) return;
+            }
+      
+            Debug.Log($"MAGAZINE EXITED");
+            base.OnSelectExited(args);
+        }
+
+        protected override void OnSelectExiting(SelectExitEventArgs args)
+        {
+            XR_InputDetector xrInputDetector = args.interactorObject.transform.GetComponent<XR_InputDetector>();
+            XR_Slider xrSlider = args.interactableObject.transform.GetComponent<XR_Slider>();
+
+            if (xrSlider != null)
+            {
+                if (xrSlider.MHandle.TryGetComponent(out Magazine sliderMagazine))
+                {
+                    if (xrInputDetector.IsTriggering && sliderMagazine.IsBeingInserted) return;
+                }
+
+                if (xrInputDetector.IsTriggering && xrSlider.CompareTag("WeaponSlide")) return;
+            }
+      
+            Debug.Log($"MAGAZINE EXITING");
+            base.OnSelectExiting(args);
+        }
     }
 }

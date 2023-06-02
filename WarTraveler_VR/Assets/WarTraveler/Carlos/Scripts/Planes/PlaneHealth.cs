@@ -1,10 +1,11 @@
-using System;
-using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 
 public class PlaneHealth : MonoBehaviour
 {
     [SerializeField] private GameObject _destroyedPlanePrefab;
+    [SerializeField] private AudioSource _audioSource;
+    private Coroutine SetAudioOff;
 
     [Header("--- PARTICLES ---")]
     [Space(10)]
@@ -38,6 +39,7 @@ public class PlaneHealth : MonoBehaviour
     {
         _rigidbody = GetComponent<Rigidbody>();
         _meshRenderer = GetComponent<MeshRenderer>();
+        _audioSource = GetComponent<AudioSource>();
     }
 
     private void Start()
@@ -87,6 +89,22 @@ public class PlaneHealth : MonoBehaviour
         transform.GetChild(0).gameObject.SetActive(false);
 
         Instantiate(_destroyedPlanePrefab, transform.position, transform.rotation);
+        
+        DeletePlane();
+    }
+
+    private IEnumerator SetAudioOff_Coroutine()
+    {
+        float lerpTime = 10f;
+        
+        float time = 0f;
+        
+        while (_audioSource.volume != 0)
+        {
+            _audioSource.volume = Mathf.Lerp(_audioSource.volume, 0f, time);
+            time += lerpTime * Time.deltaTime;
+            yield return null;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -112,7 +130,14 @@ public class PlaneHealth : MonoBehaviour
     {
         if (other.CompareTag("Mar"))
         {
-            Destroy(gameObject, 15f);
+            DeletePlane();
         }
+    }
+
+    private void DeletePlane()
+    {
+        SetAudioOff ??= StartCoroutine(SetAudioOff_Coroutine());
+
+        Destroy(gameObject, 15f);
     }
 }

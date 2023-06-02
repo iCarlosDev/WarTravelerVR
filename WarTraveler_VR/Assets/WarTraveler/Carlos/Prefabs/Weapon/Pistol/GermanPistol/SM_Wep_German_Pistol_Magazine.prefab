@@ -283,7 +283,6 @@ GameObject:
   - component: {fileID: 7862889537393598677}
   - component: {fileID: 6535079072349040496}
   - component: {fileID: 9031323103911009210}
-  - component: {fileID: 5566613383350516999}
   m_Layer: 0
   m_Name: PistolBullet
   m_TagString: Untagged
@@ -356,17 +355,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5566613383350516999
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7373880175060810351}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -4221684462843859264, guid: a0ae7122f85a3e64d8550270a8597c68, type: 3}

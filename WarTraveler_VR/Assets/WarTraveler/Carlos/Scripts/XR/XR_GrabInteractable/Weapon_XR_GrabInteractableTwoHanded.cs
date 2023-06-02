@@ -17,8 +17,6 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
     [SerializeField] private GameObject _firstRightHandPose;
     [SerializeField] private GameObject _secondLeftHandPose;
     [SerializeField] private GameObject _secondRightHandPose;
-    [SerializeField] private XRBaseController _leftController;
-    [SerializeField] private XRBaseController _rightController;
 
     [Header("--- OTHER ---")] 
     [Space(10)] 
@@ -45,8 +43,6 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
     protected override void Awake()
     {
         base.Awake();
-        _leftController = GameObject.FindWithTag("LeftHand").GetComponent<XRBaseController>();
-        _rightController = GameObject.FindWithTag("RightHand").GetComponent<XRBaseController>();
         _weapon = GetComponent<Weapon>();
     }
 
@@ -113,8 +109,8 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
         
         _firstGrab = true;
     }
-    
-    public void InteractableExited(SelectExitEventArgs args)
+
+    private void InteractableExited(SelectExitEventArgs args)
     {
         if (!_secondGrab)
         {
