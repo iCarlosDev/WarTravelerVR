@@ -13,12 +13,6 @@ public class PouchController : MonoBehaviour
         _camera = Camera.main;
     }
 
-    private void Start()
-    {
-        Application.targetFrameRate = 1000;
-        QualitySettings.vSyncCount = 0;
-    }
-
     // Update is called once per frame
     void Update()
     {
