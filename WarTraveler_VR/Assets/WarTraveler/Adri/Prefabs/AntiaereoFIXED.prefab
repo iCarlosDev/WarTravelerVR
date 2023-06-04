@@ -2645,6 +2645,7 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+  _boxCollider: {fileID: 0}
   _firstTransformPosition: {x: 0, y: 0, z: 0}
   _firstTransformRotation: {x: 0, y: 0, z: 0, w: 0}
   _timeToReset: 3

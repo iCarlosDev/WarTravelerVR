@@ -28,6 +28,7 @@ TagManager:
   - Socket
   - EnemyCollider
   - CanonBullet
+  - Target
   layers:
   - Default
   - TransparentFX
@@ -41,7 +42,7 @@ TagManager:
   - Bullet
   - Hand
   - Antiaereo
-  - 
+  - Target
   - 
   - 
   - 

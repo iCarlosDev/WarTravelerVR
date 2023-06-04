@@ -7,6 +7,8 @@ public class Bullet : MonoBehaviour
 
     [SerializeField] private ParticleSystem _planeHitParticleSystem;
     [SerializeField] private ParticleSystem _waterSplashParticleSystem;
+    [SerializeField] private ParticleSystem _targetImpactParticleSystem;
+    [SerializeField] private ParticleSystem _defaultImpactParticleSystem;
 
     public int BulletDamage => _bulletDamage;
 
@@ -14,6 +16,20 @@ public class Bullet : MonoBehaviour
     void Start()
     {
         Destroy(gameObject, 3f); //Destruimos el objeto después de 3s para no tener muchos instanciados;
+    }
+
+    private void SpawnParticleSystem(Collision collision ,ParticleSystem particleSystem)
+    {
+        if (collision.contacts.Length > 0)
+        {
+            ContactPoint contact = collision.contacts[0];
+            Vector3 collisionNormal = contact.normal;
+
+            Quaternion rotation = Quaternion.LookRotation(collisionNormal);
+            ParticleSystem particleSystemInstance = Instantiate(_targetImpactParticleSystem, contact.point, rotation);
+            particleSystemInstance.Play();
+            particleSystemInstance.transform.parent = null;
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -26,7 +42,22 @@ public class Bullet : MonoBehaviour
             ParticleSystem particleSystem = Instantiate(_planeHitParticleSystem, transform.position, Quaternion.identity);
             particleSystem.Play();
             particleSystem.transform.parent = null;
+            
+            Destroy(gameObject);
+            
+            return;
         }
+
+        if (collision.transform.CompareTag("Target"))
+        {
+            SpawnParticleSystem(collision, _targetImpactParticleSystem);
+            
+            Destroy(gameObject);
+            
+            return; 
+        }
+        
+        SpawnParticleSystem(collision, _defaultImpactParticleSystem);
         
         Destroy(gameObject);
     }

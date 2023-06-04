@@ -15,11 +15,27 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _antiaereoMaxScore;
     
     //GETTERS && SETTERS//
-    public int TrincherasScore => _trincherasScore;
-    public int TrincherasMaxScore => _trincherasMaxScore;
+    public int TrincherasScore
+    {
+        get => _trincherasScore;
+        set => _trincherasScore = value;
+    }
+    public int TrincherasMaxScore
+    {
+        get => _trincherasMaxScore;
+        set => _trincherasMaxScore = value;
+    }
 
-    public int AntiaereoScore => _antiaereoScore;
-    public int AntiaereoMaxScore => _antiaereoMaxScore;
+    public int AntiaereoScore
+    {
+        get => _antiaereoScore;
+        set => _antiaereoScore = value;
+    }
+    public int AntiaereoMaxScore
+    {
+        get => _antiaereoMaxScore;
+        set => _antiaereoMaxScore = value;
+    }
 
     /////////////////////////////////////////
     
@@ -50,6 +66,8 @@ public class GameManager : MonoBehaviour
         _trincherasScore = newScore;
         
         if (_trincherasScore > _trincherasMaxScore) UpdateTrincherasMaxScore();
+        
+        PlayerPrefsManager.instance.SaveData();
     }
     
     private void UpdateTrincherasMaxScore()
@@ -66,6 +84,8 @@ public class GameManager : MonoBehaviour
         _antiaereoScore = newScore;
         
         if (_antiaereoScore > _antiaereoMaxScore) UpdateAntiaereoMaxScore();
+        
+        PlayerPrefsManager.instance.SaveData();
     }
 
     private void UpdateAntiaereoMaxScore()

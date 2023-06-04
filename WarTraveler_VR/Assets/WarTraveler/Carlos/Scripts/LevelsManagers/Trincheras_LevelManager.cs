@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Trincheras_LevelManager : MonoBehaviour
@@ -12,6 +11,8 @@ public class Trincheras_LevelManager : MonoBehaviour
 
     private void Start()
     {
+        PlayerPrefsManager.instance.LoadData();
+        
         _miniAntiaereoScore.UpdateScore();
     }
 }
