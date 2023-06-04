@@ -45,12 +45,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
+  - name: LobbyTheme
+    _groupTypeEnum: 0
+    clip: {fileID: 8300000, guid: afa4a140125f64549b753a048c1ce555, type: 3}
+    volume: 0.153
+    pitch: 1
+    loop: 1
+    playOnAwake: 0
+    spatialBlend: 0
+    source: {fileID: 0}
   - name: MachineGunShoot
     _groupTypeEnum: 1
     clip: {fileID: 8300000, guid: 0938ebcd4c09a8f48bbf0c219ee3c786, type: 3}
     volume: 0.224
     pitch: 1
     loop: 0
+    playOnAwake: 0
     spatialBlend: 0
     source: {fileID: 0}
   - name: GrabWeapon
@@ -59,6 +69,7 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    playOnAwake: 0
     spatialBlend: 0
     source: {fileID: 0}
   - name: SaveWeapon
@@ -67,5 +78,6 @@ MonoBehaviour:
     volume: 1
     pitch: 1
     loop: 0
+    playOnAwake: 0
     spatialBlend: 0
     source: {fileID: 0}

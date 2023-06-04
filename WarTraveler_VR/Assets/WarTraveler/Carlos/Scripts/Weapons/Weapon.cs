@@ -124,6 +124,14 @@ public abstract class Weapon : MonoBehaviour
                 _glowBack = null;
             }
             
+            /*if (_weaponBolt.XRSlider.isSelected)
+            {
+                XRDirectInteractor xrDirectInteractor = _xrInputDetector.GetComponent<XRDirectInteractor>();
+                
+                xrDirectInteractor.interactionManager.SelectExit(xrDirectInteractor, _weaponBolt.XRSlider);
+                _weaponBolt.XRSlider.interactionManager.SelectExit(xrDirectInteractor, _weaponBolt.XRSlider);
+            }*/
+            
             _glowBack = StartCoroutine(GlowBack_Coroutine());
         }
 

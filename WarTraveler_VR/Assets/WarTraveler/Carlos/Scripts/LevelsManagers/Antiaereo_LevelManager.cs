@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using UnityEngine;
 
@@ -8,12 +9,22 @@ public class Antiaereo_LevelManager : MonoBehaviour
     [SerializeField] private PlayerScriptStorage _playerScriptStorage;
     [SerializeField] private Turret_XR_GrabInteractableTwoHanded _turretXRGrabInteractable;
 
+    [SerializeField] private Transform _playerSpawn;
+
     private void Awake()
     {
         instance = this;
 
         _playerScriptStorage = FindObjectOfType<PlayerScriptStorage>();
         _turretXRGrabInteractable = FindObjectOfType<Turret_XR_GrabInteractableTwoHanded>();
+    }
+
+    private void Start()
+    {
+        AudioManager.instance.Stop("LobbyTheme");
+        
+        _playerScriptStorage.transform.position = _playerSpawn.position;
+        _playerScriptStorage.transform.rotation = _playerSpawn.localRotation;
     }
 
     public void DropAntiaereo()
@@ -41,6 +52,7 @@ public class Antiaereo_LevelManager : MonoBehaviour
     
     public void ReturnToLobby()
     {
+        GameManager.instance.PlayerSpawnIndex = 1;
         _playerScriptStorage.TransitionsManager.Fade_IN(0);
     }
 }

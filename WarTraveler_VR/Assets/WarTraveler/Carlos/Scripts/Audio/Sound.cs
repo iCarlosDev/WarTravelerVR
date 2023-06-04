@@ -20,6 +20,8 @@ public class Sound
     public float pitch;
 
     public bool loop;
+    
+    public bool playOnAwake;
 
     [Range(0f, 1f)]
     public float spatialBlend;

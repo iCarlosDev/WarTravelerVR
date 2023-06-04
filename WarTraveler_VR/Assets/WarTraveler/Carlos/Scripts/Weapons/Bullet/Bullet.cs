@@ -3,10 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private int _bulletDamage;
-    [SerializeField] private float _verticalOffset;
 
-    [SerializeField] private ParticleSystem _planeHitParticleSystem;
-    [SerializeField] private ParticleSystem _waterSplashParticleSystem;
     [SerializeField] private ParticleSystem _targetImpactParticleSystem;
     [SerializeField] private ParticleSystem _defaultImpactParticleSystem;
 
@@ -36,17 +33,6 @@ public class Bullet : MonoBehaviour
     {
         //Si colisiona con algo que no queramos o un arma no se destruirá;
         if (collision.transform.CompareTag("BulletNoCollisionable") || collision.transform.CompareTag("Weapon")) return;
-
-        if (collision.transform.CompareTag("Avion"))
-        {
-            ParticleSystem particleSystem = Instantiate(_planeHitParticleSystem, transform.position, Quaternion.identity);
-            particleSystem.Play();
-            particleSystem.transform.parent = null;
-            
-            Destroy(gameObject);
-            
-            return;
-        }
 
         if (collision.transform.CompareTag("Target"))
         {

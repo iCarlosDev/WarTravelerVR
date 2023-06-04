@@ -4,6 +4,8 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
 
+    [SerializeField] private int _playerSpawnIndex;
+
     [Header("--- TRINCHERAS ---")]
     [Space(10)]
     [SerializeField] private int _trincherasScore;
@@ -15,6 +17,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] private int _antiaereoMaxScore;
     
     //GETTERS && SETTERS//
+    public int PlayerSpawnIndex
+    {
+        get => _playerSpawnIndex;
+        set => _playerSpawnIndex = value;
+    }
+
     public int TrincherasScore
     {
         get => _trincherasScore;
@@ -55,6 +63,8 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        PlayerPrefsManager.instance.LoadData();
+        
         Application.targetFrameRate = 1000;
         //QualitySettings.vSyncCount = 0;
     }
