@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 using Random = UnityEngine.Random;
@@ -19,6 +20,7 @@ public abstract class Weapon : MonoBehaviour
     [SerializeField] protected float _shootForce;
     [SerializeField] protected float _bulletShellExitForce;
     [SerializeField] private bool _isSemiAutomatic;
+    [SerializeField] private bool _isShooting;
     private float _fireRateTime;
 
     [Header("--- WEAPON AMMO ---")]
@@ -32,6 +34,10 @@ public abstract class Weapon : MonoBehaviour
     [Header("--- WEAPON PARTICLES ---")]
     [Space(10)]
     [SerializeField] protected ParticleSystem _particleSystem;
+    
+    [Header("--- WEAPON SOUNDS ---")]
+    [Space(10)]
+    [SerializeField] protected List<AudioSource> _audioSourcesList;
     
     [Header("--- WEAPON PARTS ---")]
     [Space(10)]
@@ -47,7 +53,12 @@ public abstract class Weapon : MonoBehaviour
         get => _xrInputDetector;
         set => _xrInputDetector = value;
     }
-    
+    public bool IsShooting
+    {
+        get => _isShooting;
+        set => _isShooting = value;
+    }
+
     //////////////////////////////////////////////////////////
 
     private void Awake()
@@ -55,6 +66,7 @@ public abstract class Weapon : MonoBehaviour
         _weaponXRGrab = GetComponent<Weapon_XR_GrabInteractableTwoHanded>();
         _weaponBolt = GetComponentInChildren<WeaponBolt>();
         _weaponMagazineDetector = GetComponentInChildren<WeaponMagazineDetector>();
+        _audioSourcesList.AddRange(GetComponents<AudioSource>());
     }
 
     private void Update()
@@ -79,10 +91,10 @@ public abstract class Weapon : MonoBehaviour
 
     public void ShootSemiAutomatic(ActivateEventArgs args)
     {
+        if (!_xrInputDetector.CompareTag(args.interactorObject.transform.tag)) return;
+
         if (!_isSemiAutomatic) return;
-        
-        if (!args.interactorObject.transform.CompareTag(_xrInputDetector.tag)) return;
-        
+
         Shoot();
     }
 
@@ -97,24 +109,32 @@ public abstract class Weapon : MonoBehaviour
     
     private void Shoot()
     {
-        if (!_hasBreechBullet) return;
+        if (!_hasBreechBullet)
+        {
+            _audioSourcesList[1].PlayOneShot(_audioSourcesList[1].clip); 
+            return;
+        }
 
         if (_hasBreechBullet)
         {
             if (_glowBack != null)
             {
                 StopCoroutine(_glowBack);
+                _weaponBolt.XRSlider.value = 0f;
                 _glowBack = null;
             }
             
             _glowBack = StartCoroutine(GlowBack_Coroutine());
         }
-        
+
         GameObject bullet = Instantiate(_bulletPrefab, _canon.position, _canon.rotation);
         bullet.GetComponent<Rigidbody>().AddForce(_canon.forward * _shootForce, ForceMode.Impulse);
         _particleSystem.Play();
+        _audioSourcesList[0].PlayOneShot(_audioSourcesList[0].clip);
+
+        _isShooting = true;
         
-        _xrInputDetector.HapticFeedBack.ControllerVibration(1, 0.1f);
+        _xrInputDetector.HapticFeedBack.ControllerVibration(1f, 0.1f);
     }
 
     private IEnumerator GlowBack_Coroutine()
@@ -123,12 +143,19 @@ public abstract class Weapon : MonoBehaviour
         
         float timeBack = 0f;
 
-        while (_weaponBolt.XRSlider.value != 0)
+        while (_weaponBolt.XRSlider.value != 0f)
         {
             _weaponBolt.XRSlider.value = Mathf.Lerp(_weaponBolt.XRSlider.value, 0f, timeBack);
 
             timeBack += lerpTime * Time.deltaTime;
             yield return null;
+        }
+
+        if (_magazine?.CurrentAmmoInMagazine == 0 || _magazine == null)
+        {
+            _weaponBolt.XRSlider.value = 0f;
+            Invoke(nameof(RecolocateWeaponBolt), 0.1f);
+            yield break;
         }
 
         float timeFront = 0f;
@@ -140,6 +167,11 @@ public abstract class Weapon : MonoBehaviour
             timeFront += lerpTime * Time.deltaTime;
             yield return null;
         }
+    }
+
+    private void RecolocateWeaponBolt()
+    {
+        _weaponBolt.XRSlider.value = 0.1f;
     }
 
     /// <summary>
@@ -177,6 +209,8 @@ public abstract class Weapon : MonoBehaviour
 
     public virtual void DropMagazine()
     {
+        _weaponMagazineDetector.AudioSourcesList[1].PlayOneShot(_weaponMagazineDetector.AudioSourcesList[1].clip);
+        
         _magazine.Collider.isTrigger = false;
         _magazine.Rigidbody.isKinematic = false;
         _magazine.transform.parent = null;

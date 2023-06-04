@@ -309,6 +309,7 @@ GameObject:
   - component: {fileID: 8646691354950355416}
   - component: {fileID: 8645899381187075276}
   - component: {fileID: 262228658}
+  - component: {fileID: 5585756130517316864}
   - component: {fileID: 8056900934760320827}
   - component: {fileID: 7448856266457934380}
   - component: {fileID: 262228674}
@@ -447,6 +448,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 48
   m_CollisionDetection: 1
+--- !u!95 &5585756130517316864
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8582842196623227850}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &8056900934760320827
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,6 +502,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _destroyedPlanePrefab: {fileID: 4926519484321089285, guid: fcd09e4b1a79ce1458b8fe70617bda8c,
     type: 3}
+  _audioSource: {fileID: 0}
   _explosionParticle: {fileID: 1661316135793608607}
   _giganticExplosionParticle: {fileID: 198349147902396637}
   _bodyExplosionParticle: {fileID: 7561128629666806179}

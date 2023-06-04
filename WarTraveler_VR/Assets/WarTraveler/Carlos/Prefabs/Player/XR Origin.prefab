@@ -58,7 +58,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 635520608}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.2627, y: 0, z: -0.0074}
+  m_LocalPosition: {x: -0.2317, y: 0, z: 0.0466}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -143,7 +143,8 @@ MonoBehaviour:
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 56263e85c238a554390212ca9318eb53,
     type: 2}
-  m_InteractableCantHoverMeshMaterial: {fileID: 0}
+  m_InteractableCantHoverMeshMaterial: {fileID: 2100000, guid: 0022767ef6516764e8b4b7613b948996,
+    type: 2}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -286,7 +287,7 @@ GameObject:
   - component: {fileID: 1310679317}
   - component: {fileID: 1310679316}
   m_Layer: 0
-  m_Name: RightBackHeavyWeaponSocket (1)
+  m_Name: RightBackHeavyWeaponSocket
   m_TagString: Socket
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -427,7 +428,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1477962246}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2627001, y: 0, z: -0.007400006}
+  m_LocalPosition: {x: 0.2317, y: 0, z: 0.0466}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -512,7 +513,8 @@ MonoBehaviour:
   m_ShowInteractableHoverMeshes: 1
   m_InteractableHoverMeshMaterial: {fileID: 2100000, guid: 56263e85c238a554390212ca9318eb53,
     type: 2}
-  m_InteractableCantHoverMeshMaterial: {fileID: 0}
+  m_InteractableCantHoverMeshMaterial: {fileID: 2100000, guid: 0022767ef6516764e8b4b7613b948996,
+    type: 2}
   m_SocketActive: 1
   m_InteractableHoverScale: 1
   m_RecycleDelayTime: 1
@@ -783,7 +785,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bd94b84cb26f1549a20e3e899164d71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerScriptStorage: {fileID: 0}
+  _playerScriptStorage: {fileID: 6898140232870884940}
   _animator: {fileID: 0}
   _sceneIndex: 0
 --- !u!1 &7913293435581933640
@@ -838,6 +840,7 @@ GameObject:
   - component: {fileID: 7913293435826657379}
   - component: {fileID: 7913293435826657406}
   - component: {fileID: 6898140232870884940}
+  - component: {fileID: 928958979}
   m_Layer: 8
   m_Name: XR Origin
   m_TagString: Untagged
@@ -1038,9 +1041,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41bdc83449650824db4d00b187af8238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actionBasedContinuousMoveProvider: {fileID: 0}
-  _actionBasedSnapTurnProvider: {fileID: 0}
-  _transitionsManager: {fileID: 0}
+  _actionBasedContinuousMoveProvider: {fileID: 7913293435826657381}
+  _actionBasedSnapTurnProvider: {fileID: 7913293435826657379}
+  _leftInputDetector: {fileID: 0}
+  _rightInputDetector: {fileID: 0}
+  _transitionsManager: {fileID: 732622221326860750}
+--- !u!114 &928958979
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7913293435826657385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdb085846474bf74f8f9d58eb19361a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerScriptStorage: {fileID: 0}
 --- !u!1 &7913293435989885602
 GameObject:
   m_ObjectHideFlags: 0
@@ -1416,6 +1434,9 @@ MonoBehaviour:
   _grabInput: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   _isGrabbing: 0
+  _joistickInput: {fileID: -8358032100899166728, guid: 0be0028c24f2a4c14a96b6aa39055933,
+    type: 3}
+  _joistickPressed: 0
   _primaryButton: {fileID: -3258976167995792, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   _primaryButtonWasPressed: 0
@@ -2024,6 +2045,9 @@ MonoBehaviour:
   _grabInput: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   _isGrabbing: 0
+  _joistickInput: {fileID: 637922521265743415, guid: 0be0028c24f2a4c14a96b6aa39055933,
+    type: 3}
+  _joistickPressed: 0
   _primaryButton: {fileID: -4094856618693597874, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   _primaryButtonWasPressed: 0

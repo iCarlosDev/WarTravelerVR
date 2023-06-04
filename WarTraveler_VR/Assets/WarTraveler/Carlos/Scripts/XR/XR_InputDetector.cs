@@ -19,6 +19,11 @@ public class XR_InputDetector : MonoBehaviour
     [SerializeField] private InputActionReference _grabInput;
     [SerializeField] private bool _isGrabbing;
     
+    [Header("--- JOISTICK BUTTON ---")]
+    [Space(10)]
+    [SerializeField] private InputActionReference _joistickInput;
+    [SerializeField] private bool _joistickPressed;
+    
     [Header("--- PRIMARY BUTTON ---")]
     [Space(10)]
     [SerializeField] private InputActionReference _primaryButton;
@@ -57,6 +62,7 @@ public class XR_InputDetector : MonoBehaviour
     }
     public bool IsTriggering => _isTriggering;
     public bool IsGrabbing => _isGrabbing;
+    public bool JoistickPressed => _joistickPressed;
     public InputActionReference PrimaryButton => _primaryButton;
     public InputActionReference SecondaryButton => _secondaryButton;
     
@@ -126,6 +132,19 @@ public class XR_InputDetector : MonoBehaviour
         else if (_grabInput.action.ReadValue<float>() <= 0.1f)
         {
             _isGrabbing = false;
+        }
+
+        #endregion
+
+        #region - JOISTICK -
+
+        if (_joistickInput.action.IsPressed())
+        {
+            _joistickPressed = true;
+        }
+        else
+        {
+            _joistickPressed = false;
         }
 
         #endregion

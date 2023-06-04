@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR.Content.Interaction;
 
@@ -11,12 +12,17 @@ public class WeaponMagazineDetector : MonoBehaviour
     [SerializeField] private float _magazineX_RotationOffset;
     [SerializeField] private bool quieroSalir;
 
+    [SerializeField] private List<AudioSource> _audioSourcesList;
+
     public XR_Slider XRSlider => _xrSlider;
+    public List<AudioSource> AudioSourcesList => _audioSourcesList;
 
     private void Awake()
     {
         _weapon = GetComponentInParent<Weapon>();
         _xrSlider = GetComponent<XR_Slider>();
+        
+        _audioSourcesList.AddRange(GetComponents<AudioSource>());
     }
 
     private void Update()
@@ -27,6 +33,9 @@ public class WeaponMagazineDetector : MonoBehaviour
             {
                 _xrInputDetector.ReleaseSlider();
                 _xrSlider.interactionManager.SelectExit(_xrSlider.firstInteractorSelecting, _xrSlider);
+
+                if (_audioSourcesList[0].isPlaying) return;
+                _audioSourcesList[0].PlayOneShot(_audioSourcesList[0].clip);
             }
             
             _weapon.InsertMagazine(_magazine.GetComponent<Magazine>());

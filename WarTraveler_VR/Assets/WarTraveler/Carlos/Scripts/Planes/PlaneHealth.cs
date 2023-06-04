@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlaneHealth : MonoBehaviour
 {
     [SerializeField] private GameObject _destroyedPlanePrefab;
+    [SerializeField] private Animator _animator;
     [SerializeField] private AudioSource _audioSource;
     private Coroutine SetAudioOff;
 
@@ -40,6 +41,7 @@ public class PlaneHealth : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody>();
         _meshRenderer = GetComponent<MeshRenderer>();
         _audioSource = GetComponent<AudioSource>();
+        _animator = GetComponent<Animator>();
     }
 
     private void Start()
@@ -75,6 +77,10 @@ public class PlaneHealth : MonoBehaviour
         _rigidbody.AddForce(transform.forward * _forceImpulse, ForceMode.Impulse);
         _rigidbody.AddTorque(Vector3.forward * _forwardTorqueImpulse, ForceMode.Impulse);
         _rigidbody.AddTorque(Vector3.left * _leftTorqueImpulse, ForceMode.Impulse);
+
+        _animator.enabled = false;
+        
+        Score.instance.AddScore(100);
     }
 
     [ContextMenu("Destroy Plane")]
@@ -118,11 +124,16 @@ public class PlaneHealth : MonoBehaviour
         {
             Die();
             DestroyPlane();
+            
+            Score.instance.AddScore(200);
         }
 
         if (collision.transform.CompareTag("Cubierta"))
         {
+            if (!_meshRenderer.enabled) return;
+            
             DestroyPlane();
+            Score.instance.AddScore(25);
         }
     }
 

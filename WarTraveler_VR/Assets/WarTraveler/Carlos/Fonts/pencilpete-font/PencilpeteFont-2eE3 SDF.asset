@@ -59,9 +59,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
   m_Name: PencilpeteFont-2eE3 SDF
   m_EditorClassIdentifier: 
-  hashCode: 0
+  hashCode: 1143291575
   material: {fileID: 6049586600869408706}
-  materialHashCode: 0
+  materialHashCode: -165796553
   m_Version: 1.1.0
   m_SourceFontFileGUID: c43a0ad9e1241e24f94e2bf7c6b52525
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: c43a0ad9e1241e24f94e2bf7c6b52525,
@@ -251,9 +251,9 @@ Material:
     - _OutlineWidth: 0
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
-    - _ScaleRatioA: 1
-    - _ScaleRatioB: 1
-    - _ScaleRatioC: 1
+    - _ScaleRatioA: 0.9
+    - _ScaleRatioB: 0.73125
+    - _ScaleRatioC: 0.73125
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0

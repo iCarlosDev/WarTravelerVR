@@ -270,7 +270,7 @@ MonoBehaviour:
   _rigidbody: {fileID: 0}
   _isBeingInserted: 0
   _isInserted: 0
-  _magazineCapacity: 11
+  _magazineCapacity: 8
   _currentAmmoInMagazine: 0
 --- !u!1 &7373880175060810351
 GameObject:

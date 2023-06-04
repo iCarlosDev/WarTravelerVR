@@ -18,6 +18,11 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
     [SerializeField] private GameObject _secondLeftHandPose;
     [SerializeField] private GameObject _secondRightHandPose;
 
+    [Header("--- CONTROLLERS ---")] 
+    [Space(10)] 
+    [SerializeField] private XR_InputDetector _leftInputDetector;
+    [SerializeField] private XR_InputDetector _rightInputDetector;
+
     [Header("--- OTHER ---")] 
     [Space(10)] 
     [SerializeField] private Weapon _weapon;
@@ -52,6 +57,20 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
         _firstRightHandPose.SetActive(false);
         _secondLeftHandPose.SetActive(false);
         _secondRightHandPose.SetActive(false);
+
+        XR_InputDetector[] inputDetectors = FindObjectsOfType<XR_InputDetector>();
+
+        foreach (XR_InputDetector inputDetector in inputDetectors)
+        {
+            if (inputDetector.CompareTag("LeftHand"))
+            {
+                _leftInputDetector = inputDetector;
+            }
+            else if (inputDetector.CompareTag("RightHand"))
+            {
+                _rightInputDetector = inputDetector;
+            }
+        }
     }
 
     protected override void OnSelectEntered(SelectEnterEventArgs args)
@@ -82,8 +101,8 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
     {
         if (!_firstGrab)
         {
-            _weapon.XRInputDetector = args.interactorObject.transform.GetComponent<XR_InputDetector>();
-
+            OnControllerEnter(args.interactorObject.transform.GetComponent<XR_InputDetector>());
+            
             if (args.interactorObject.transform.CompareTag("LeftHand"))
             { 
                 _firstLeftHandPose.SetActive(true);
@@ -131,6 +150,8 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
                     _secondRightHandPose.SetActive(false);
                     _firstRightHandPose.SetActive(true);
                 }
+                
+                OnControllerEnter(_rightInputDetector);
                 break;
 
             case "RightHand":
@@ -144,9 +165,10 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
                     _secondLeftHandPose.SetActive(false);
                     _firstLeftHandPose.SetActive(true);
                 }
+                
+                OnControllerEnter(_leftInputDetector);
                 break;
         }
-
         _secondGrab = false;
     }
 
@@ -164,8 +186,14 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
         }
     }
 
+    public void OnControllerEnter(XR_InputDetector xrInputDetector)
+    {
+        _weapon.XRInputDetector = xrInputDetector;
+    }
+
     public void OnControllerExited()
     {
         _firstGrab = false;
+        _weapon.XRInputDetector = null;
     }
 }

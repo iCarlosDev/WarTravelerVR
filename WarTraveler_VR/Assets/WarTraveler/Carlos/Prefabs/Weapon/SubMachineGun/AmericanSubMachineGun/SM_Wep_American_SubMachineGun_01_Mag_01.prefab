@@ -269,5 +269,5 @@ MonoBehaviour:
   _rigidbody: {fileID: 0}
   _isBeingInserted: 0
   _isInserted: 0
-  _magazineCapacity: 22
+  _magazineCapacity: 25
   _currentAmmoInMagazine: 0
