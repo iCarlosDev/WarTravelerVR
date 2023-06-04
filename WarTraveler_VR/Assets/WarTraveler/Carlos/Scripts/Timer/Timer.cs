@@ -2,12 +2,16 @@ using TMPro;
 using UnityEngine;
 public class Timer : MonoBehaviour
 {
+    [SerializeField] private Score _score;
+    
     [SerializeField] private float _timeRemaining = 300f;
     [SerializeField] private bool _timerIsRunning;
     [SerializeField] private TextMeshProUGUI _timerTMP;
 
     private void Awake()
     {
+        _score = FindObjectOfType<Score>();
+        
         _timerTMP = GetComponentInChildren<TextMeshProUGUI>();
     }
 
@@ -28,7 +32,10 @@ public class Timer : MonoBehaviour
         }
         else
         {
-            Debug.Log("Time has run out!");
+            Debug.Log("Time has run out!"); 
+            Antiaereo_LevelManager.instance.DropAntiaereo();
+            GameManager.instance.UpdateAntiaereoScore(_score.CurrentScore);
+
             _timeRemaining = 0;
             _timerIsRunning = false;
         }

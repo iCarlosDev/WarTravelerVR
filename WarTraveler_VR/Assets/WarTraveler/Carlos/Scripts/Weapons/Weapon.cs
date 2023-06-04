@@ -217,4 +217,12 @@ public abstract class Weapon : MonoBehaviour
         _weaponMagazineDetector.XRSlider.MHandle = null;
         _magazine = null;
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.transform.CompareTag("Untagged"))
+        {
+            _audioSourcesList[2].PlayOneShot(_audioSourcesList[2].clip);
+        }
+    }
 }

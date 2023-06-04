@@ -9,6 +9,10 @@ public class TransitionsManager : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private int _sceneIndex;
     
+    [SerializeField] private bool _inTransition;
+
+    public bool InTransition => _inTransition;
+
     private void Awake()
     {
         _animator = GetComponent<Animator>();
@@ -24,6 +28,8 @@ public class TransitionsManager : MonoBehaviour
     {
         _animator.SetTrigger("Fade_IN");
         _sceneIndex = sceneIndex;
+
+        _inTransition = true;
     }
 
     public void Fade_OUT()

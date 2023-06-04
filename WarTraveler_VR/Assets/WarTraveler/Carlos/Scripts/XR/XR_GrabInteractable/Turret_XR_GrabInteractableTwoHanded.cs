@@ -6,6 +6,8 @@ public class Turret_XR_GrabInteractableTwoHanded : XRGrabInteractable
 {
     [Space(20)] [Header("--- MY SCRIPT ---")] 
     [Space(10)] 
+    [SerializeField] private BoxCollider _boxCollider;
+    
     [SerializeField] private Vector3 _firstTransformPosition;
     [SerializeField] private Quaternion _firstTransformRotation;
     [SerializeField] private float _timeToReset;
@@ -27,6 +29,7 @@ public class Turret_XR_GrabInteractableTwoHanded : XRGrabInteractable
     [SerializeField] private bool TrackRotationByPosition;
 
     //GETTERS && SETTERS//
+    public BoxCollider BoxCollider => _boxCollider;
     public XRBaseController LeftController => _leftController;
     public XRBaseController RightController => _rightController;
     public bool IsLeftGrab => _isLeftGrab;
@@ -37,6 +40,8 @@ public class Turret_XR_GrabInteractableTwoHanded : XRGrabInteractable
     protected override void Awake()
     {
         base.Awake();
+        _boxCollider = GetComponentInChildren<BoxCollider>();
+        
         _leftController = GameObject.Find("XR Origin/Camera Offset/LeftHand Controller").GetComponent<XRBaseController>();
         _rightController = GameObject.Find("XR Origin/Camera Offset/RightHand Controller").GetComponent<XRBaseController>();
     }

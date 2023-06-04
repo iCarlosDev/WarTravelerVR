@@ -53,3 +53,19 @@ MonoBehaviour:
     loop: 0
     spatialBlend: 0
     source: {fileID: 0}
+  - name: GrabWeapon
+    _groupTypeEnum: 1
+    clip: {fileID: 8300000, guid: f2d8b5cf16277c3438b13d0a01680fff, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    source: {fileID: 0}
+  - name: SaveWeapon
+    _groupTypeEnum: 1
+    clip: {fileID: 8300000, guid: 05c22842848a54947bce6e8d94c66a17, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    spatialBlend: 0
+    source: {fileID: 0}

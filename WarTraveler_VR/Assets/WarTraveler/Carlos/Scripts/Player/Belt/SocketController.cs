@@ -17,6 +17,8 @@ public class SocketController : MonoBehaviour
         }
         
         _setWeaponToSocket = StartCoroutine(SetWeaponToSocket_Coroutine(args));
+        
+        AudioManager.instance.PlayOneShot("SaveWeapon");
     }
 
     private IEnumerator SetWeaponToSocket_Coroutine(SelectEnterEventArgs args)

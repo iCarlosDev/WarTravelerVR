@@ -4,6 +4,8 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class PlayerScriptStorage : MonoBehaviour
 {
+    [SerializeField] private CharacterController _characterController;
+    
     [SerializeField] private ActionBasedContinuousMoveProvider _actionBasedContinuousMoveProvider;
     [SerializeField] private ActionBasedSnapTurnProvider _actionBasedSnapTurnProvider;
 
@@ -11,8 +13,10 @@ public class PlayerScriptStorage : MonoBehaviour
     [SerializeField] private XR_InputDetector _rightInputDetector;
     
     [SerializeField] private TransitionsManager _transitionsManager;
-    
+
     //GETTERS && SETTERS//
+    public CharacterController CharacterController => _characterController;
+
     public ActionBasedContinuousMoveProvider ActionBasedContinuousMoveProvider => _actionBasedContinuousMoveProvider;
     public ActionBasedSnapTurnProvider ActionBasedSnapTurnProvider => _actionBasedSnapTurnProvider;
 
@@ -25,6 +29,8 @@ public class PlayerScriptStorage : MonoBehaviour
 
     private void Awake()
     {
+        _characterController = GetComponent<CharacterController>();
+        
         _actionBasedContinuousMoveProvider = GetComponent<ActionBasedContinuousMoveProvider>();
         _actionBasedSnapTurnProvider = GetComponent<ActionBasedSnapTurnProvider>();
 

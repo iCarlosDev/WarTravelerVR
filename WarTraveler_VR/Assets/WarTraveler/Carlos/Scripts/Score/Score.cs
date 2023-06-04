@@ -14,7 +14,9 @@ public class Score : MonoBehaviour
     [Space(10)]
     [SerializeField] private Transform _positionToSpawn;
     [SerializeField] private TextMeshProUGUI _scoreGettedPrefab;
-    
+
+    public int CurrentScore => _currentScore;
+
     private void Awake()
     {
         instance = this;

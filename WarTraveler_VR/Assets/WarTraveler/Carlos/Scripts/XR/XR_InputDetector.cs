@@ -63,6 +63,7 @@ public class XR_InputDetector : MonoBehaviour
     public bool IsTriggering => _isTriggering;
     public bool IsGrabbing => _isGrabbing;
     public bool JoistickPressed => _joistickPressed;
+    public InputActionReference JoistickInput => _joistickInput;
     public InputActionReference PrimaryButton => _primaryButton;
     public InputActionReference SecondaryButton => _secondaryButton;
     
@@ -98,11 +99,11 @@ public class XR_InputDetector : MonoBehaviour
     {
         #region - TRIGGER -
 
-        if (_triggerInput.action.ReadValue<float>() > 0.3f)
+        if (_triggerInput.action.IsPressed())
         {
             _isTriggering = true;
         }
-        else if (_triggerInput.action.ReadValue<float>() <= 0.1f)
+        else
         {
             _isTriggering = false;
             _grabbingSlider = false;
@@ -112,40 +113,19 @@ public class XR_InputDetector : MonoBehaviour
 
         #region - PRIMARY BUTTON -
 
-        if (_primaryButton.action.IsPressed())
-        {
-            _primaryButtonWasPressed = true;
-        }
-        else
-        {
-            _primaryButtonWasPressed = false;
-        }
+        _primaryButtonWasPressed = _primaryButton.action.IsPressed();
 
         #endregion
 
         #region - GRIP -
 
-        if (_grabInput.action.ReadValue<float>() > 0.3f)
-        {
-            _isGrabbing = true;
-        }
-        else if (_grabInput.action.ReadValue<float>() <= 0.1f)
-        {
-            _isGrabbing = false;
-        }
+        _isGrabbing = _grabInput.action.IsPressed();
 
         #endregion
 
         #region - JOISTICK -
 
-        if (_joistickInput.action.IsPressed())
-        {
-            _joistickPressed = true;
-        }
-        else
-        {
-            _joistickPressed = false;
-        }
+        _joistickPressed = _joistickInput.action.IsPressed();
 
         #endregion
     }
@@ -162,6 +142,8 @@ public class XR_InputDetector : MonoBehaviour
         
         _interactor.IsSelecting(triggerGrabbable);
         _interactor.interactionManager.SelectEnter(_interactor, triggerGrabbable);
+        
+        AudioManager.instance.PlayOneShot("GrabWeapon");
     }
 
     /// <summary>

@@ -657,6 +657,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "PrimaryThumbstick",
+                    "type": "Button",
+                    "id": "74048a2e-019b-457c-887e-b23ad84464b7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -811,6 +820,17 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Y Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "41f7c0d1-dfd2-40b5-b9e9-ad9e477fd047",
+                    "path": "<XRController>{LeftHand}/thumbstickClicked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PrimaryThumbstick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -1393,6 +1413,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "SecondaryThumbstick",
+                    "type": "Button",
+                    "id": "f88c027b-6dc4-44cc-81d7-639bc7168430",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -1547,6 +1576,17 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "B Button",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ea104c00-78a0-499a-bbac-257250500071",
+                    "path": "<XRController>{RightHand}/thumbstickClicked",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SecondaryThumbstick",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

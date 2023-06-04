@@ -1434,7 +1434,7 @@ MonoBehaviour:
   _grabInput: {fileID: -1758520528963094988, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   _isGrabbing: 0
-  _joistickInput: {fileID: -8358032100899166728, guid: 0be0028c24f2a4c14a96b6aa39055933,
+  _joistickInput: {fileID: 8439666224039266982, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   _joistickPressed: 0
   _primaryButton: {fileID: -3258976167995792, guid: c348712bda248c246b8c49b3db54643f,
@@ -2045,7 +2045,7 @@ MonoBehaviour:
   _grabInput: {fileID: 6558622148059887818, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   _isGrabbing: 0
-  _joistickInput: {fileID: 637922521265743415, guid: 0be0028c24f2a4c14a96b6aa39055933,
+  _joistickInput: {fileID: 4365922051194361332, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   _joistickPressed: 0
   _primaryButton: {fileID: -4094856618693597874, guid: c348712bda248c246b8c49b3db54643f,

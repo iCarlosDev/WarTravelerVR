@@ -81,7 +81,9 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
         if (_weapon != null && !args.interactorObject.transform.CompareTag("Socket"))
         {
             args.interactorObject.transform.GetComponent<XR_InputDetector>().WeaponGrabbed = this;
-            TakePouchAmmo.instance.GrabbedWeaponsList.Add(_weapon);   
+            TakePouchAmmo.instance.GrabbedWeaponsList.Add(_weapon);
+            
+            AudioManager.instance.PlayOneShot("GrabWeapon");
         }
     }
 

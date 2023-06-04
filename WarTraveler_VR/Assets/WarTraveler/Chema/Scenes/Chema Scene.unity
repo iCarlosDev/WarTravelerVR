@@ -4768,6 +4768,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34cada513457794db9ff784b6cc940a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerScriptStorage: {fileID: 0}
+  _turretXRGrabInteractable: {fileID: 0}
 --- !u!4 &598338822
 Transform:
   m_ObjectHideFlags: 0
@@ -4979,7 +4981,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreTMP: {fileID: 0}
-  _currentScore: 100
+  _currentScore: 0
   _positionToSpawn: {fileID: 1490693294}
   _scoreGettedPrefab: {fileID: 2953561275495069770, guid: e7ccfca0ceecac346bb76f8efb5bec36,
     type: 3}
@@ -9844,17 +9846,17 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   colorGradientTexture: {fileID: 0}
   shallowColor: {r: 0, g: 0.7725491, b: 0.7529412, a: 0.38431373}
-  deepColor: {r: 0.0893658, g: 0.24625719, b: 0.574, a: 1}
+  deepColor: {r: 0.08936127, g: 0.2462515, b: 0.574, a: 1}
   colorDepth: 0.94
-  horizonColor: {r: 0, g: 0.22715527, b: 0.8, a: 1}
+  horizonColor: {r: 0, g: 0.22714958, b: 0.8, a: 1}
   horizonDistance: 20
   shoreFade: 1
-  shoreColor: {r: 0, g: 0.98039216, b: 0.30166507, a: 0.069}
+  shoreColor: {r: 0, g: 0.98039216, b: 0.30165938, a: 0.069}
   shoreStrength: 0.069
   shoreBlend: 1
   shoreDepth: 0.74
   waveColor: {r: 0, g: 0, b: 0, a: 0}
-  underwaterColor: {r: 0.20364127, g: 0.30950814, b: 0.517647, a: 1}
+  underwaterColor: {r: 0.20363587, g: 0.30950245, b: 0.517647, a: 1}
   underwaterColorStrength: 1
   underwaterRefractionStrength: 0.099
   surfaceFoamTexture: {fileID: 2800000, guid: d3b0d77dfe711a04c8ff18ecc260aa66, type: 3}
@@ -13634,6 +13636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f781768cba1cce46b0f743c56e745df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _score: {fileID: 0}
   _timeRemaining: 300
   _timerIsRunning: 0
   _timerTMP: {fileID: 0}
