@@ -8,6 +8,9 @@ public class PlayerScriptStorage : MonoBehaviour
     
     [SerializeField] private ActionBasedContinuousMoveProvider _actionBasedContinuousMoveProvider;
     [SerializeField] private ActionBasedSnapTurnProvider _actionBasedSnapTurnProvider;
+    
+    [SerializeField] private PlayerInventory _playerInventory;
+    [SerializeField] private TakePouchAmmo _takePouchAmmo;
 
     [SerializeField] private XR_InputDetector _leftInputDetector;
     [SerializeField] private XR_InputDetector _rightInputDetector;
@@ -19,6 +22,9 @@ public class PlayerScriptStorage : MonoBehaviour
 
     public ActionBasedContinuousMoveProvider ActionBasedContinuousMoveProvider => _actionBasedContinuousMoveProvider;
     public ActionBasedSnapTurnProvider ActionBasedSnapTurnProvider => _actionBasedSnapTurnProvider;
+    
+    public PlayerInventory PlayerInventory => _playerInventory;
+    public TakePouchAmmo TakePouchAmmo => _takePouchAmmo;
 
     public XR_InputDetector LeftInputDetector => _leftInputDetector;
     public XR_InputDetector RightInputDetector => _rightInputDetector;
@@ -33,6 +39,9 @@ public class PlayerScriptStorage : MonoBehaviour
         
         _actionBasedContinuousMoveProvider = GetComponent<ActionBasedContinuousMoveProvider>();
         _actionBasedSnapTurnProvider = GetComponent<ActionBasedSnapTurnProvider>();
+
+        _playerInventory = GetComponent<PlayerInventory>();
+        _takePouchAmmo = GetComponentInChildren<TakePouchAmmo>();
 
         _transitionsManager = GetComponentInChildren<TransitionsManager>();
 

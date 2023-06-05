@@ -6,7 +6,10 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private Sound[] sounds;
     public static AudioManager instance;
 
-    private void Awake()
+    /// <summary>
+    /// Método para no destruir entre escenas este objeto;
+    /// </summary>
+    private void DontDestroy()
     {
         if (instance == null)
         {
@@ -18,6 +21,11 @@ public class AudioManager : MonoBehaviour
         }
         
         DontDestroyOnLoad(gameObject);
+    }
+    
+    private void Awake()
+    {
+        DontDestroy();
         
         foreach (Sound s in sounds)
         {
@@ -36,6 +44,10 @@ public class AudioManager : MonoBehaviour
         Play("MainTheme");
     }
 
+    /// <summary>
+    /// Método para iniciar un sonido por el nombre que tenga en la lista de sonidos;
+    /// </summary>
+    /// <param name="name"></param>
     public void Play(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -47,6 +59,10 @@ public class AudioManager : MonoBehaviour
         s.source.Play();
     }
 
+    /// <summary>
+    /// Método para iniciar un sonido por el nombre que tenga en la lista de sonidos;
+    /// </summary>
+    /// <param name="name"></param>
     public void PlayOneShot(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);
@@ -58,6 +74,10 @@ public class AudioManager : MonoBehaviour
         s.source.PlayOneShot(s.source.clip);
     }
     
+    /// <summary>
+    /// Método para parar un sonido por el nombre que tenga en la lista de sonidos;
+    /// </summary>
+    /// <param name="name"></param>
     public void Stop(string name)
     {
         Sound s = Array.Find(sounds, sound => sound.name == name);

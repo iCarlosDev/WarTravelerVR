@@ -176,8 +176,7 @@ namespace UnityEngine.XR.Content.Interaction
 
                 if (xrInputDetector.IsTriggering && xrSlider.CompareTag("WeaponSlide")) return;
             }
-      
-            Debug.Log($"MAGAZINE EXITED");
+            
             base.OnSelectExited(args);
         }
 
@@ -195,8 +194,7 @@ namespace UnityEngine.XR.Content.Interaction
 
                 if (xrInputDetector.IsTriggering && xrSlider.CompareTag("WeaponSlide")) return;
             }
-      
-            Debug.Log($"MAGAZINE EXITING");
+            
             base.OnSelectExiting(args);
         }
     }

@@ -29,6 +29,7 @@ TagManager:
   - EnemyCollider
   - CanonBullet
   - Target
+  - DianaSiluet
   layers:
   - Default
   - TransparentFX

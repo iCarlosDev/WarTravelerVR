@@ -125,7 +125,19 @@ MonoBehaviour:
         m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1310679316}
+        m_TargetAssemblyTypeName: SocketController, Assembly-CSharp
+        m_MethodName: RemoveWeaponInventory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_OnHoverEntered:
@@ -160,6 +172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f301409b8abcd5428cc35cf75eec85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerScriptStorage: {fileID: 0}
 --- !u!1 &841839450
 GameObject:
   m_ObjectHideFlags: 0
@@ -368,7 +381,19 @@ MonoBehaviour:
         m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1310679316}
+        m_TargetAssemblyTypeName: SocketController, Assembly-CSharp
+        m_MethodName: RemoveWeaponInventory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_OnHoverEntered:
@@ -401,6 +426,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f301409b8abcd5428cc35cf75eec85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerScriptStorage: {fileID: 0}
 --- !u!1 &1477962246
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,7 +521,19 @@ MonoBehaviour:
         m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1310679316}
+        m_TargetAssemblyTypeName: SocketController, Assembly-CSharp
+        m_MethodName: RemoveWeaponInventory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_OnHoverEntered:
@@ -530,6 +568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f301409b8abcd5428cc35cf75eec85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerScriptStorage: {fileID: 0}
 --- !u!1 &1498438512
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,7 +725,19 @@ MonoBehaviour:
         m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1310679316}
+        m_TargetAssemblyTypeName: SocketController, Assembly-CSharp
+        m_MethodName: RemoveWeaponInventory
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_StartingHoverFilters: []
   m_StartingSelectFilters: []
   m_OnHoverEntered:
@@ -719,6 +770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f301409b8abcd5428cc35cf75eec85d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerScriptStorage: {fileID: 0}
 --- !u!1 &2694250480733032364
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,6 +840,7 @@ MonoBehaviour:
   _playerScriptStorage: {fileID: 6898140232870884940}
   _animator: {fileID: 0}
   _sceneIndex: 0
+  _inTransition: 0
 --- !u!1 &7913293435581933640
 GameObject:
   m_ObjectHideFlags: 0
@@ -841,9 +894,10 @@ GameObject:
   - component: {fileID: 7913293435826657406}
   - component: {fileID: 6898140232870884940}
   - component: {fileID: 928958979}
+  - component: {fileID: 3503482097231644187}
   m_Layer: 8
   m_Name: XR Origin
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1041,8 +1095,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41bdc83449650824db4d00b187af8238, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _characterController: {fileID: 0}
   _actionBasedContinuousMoveProvider: {fileID: 7913293435826657381}
   _actionBasedSnapTurnProvider: {fileID: 7913293435826657379}
+  _playerInventory: {fileID: 0}
+  _takePouchAmmo: {fileID: 0}
   _leftInputDetector: {fileID: 0}
   _rightInputDetector: {fileID: 0}
   _transitionsManager: {fileID: 732622221326860750}
@@ -1059,6 +1116,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerScriptStorage: {fileID: 0}
+  _notMovingRef: {x: 0, y: 0}
+  _isSprinting: 0
+--- !u!114 &3503482097231644187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7913293435826657385}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0f477318658e5e4eb98b0b5be7bfad1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weaponsList: []
 --- !u!1 &7913293435989885602
 GameObject:
   m_ObjectHideFlags: 0

@@ -1426,7 +1426,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 015544c40e36cdd49abe24dbb8ca3b80, type: 2}
+  - {fileID: 2100000, guid: af8473bf553eb8f4d8ee7ca028c72b96, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1755,7 +1755,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 015544c40e36cdd49abe24dbb8ca3b80, type: 2}
+  - {fileID: 2100000, guid: 00237a24b7ca9af4889d4d9065d3eb00, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2675,6 +2675,8 @@ MonoBehaviour:
   _antiAereoAnimations: {fileID: 0}
   _leftInputDetector: {fileID: 0}
   _rightInputDetector: {fileID: 0}
+  _leftMachineGunRenderer: {fileID: 5209732534320680552}
+  _rightMachineGunRenderer: {fileID: 1568263311876797401}
   _machineGunAudio: {fileID: 0}
   _canonAudio: {fileID: 0}
   _maxTimeShooting: 10

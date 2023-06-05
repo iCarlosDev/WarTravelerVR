@@ -55,8 +55,16 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
     {
         _firstLeftHandPose.SetActive(false);
         _firstRightHandPose.SetActive(false);
-        _secondLeftHandPose.SetActive(false);
-        _secondRightHandPose.SetActive(false);
+        
+        if (_secondLeftHandPose != null)
+        {
+            _secondLeftHandPose.SetActive(false);
+        }
+        
+        if (_secondRightHandPose != null)
+        {
+            _secondRightHandPose.SetActive(false);
+        }
 
         XR_InputDetector[] inputDetectors = FindObjectsOfType<XR_InputDetector>();
 
@@ -82,7 +90,7 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
         {
             args.interactorObject.transform.GetComponent<XR_InputDetector>().WeaponGrabbed = this;
             TakePouchAmmo.instance.GrabbedWeaponsList.Add(_weapon);
-            
+
             AudioManager.instance.PlayOneShot("GrabWeapon");
         }
     }

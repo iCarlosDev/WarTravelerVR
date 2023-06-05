@@ -33,7 +33,7 @@ public class Timer : MonoBehaviour
         else
         {
             Debug.Log("Time has run out!"); 
-            Antiaereo_LevelManager.instance.DropAntiaereo();
+            Antiaereo_LevelManager.instance.DropAntiaereoAndReturnLobby();
             GameManager.instance.UpdateAntiaereoScore(_score.CurrentScore);
 
             _timeRemaining = 0;

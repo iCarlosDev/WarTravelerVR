@@ -46,8 +46,7 @@ public class XR_MyDirectInteractor : XRDirectInteractor
 
             if (xrInputDetector.IsTriggering && xrSlider.CompareTag("WeaponSlide")) return;
         }
-      
-        Debug.Log($"CONTROLLER EXITED");
+        
         base.OnSelectExited(args);
     }
 
@@ -71,8 +70,7 @@ public class XR_MyDirectInteractor : XRDirectInteractor
 
             if (xrInputDetector.IsTriggering && xrSlider.CompareTag("WeaponSlide")) return;
         }
-
-        Debug.Log($"CONTROLLER EXITING");
+        
         base.OnSelectExiting(args);
     }
 }

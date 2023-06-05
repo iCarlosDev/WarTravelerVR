@@ -2,11 +2,20 @@ using UnityEngine;
 
 public class AntiAereoShoot : MonoBehaviour
 {
+    [Header("--- OTHER SCRIPTS ---")]
+    [Space(10)]
     [SerializeField] private Turret_XR_GrabInteractableTwoHanded _turretXrGrabInteractableTwoHanded;
     [SerializeField] private AntiAereoAnimations _antiAereoAnimations;
 
+    [Header("--- CONTROLLERS ---")]
+    [Space(10)]
     [SerializeField] private XR_InputDetector _leftInputDetector;
     [SerializeField] private XR_InputDetector _rightInputDetector;
+
+    [Header("--- MACHINE_GUNS MESHES ---")]
+    [Space(10)]
+    [SerializeField] private Renderer _leftMachineGunRenderer;
+    [SerializeField] private Renderer _rightMachineGunRenderer;
 
     [Header("--- CANON PARAMS ---")] 
     [Space(10)] 
@@ -67,169 +76,249 @@ public class AntiAereoShoot : MonoBehaviour
         LeftMachineGunShoot();
         RightMachineGunShoot();
         
-        LeftCanonShoot();
-        RightCanonShoot();
+        FirstCanonShoot();
+        SecondCanonShoot();
         
         CheckLeftMachineGunOverheat();
         CheckRightMachineGunOverheat();
     }
 
+    /// <summary>
+    /// Método para controlar el sobrecalentamiento de la ametralladora izquierda;
+    /// </summary>
     private void CheckLeftMachineGunOverheat()
     {
+        //Comprobamos que estémos pulsando el trigger izquierdo y estémos disparando la ametralladora izquierda;
         if (_leftInputDetector.IsTriggering && LeftMachineGunShoot())
         {
-            _currentLeftTimeShooting += Time.deltaTime;
+            _currentLeftTimeShooting += Time.deltaTime; //Sumamos el tiempo que disparamos;
         }
         else
         {
-            _currentLeftTimeShooting -= Time.deltaTime;
+            _currentLeftTimeShooting -= Time.deltaTime; //Restamos el tiempo que dejamos de disparar;
         }
-
-        _currentLeftTimeShooting = Mathf.Clamp(_currentLeftTimeShooting, 0f, _maxTimeShooting);
         
+        //Cambiamos el color del emisivo de la ametralladora para saber si se está sobrecalentando;
+        Color color = new Color(_currentLeftTimeShooting - 8f,0f,0f);
+        color.r = Mathf.Clamp(color.r, 0f, 255f);
+        _leftMachineGunRenderer.material.SetColor("_EmissionColor", color);
+        _leftMachineGunRenderer.material.EnableKeyword("_EMISSION");
+        ///////////////////////////////////////////////////////////////////////////////////////////
+
+        _currentLeftTimeShooting = Mathf.Clamp(_currentLeftTimeShooting, 0f, _maxTimeShooting); //límitamos el tiempo;
+
+        //Si el tiempo que disparamos es superior al máximo tiempo q podemos disparar...
+        //la ametralladora estará sobrecalentada;
         if (_currentLeftTimeShooting >= _maxTimeShooting)
         {
             _isLeftOverheated = true;
         }
+        //Si el tiempo que disparamos es menor o igual a la mitad del tiempo máximo...
+        //la ametralladora no estará sobrecalentada;
         else if (_currentLeftTimeShooting <= _maxTimeShooting/2)
         {
             _isLeftOverheated = false;
         }
     }
 
+    /// <summary>
+    /// Método para controlar el sobrecalentamiento de la ametralladora derecha;
+    /// </summary>
     private void CheckRightMachineGunOverheat()
     {
+        //Comprobamos que estémos pulsando el trigger derecho y estémos disparando la ametralladora derecha;
         if (_rightInputDetector.IsTriggering && RightMachineGunShoot())
         {
-            _currentRightTimeShooting += Time.deltaTime;
+            _currentRightTimeShooting += Time.deltaTime; //Sumamos el tiempo que disparamos;
         }
         else
         {
-            _currentRightTimeShooting -= Time.deltaTime;
+            _currentRightTimeShooting -= Time.deltaTime; //Restamos el tiempo que dejamos de disparar;
         }
+        
+        //Cambiamos el color del emisivo de la ametralladora para saber si se está sobrecalentando;
+        Color color = new Color(_currentRightTimeShooting - 8f,0f,0f);
+        color.r = Mathf.Clamp(color.r, 0f, 255f);
+        _rightMachineGunRenderer.material.SetColor("_EmissionColor", color);
+        _rightMachineGunRenderer.material.EnableKeyword("_EMISSION");
+        ///////////////////////////////////////////////////////////////////////////////////////////
 
-        _currentRightTimeShooting = Mathf.Clamp(_currentRightTimeShooting, 0f, _maxTimeShooting);
+        _currentRightTimeShooting = Mathf.Clamp(_currentRightTimeShooting, 0f, _maxTimeShooting); //límitamos el tiempo;
 
+        //Si el tiempo que disparamos es superior al máximo tiempo q podemos disparar...
+        //la ametralladora estará sobrecalentada;
         if (_currentRightTimeShooting >= _maxTimeShooting)
         {
             _isRightOverheated = true;
         }
+        //Si el tiempo que disparamos es menor o igual a la mitad del tiempo máximo...
+        //la ametralladora no estará sobrecalentada;
         else if (_currentRightTimeShooting <= _maxTimeShooting/2)
         {
             _isRightOverheated = false;
         }
     }
     
+    /// <summary>
+    /// Método para disparar la ametralladora izquierda;
+    /// </summary>
+    /// <returns></returns>
     private bool LeftMachineGunShoot()
     {
-        if (_isLeftOverheated)
+        if (_isLeftOverheated) //Si está sobrecalentada devolvemos falso y se paran las animaciones;
         {
             _antiAereoAnimations.SetBoolLeftAmmoAnimation(false);
             _antiAereoAnimations.SetBoolLeftMachineGun(false);
             return false;
         }
 
+        //Si se pulsa el trigger izquierdo y está agarrada la ametralladora izquierda...;
         if (_leftInputDetector.IsTriggering && _turretXrGrabInteractableTwoHanded.IsLeftGrab)
         {
-            if (Time.time > _leftFireRateTime)
-            {
-                GameObject bullet = Instantiate(_bulletPrefab, _firstMachineGunCanon.position, _firstMachineGunCanon.rotation);
-                bullet.GetComponent<Rigidbody>().AddForce(_firstMachineGunCanon.forward * _bulletImpulseForce, ForceMode.Impulse);
+            if (!(Time.time > _leftFireRateTime)) return false; //Si el tiempo no es mayor al "_leftFireRateTime" devolvemos falso;
             
-                _firstMachineGunParticleSystem.Play();
-                _leftInputDetector.HapticFeedBack.ControllerVibration(1f, 0.1f);
+            //Se instancia una bala y se impulsa con una fuerza hacía adelante;
+            GameObject bullet = Instantiate(_bulletPrefab, _firstMachineGunCanon.position, _firstMachineGunCanon.rotation);
+            bullet.GetComponent<Rigidbody>().AddForce(_firstMachineGunCanon.forward * _bulletImpulseForce, ForceMode.Impulse);
+            
+            //Se playean las particulas de disparo de la ametralladora y se manda vibración al mando
+            _firstMachineGunParticleSystem.Play();
+            _leftInputDetector.HapticFeedBack.ControllerVibration(1f, 0.1f);
 
-                _leftFireRateTime = Time.time + _fireRate;
+            //Se suma en el "_leftFireRateTime" el tiempo transcurrido + el "_fireRate";
+            _leftFireRateTime = Time.time + _fireRate;
+            
+            //Se activan las animaciones de la ametralladora;
+            _antiAereoAnimations.SetBoolLeftAmmoAnimation(true);
+            _antiAereoAnimations.SetBoolLeftMachineGun(true);
                 
-                _antiAereoAnimations.SetBoolLeftAmmoAnimation(true);
-                _antiAereoAnimations.SetBoolLeftMachineGun(true);
-                
-                AudioManager.instance.PlayOneShot("MachineGunShoot");
-            }
+            //Se playea un sonido de disparo;
+            AudioManager.instance.PlayOneShot("MachineGunShoot");
             return true;
         }
         
+        //Se paran las animaciones si no estamos apretando el trigger mientras agarramos la ametralladora;
         _antiAereoAnimations.SetBoolLeftAmmoAnimation(false);
         _antiAereoAnimations.SetBoolLeftMachineGun(false);
         return false;
     }
 
+    /// <summary>
+    /// Método para disparar la ametralladora derecha;
+    /// </summary>
+    /// <returns></returns>
     private bool RightMachineGunShoot()
     {
-        if (_isRightOverheated)
+        if (_isRightOverheated) //Si está sobrecalentada devolvemos falso y se paran las animaciones;
         {
             _antiAereoAnimations.SetBoolRightAmmoAnimation(false);
             _antiAereoAnimations.SetBoolRightMachineGun(false);
             return false;
         }
         
+        //Si se pulsa el trigger derecho y está agarrada la ametralladora derecha...;
         if (_rightInputDetector.IsTriggering && _turretXrGrabInteractableTwoHanded.IsRightGrab)
         {
-            if (Time.time > _rightFireRateTime)
-            {
-                GameObject bullet = Instantiate(_bulletPrefab, _secondMachineGunCanon.position, _secondMachineGunCanon.rotation);
-                bullet.GetComponent<Rigidbody>().AddForce(_secondMachineGunCanon.forward * _bulletImpulseForce, ForceMode.Impulse);
+            if (!(Time.time > _rightFireRateTime)) return true; //Si el tiempo no es mayor al "_rightFireRateTime" devolvemos falso;
             
-                _secondMachineGunParticleSystem.Play();
-                _rightInputDetector.HapticFeedBack.ControllerVibration(1f, 0.1f);
+            //Se instancia una bala y se impulsa con una fuerza hacía adelante;
+            GameObject bullet = Instantiate(_bulletPrefab, _secondMachineGunCanon.position, _secondMachineGunCanon.rotation);
+            bullet.GetComponent<Rigidbody>().AddForce(_secondMachineGunCanon.forward * _bulletImpulseForce, ForceMode.Impulse);
+            
+            //Se playean las particulas de disparo de la ametralladora y se manda vibración al mando
+            _secondMachineGunParticleSystem.Play();
+            _rightInputDetector.HapticFeedBack.ControllerVibration(1f, 0.1f);
 
-                _rightFireRateTime = Time.time + _fireRate;
+            //Se suma en el "_rightFireRateTime" el tiempo transcurrido + el "_fireRate";
+            _rightFireRateTime = Time.time + _fireRate;
                 
-                _antiAereoAnimations.SetBoolRightAmmoAnimation(true);
-                _antiAereoAnimations.SetBoolRightMachineGun(true);
+            //Se activan las animaciones de la ametralladora;
+            _antiAereoAnimations.SetBoolRightAmmoAnimation(true);
+            _antiAereoAnimations.SetBoolRightMachineGun(true);
 
-                if (!LeftMachineGunShoot())
-                {
-                    AudioManager.instance.PlayOneShot("MachineGunShoot");
-                }
+            //Se playea un sonido de disparo si no estamos disparando la ametralladora izquierda;
+            //(Esto evita que haya 2 sonidos sobrepuestos);
+            if (!LeftMachineGunShoot())
+            {
+                AudioManager.instance.PlayOneShot("MachineGunShoot");
             }
             return true;
         }
 
+        //Se paran las animaciones si no estamos apretando el trigger mientras agarramos la ametralladora;
         _antiAereoAnimations.SetBoolRightAmmoAnimation(false);
         _antiAereoAnimations.SetBoolRightMachineGun(false);
         return false;
     }
 
-    private void LeftCanonShoot()
+    /// <summary>
+    /// Método para disparar el primer cañon;
+    /// </summary>
+    private void FirstCanonShoot()
     {
-        if (!_readyToShootFirstCanon) return;
+        if (!_readyToShootFirstCanon) return; //Si no está listo para disparar no hacemos nada;
 
-        if (_leftInputDetector.PrimaryButton.action.triggered && _turretXrGrabInteractableTwoHanded.IsLeftGrab)
-        {
-            ChooseCanonShoot(_firstCanon, _firstCanonParticleSystem);
-            _antiAereoAnimations.SetTriggerFirstCanon();
-            _readyToShootFirstCanon = false;
-            Invoke(nameof(SetReadyToShootFirstCanon), 3f);
-        }
-    }
-
-    private void RightCanonShoot()
-    {
-        if (!_readyToShootSecondCanon) return;
+        //Si no estamos presionando el botón primario o no estámos agarrando la ametralladora izquierda...;
+        if (!_leftInputDetector.PrimaryButton.action.triggered || !_turretXrGrabInteractableTwoHanded.IsLeftGrab) return;
         
-        if (_rightInputDetector.PrimaryButton.action.triggered && _turretXrGrabInteractableTwoHanded.IsRightGrab)
-        {
-            ChooseCanonShoot(_secondCanon, _secondCanonParticleSystem);
-            _antiAereoAnimations.SetTriggerSecondCanon();
-            _readyToShootSecondCanon = false;
-            Invoke(nameof(SetReadyToShootSecondCanon), 3f);
-        }
+        //Llamamos al método que elige que cañon se ha disparado;
+        ChooseCanonShoot(_firstCanon, _firstCanonParticleSystem);
+            
+        //Se setea la animación del cañon y hacemos que no esté listo para disparar;
+        _antiAereoAnimations.SetTriggerFirstCanon();
+        _readyToShootFirstCanon = false;
+            
+        //Se invoca al método que pondrá listo para disparar el cañon en 3s;
+        Invoke(nameof(SetReadyToShootFirstCanon), 3f);
     }
 
+    /// <summary>
+    /// Método para disparar el segundo cañon;
+    /// </summary>
+    private void SecondCanonShoot()
+    {
+        if (!_readyToShootSecondCanon) return; //Si no está listo para disparar no hacemos nada;
+        
+        //Si no estamos presionando el botón primario o no estámos agarrando la ametralladora derecha...;
+        if (!_rightInputDetector.PrimaryButton.action.triggered || !_turretXrGrabInteractableTwoHanded.IsRightGrab) return;
+        
+        //Llamamos al método que elige que cañon se ha disparado;
+        ChooseCanonShoot(_secondCanon, _secondCanonParticleSystem);
+        
+        //Se setea la animación del cañon y hacemos que no esté listo para disparar;
+        _antiAereoAnimations.SetTriggerSecondCanon();
+        _readyToShootSecondCanon = false;
+        
+        //Se invoca al método que pondrá listo para disparar el cañon en 3s;
+        Invoke(nameof(SetReadyToShootSecondCanon), 3f);
+    }
+
+    /// <summary>
+    /// Método que escoge que cañon se tiene que disparar;
+    /// </summary>
+    /// <param name="canon"></param>
+    /// <param name="canonParticleSystem"></param>
     private void ChooseCanonShoot(Transform canon, ParticleSystem canonParticleSystem)
     {
+        //Se instancia una bala y se impulsa con una fuerza hacia adelante;
         GameObject bullet = Instantiate(_canonBulletPrefab, canon.position, canon.rotation);
         bullet.GetComponent<Rigidbody>().AddForce(canon.forward * _canonBulletImpulseForce, ForceMode.Impulse);
-            
+        
+        //Se playea las particulas de disparo;
         canonParticleSystem.Play();
     }
 
+    /// <summary>
+    /// Método para setear listo el disparo del primer cañon;
+    /// </summary>
     private void SetReadyToShootFirstCanon()
     {
         _readyToShootFirstCanon = true;
     }
 
+    /// <summary>
+    /// Método para setear listo el disparo del segundo cañon;
+    /// </summary>
     private void SetReadyToShootSecondCanon()
     {
         _readyToShootSecondCanon = true;

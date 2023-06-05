@@ -4,7 +4,14 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class SocketController : MonoBehaviour
 {
+    [SerializeField] private PlayerScriptStorage _playerScriptStorage;
+    
     private Coroutine _setWeaponToSocket;
+
+    private void Awake()
+    {
+        _playerScriptStorage = GetComponentInParent<PlayerScriptStorage>();
+    }
 
     public void SetWeaponToSocket(SelectEnterEventArgs args)
     {
@@ -18,6 +25,8 @@ public class SocketController : MonoBehaviour
         
         _setWeaponToSocket = StartCoroutine(SetWeaponToSocket_Coroutine(args));
         
+        _playerScriptStorage.PlayerInventory.WeaponsList.Add(weapon);
+
         AudioManager.instance.PlayOneShot("SaveWeapon");
     }
 
@@ -34,5 +43,12 @@ public class SocketController : MonoBehaviour
         
         weaponXRGrabInteractableTwoHanded.FirstGrab = false;
         weaponXRGrabInteractableTwoHanded.SecondGrab = false;
+    }
+
+    public void RemoveWeaponInventory(SelectExitEventArgs args)
+    {
+        if (!args.interactableObject.transform.TryGetComponent(out Weapon weapon)) return;
+        
+        _playerScriptStorage.PlayerInventory.WeaponsList.Remove(weapon);
     }
 }

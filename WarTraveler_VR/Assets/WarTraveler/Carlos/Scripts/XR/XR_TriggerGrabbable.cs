@@ -30,8 +30,7 @@ public class XR_TriggerGrabbable : XRGrabInteractable
       {
          if (xrInputDetector.IsTriggering && !magazine.IsBeingInserted) return;
       }
-
-      Debug.Log($"MAGAZINE EXITED");
+      
       base.OnSelectExited(args);
    }
 
@@ -44,8 +43,7 @@ public class XR_TriggerGrabbable : XRGrabInteractable
       {
          if (xrInputDetector.IsTriggering && !magazine.IsBeingInserted) return;
       }
-
-      Debug.Log($"MAGAZINE EXITING");
+      
       base.OnSelectExiting(args);
    }
 }
