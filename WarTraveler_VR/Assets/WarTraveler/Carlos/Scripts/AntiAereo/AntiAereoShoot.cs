@@ -39,8 +39,10 @@ public class AntiAereoShoot : MonoBehaviour
     private float _rightFireRateTime;
     [SerializeField] private Transform _firstMachineGunCanon;
     [SerializeField] private ParticleSystem _firstMachineGunParticleSystem;
+    [SerializeField] private bool _firstMachineGunShooting;
     [SerializeField] private Transform _secondMachineGunCanon;
     [SerializeField] private ParticleSystem _secondMachineGunParticleSystem;
+    [SerializeField] private bool _secondMachineGunShooting;
     
     [Header("--- CANON PARAMS ---")]
     [Space(10)]
@@ -89,7 +91,7 @@ public class AntiAereoShoot : MonoBehaviour
     private void CheckLeftMachineGunOverheat()
     {
         //Comprobamos que estémos pulsando el trigger izquierdo y estémos disparando la ametralladora izquierda;
-        if (_leftInputDetector.IsTriggering && LeftMachineGunShoot())
+        if (_leftInputDetector.IsTriggering && _firstMachineGunShooting)
         {
             _currentLeftTimeShooting += Time.deltaTime; //Sumamos el tiempo que disparamos;
         }
@@ -127,7 +129,7 @@ public class AntiAereoShoot : MonoBehaviour
     private void CheckRightMachineGunOverheat()
     {
         //Comprobamos que estémos pulsando el trigger derecho y estémos disparando la ametralladora derecha;
-        if (_rightInputDetector.IsTriggering && RightMachineGunShoot())
+        if (_rightInputDetector.IsTriggering && _secondMachineGunShooting)
         {
             _currentRightTimeShooting += Time.deltaTime; //Sumamos el tiempo que disparamos;
         }
@@ -163,19 +165,21 @@ public class AntiAereoShoot : MonoBehaviour
     /// Método para disparar la ametralladora izquierda;
     /// </summary>
     /// <returns></returns>
-    private bool LeftMachineGunShoot()
+    private void LeftMachineGunShoot()
     {
         if (_isLeftOverheated) //Si está sobrecalentada devolvemos falso y se paran las animaciones;
         {
             _antiAereoAnimations.SetBoolLeftAmmoAnimation(false);
             _antiAereoAnimations.SetBoolLeftMachineGun(false);
-            return false;
+            
+            _firstMachineGunShooting = false;
+            return;
         }
 
         //Si se pulsa el trigger izquierdo y está agarrada la ametralladora izquierda...;
         if (_leftInputDetector.IsTriggering && _turretXrGrabInteractableTwoHanded.IsLeftGrab)
         {
-            if (!(Time.time > _leftFireRateTime)) return false; //Si el tiempo no es mayor al "_leftFireRateTime" devolvemos falso;
+            if (!(Time.time > _leftFireRateTime)) return; //Si el tiempo no es mayor al "_leftFireRateTime" devolvemos falso;
             
             //Se instancia una bala y se impulsa con una fuerza hacía adelante;
             GameObject bullet = Instantiate(_bulletPrefab, _firstMachineGunCanon.position, _firstMachineGunCanon.rotation);
@@ -194,32 +198,37 @@ public class AntiAereoShoot : MonoBehaviour
                 
             //Se playea un sonido de disparo;
             AudioManager.instance.PlayOneShot("MachineGunShoot");
-            return true;
+
+            _firstMachineGunShooting = true;
+            return;
         }
         
         //Se paran las animaciones si no estamos apretando el trigger mientras agarramos la ametralladora;
         _antiAereoAnimations.SetBoolLeftAmmoAnimation(false);
         _antiAereoAnimations.SetBoolLeftMachineGun(false);
-        return false;
+        
+        _firstMachineGunShooting = false;
     }
 
     /// <summary>
     /// Método para disparar la ametralladora derecha;
     /// </summary>
     /// <returns></returns>
-    private bool RightMachineGunShoot()
+    private void RightMachineGunShoot()
     {
         if (_isRightOverheated) //Si está sobrecalentada devolvemos falso y se paran las animaciones;
         {
             _antiAereoAnimations.SetBoolRightAmmoAnimation(false);
             _antiAereoAnimations.SetBoolRightMachineGun(false);
-            return false;
+            
+            _secondMachineGunShooting = false;
+            return;
         }
         
         //Si se pulsa el trigger derecho y está agarrada la ametralladora derecha...;
         if (_rightInputDetector.IsTriggering && _turretXrGrabInteractableTwoHanded.IsRightGrab)
         {
-            if (!(Time.time > _rightFireRateTime)) return true; //Si el tiempo no es mayor al "_rightFireRateTime" devolvemos falso;
+            if (!(Time.time > _rightFireRateTime)) return; //Si el tiempo no es mayor al "_rightFireRateTime" devolvemos falso;
             
             //Se instancia una bala y se impulsa con una fuerza hacía adelante;
             GameObject bullet = Instantiate(_bulletPrefab, _secondMachineGunCanon.position, _secondMachineGunCanon.rotation);
@@ -238,17 +247,20 @@ public class AntiAereoShoot : MonoBehaviour
 
             //Se playea un sonido de disparo si no estamos disparando la ametralladora izquierda;
             //(Esto evita que haya 2 sonidos sobrepuestos);
-            if (!LeftMachineGunShoot())
+            if (!_firstMachineGunShooting)
             {
                 AudioManager.instance.PlayOneShot("MachineGunShoot");
             }
-            return true;
+
+            _secondMachineGunShooting = true;
+            return;
         }
 
         //Se paran las animaciones si no estamos apretando el trigger mientras agarramos la ametralladora;
         _antiAereoAnimations.SetBoolRightAmmoAnimation(false);
         _antiAereoAnimations.SetBoolRightMachineGun(false);
-        return false;
+        
+        _secondMachineGunShooting = false;
     }
 
     /// <summary>

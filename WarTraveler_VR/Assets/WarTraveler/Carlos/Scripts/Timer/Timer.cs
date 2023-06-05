@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 public class Timer : MonoBehaviour
 {
-    [SerializeField] private Score _score;
+    [SerializeField] private AntiaereoScoreManager _score;
     
     [SerializeField] private float _timeRemaining = 300f;
     [SerializeField] private bool _timerIsRunning;
@@ -10,7 +10,7 @@ public class Timer : MonoBehaviour
 
     private void Awake()
     {
-        _score = FindObjectOfType<Score>();
+        _score = FindObjectOfType<AntiaereoScoreManager>();
         
         _timerTMP = GetComponentInChildren<TextMeshProUGUI>();
     }

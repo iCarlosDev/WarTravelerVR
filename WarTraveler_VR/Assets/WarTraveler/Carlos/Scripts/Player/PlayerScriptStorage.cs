@@ -4,8 +4,12 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class PlayerScriptStorage : MonoBehaviour
 {
+    [Header("--- COMPONENTS ---")]
+    [Space(10)]
     [SerializeField] private CharacterController _characterController;
     
+    [Header("--- SCRIPTS ---")]
+    [Space(10)]
     [SerializeField] private ActionBasedContinuousMoveProvider _actionBasedContinuousMoveProvider;
     [SerializeField] private ActionBasedSnapTurnProvider _actionBasedSnapTurnProvider;
     

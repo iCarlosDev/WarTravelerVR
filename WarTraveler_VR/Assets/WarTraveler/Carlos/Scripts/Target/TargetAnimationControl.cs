@@ -30,4 +30,11 @@ public class TargetAnimationControl : MonoBehaviour
     {
         _animator.SetTrigger("TargetUp");
     }
+    
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!collision.transform.CompareTag("Bullet")) return;
+        
+        SetTargetDown();
+    }
 }

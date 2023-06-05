@@ -8,8 +8,16 @@ public class TakePouchAmmo : MonoBehaviour
 {
     public static TakePouchAmmo instance;
 
+    [Header("--- WEAPONS ---")]
+    [Space(10)]
     [SerializeField] private List<Weapon> _grabbedWeaponsList;
+    
+    [Header("--- CONTROLLER ---")]
+    [Space(10)]
     [SerializeField] private XR_InputDetector _xrInputDetector;
+    
+    [Header("--- TAKE POUCH AMMO PARAMS ---")]
+    [Space(10)]
     [SerializeField] private bool _canTakeAmmo;
 
     //GETTERS && SETTERS//
@@ -32,15 +40,20 @@ public class TakePouchAmmo : MonoBehaviour
     /// </summary>
     private void TakeAmmo()
     {
+        //Si no es un controlador o estámos usando el grip o no podemos coger munición,
+        //no hacemos la lógica restante;
         if (_xrInputDetector == null || _xrInputDetector.IsGrabbing || !_canTakeAmmo) return;
 
-        if (_xrInputDetector.IsTriggering && _xrInputDetector.ObjectGrabbed == null)
-        {
-            GameObject instantiatedObject = Instantiate(GrabbedWeaponsList[0].MagazinePrefab, transform.position, transform.rotation);
-            XR_TriggerGrabbable triggerGrabbable = instantiatedObject.GetComponent<XR_TriggerGrabbable>();
-            _xrInputDetector.GrabTriggerObject(triggerGrabbable);
-            _canTakeAmmo = false;
-        }
+        //Si no estámos pulsando el trigger o no tenemos un arma agarrada,
+        //no hacemos la lógica restante;
+        if (!_xrInputDetector.IsTriggering || _xrInputDetector.ObjectGrabbed != null) return;
+        
+        //Instanciamos un cargador del arma correspondiente, la autograbeamos en el mando del player
+        //y hacemos que no podamos coger más cargadores;
+        GameObject instantiatedObject = Instantiate(GrabbedWeaponsList[0].MagazinePrefab, transform.position, transform.rotation);
+        XR_TriggerGrabbable triggerGrabbable = instantiatedObject.GetComponent<XR_TriggerGrabbable>();
+        _xrInputDetector.GrabTriggerObject(triggerGrabbable);
+        _canTakeAmmo = false;
     }
 
     private void OnTriggerStay(Collider other)
