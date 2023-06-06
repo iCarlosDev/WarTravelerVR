@@ -48,6 +48,12 @@ public class Weapon_XR_GrabInteractableTwoHanded : XRGrabInteractable
     protected override void Awake()
     {
         base.Awake();
+        
+        Destroy(_firstLeftHandPose.GetComponentInChildren<MeshCollider>());
+        Destroy(_firstRightHandPose.GetComponentInChildren<MeshCollider>());
+        Destroy(_secondLeftHandPose.GetComponentInChildren<MeshCollider>());
+        Destroy(_secondRightHandPose.GetComponentInChildren<MeshCollider>());
+        
         _weapon = GetComponent<Weapon>();
     }
 

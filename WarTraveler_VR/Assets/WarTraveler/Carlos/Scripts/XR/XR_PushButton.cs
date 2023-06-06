@@ -292,5 +292,17 @@ namespace UnityEngine.XR.Content.Interaction
         }
         
         #endregion
+
+        [SerializeField] private AudioSource[] _audioSourcesList;
+
+        public void ButtonPressSound()
+        {
+            _audioSourcesList[0].PlayOneShot(_audioSourcesList[0].clip);
+        }
+
+        public void ButtonReleaseSound()
+        {
+            _audioSourcesList[1].PlayOneShot(_audioSourcesList[1].clip);
+        }
     }
 }

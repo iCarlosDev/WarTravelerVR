@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -23,7 +24,7 @@ public class Bullet : MonoBehaviour
             Vector3 collisionNormal = contact.normal;
 
             Quaternion rotation = Quaternion.LookRotation(collisionNormal);
-            ParticleSystem particleSystemInstance = Instantiate(_targetImpactParticleSystem, contact.point, rotation);
+            ParticleSystem particleSystemInstance = Instantiate(particleSystem, contact.point, rotation);
             particleSystemInstance.Play();
             particleSystemInstance.transform.parent = null;
         }
@@ -37,10 +38,10 @@ public class Bullet : MonoBehaviour
         if (collision.transform.CompareTag("Target"))
         {
             SpawnParticleSystem(collision, _targetImpactParticleSystem);
-            
+
             Destroy(gameObject);
             
-            return; 
+            return;
         }
         
         SpawnParticleSystem(collision, _defaultImpactParticleSystem);

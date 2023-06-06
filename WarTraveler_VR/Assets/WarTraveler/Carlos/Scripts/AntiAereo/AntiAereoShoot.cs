@@ -282,6 +282,8 @@ public class AntiAereoShoot : MonoBehaviour
             
         //Se invoca al método que pondrá listo para disparar el cañon en 3s;
         Invoke(nameof(SetReadyToShootFirstCanon), 3f);
+        
+        AudioManager.instance.PlayOneShot("CanonShot");
     }
 
     /// <summary>
@@ -303,6 +305,8 @@ public class AntiAereoShoot : MonoBehaviour
         
         //Se invoca al método que pondrá listo para disparar el cañon en 3s;
         Invoke(nameof(SetReadyToShootSecondCanon), 3f);
+        
+        AudioManager.instance.PlayOneShot("CanonShot");
     }
 
     /// <summary>

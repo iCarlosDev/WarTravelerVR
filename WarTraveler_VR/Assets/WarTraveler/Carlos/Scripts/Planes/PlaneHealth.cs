@@ -10,6 +10,7 @@ public class PlaneHealth : MonoBehaviour
     [Header("--- OTHER SCRIPTS ---")]
     [SerializeField] private Animator _animator;
     [SerializeField] private AudioSource _audioSource;
+    [SerializeField] private AudioSource _explosionAudio;
     private Coroutine SetAudioOff;
 
     [Header("--- PARTICLES ---")]
@@ -117,6 +118,8 @@ public class PlaneHealth : MonoBehaviour
         //Se inician las particulas correspondientes;
         _bodyExplosionParticle.Play();
         _giganticExplosionParticle.Play();
+        
+        _explosionAudio.PlayOneShot(_explosionAudio.clip);
             
         //Se desactivan las meshes necesarias para que
         //no se vea el avión roto y el intacto al mismo tiempo;

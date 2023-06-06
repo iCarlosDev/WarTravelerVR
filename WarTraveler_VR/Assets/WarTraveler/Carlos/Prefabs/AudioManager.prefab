@@ -63,6 +63,15 @@ MonoBehaviour:
     playOnAwake: 0
     spatialBlend: 0
     source: {fileID: 0}
+  - name: CanonShot
+    _groupTypeEnum: 1
+    clip: {fileID: 8300000, guid: c2ead425f9c259648b2bfd24e6778479, type: 3}
+    volume: 0.923
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    spatialBlend: 0
+    source: {fileID: 0}
   - name: GrabWeapon
     _groupTypeEnum: 1
     clip: {fileID: 8300000, guid: f2d8b5cf16277c3438b13d0a01680fff, type: 3}

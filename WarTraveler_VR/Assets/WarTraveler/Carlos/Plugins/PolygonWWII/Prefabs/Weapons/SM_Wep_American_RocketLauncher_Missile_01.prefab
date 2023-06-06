@@ -116,7 +116,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bulletDamage: 0
-  _planeHitParticleSystem: {fileID: 198753536921840570, guid: 2938def9583039b498280fae52bf6fd4,
+  _targetImpactParticleSystem: {fileID: 198013451468767398, guid: 95ca11d071b6ac246977e01a3c54ea75,
+    type: 3}
+  _defaultImpactParticleSystem: {fileID: 198013451468767398, guid: 4a049bbef79ee7845b541e2d0d83b4cc,
     type: 3}
 --- !u!136 &4071673388477977936
 CapsuleCollider:

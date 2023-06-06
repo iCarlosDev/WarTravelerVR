@@ -18,6 +18,7 @@ public class TargetAnimationControl : MonoBehaviour
 
     public void SetTargetDown()
     {
+        ResetTriggers();
         _animator.SetTrigger("TargetDown");
 
         if (_isInTrincheras) return;
@@ -28,7 +29,14 @@ public class TargetAnimationControl : MonoBehaviour
 
     private void SetTargetUp()
     {
+        ResetTriggers();
         _animator.SetTrigger("TargetUp");
+    }
+
+    private void ResetTriggers()
+    {
+        _animator.ResetTrigger("TargetDown");
+        _animator.ResetTrigger("TargetUp");
     }
     
     private void OnCollisionEnter(Collision collision)
