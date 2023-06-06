@@ -39,14 +39,11 @@ public class PauseMenuManager : MonoBehaviour
     private void OnEnable()
     {
         TryGetComponents();
-        
-        _returnToLobbyBTN.SetActive(SceneManager.GetActiveScene().buildIndex == 1);
         _pauseMenu.gameObject.SetActive(false);
     }
     
     private void TryGetComponents()
-    { 
-        _playerScriptStorage ??= FindObjectOfType<PlayerScriptStorage>();
+    {
         if (Camera.main != null) _playerCamera = Camera.main.transform;
 
         if (_leftInputDetector != null && _rightInputDetector != null) return;
@@ -64,6 +61,11 @@ public class PauseMenuManager : MonoBehaviour
                 _rightInputDetector = inputDetector;
             }
         }
+
+        if (_playerScriptStorage != null) return;
+        _playerScriptStorage = FindObjectOfType<PlayerScriptStorage>();
+        
+        _returnToLobbyBTN.SetActive(SceneManager.GetActiveScene().buildIndex == 1);
     }
 
     private void Update()
@@ -103,7 +105,7 @@ public class PauseMenuManager : MonoBehaviour
             _timePauseButtonPressed = 0f;
         }
 
-        if (!(_timePauseButtonPressed >= 2.5f)) return;
+        if (!(_timePauseButtonPressed >= 2f)) return;
         
         PauseMenuControl();
         _timePauseButtonPressed = 0f;

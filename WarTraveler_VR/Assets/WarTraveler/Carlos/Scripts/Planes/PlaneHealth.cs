@@ -111,7 +111,7 @@ public class PlaneHealth : MonoBehaviour
     /// Método para destruir el avión;
     /// </summary>
     [ContextMenu("Destroy Plane")]
-    private void DestroyPlane()
+    public void DestroyPlane()
     {
         if (!_meshRenderer.enabled) return; //Si ya a sido destruido no hace falta hacer la lógica restante;
 

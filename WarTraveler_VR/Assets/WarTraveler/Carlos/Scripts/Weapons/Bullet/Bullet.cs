@@ -5,6 +5,8 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private int _bulletDamage;
 
+    [SerializeField] private GameObject _bulletSound;
+    
     [SerializeField] private ParticleSystem _targetImpactParticleSystem;
     [SerializeField] private ParticleSystem _defaultImpactParticleSystem;
 
@@ -38,7 +40,8 @@ public class Bullet : MonoBehaviour
         if (collision.transform.CompareTag("Target"))
         {
             SpawnParticleSystem(collision, _targetImpactParticleSystem);
-
+            _bulletSound.SetActive(true);
+            _bulletSound.transform.parent = null;
             Destroy(gameObject);
             
             return;
